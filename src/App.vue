@@ -21,6 +21,7 @@ export default {
 <style>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.css');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
 
 body {
   margin: 0;
