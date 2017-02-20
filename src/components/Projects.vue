@@ -11,7 +11,7 @@
           <p>{{project.description}}</p>
           <div class="tags">
             <div v-for="tag in project.tags" class="chip">
-              <i class="devicon-angularjs-plain colored"></i>
+              <i v-bind:class="['colored', className(tag)]" v-if="className(tag)"></i>
               {{tag}}
             </div>
           </div>
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import * as _ from 'lodash';
+
 export default {
   name: 'projects',
   data () {
@@ -53,7 +55,46 @@ export default {
         url: 'http://jessdocs.io',
         tags: ['angular', 'webpack', 'ruby on rails', 'material design', 'heroku', 'amazon s3'],
         image: require('../assets/jessdocs.png')
+      }],
+      tags: [{
+        name: 'react',
+        icon: 'devicon-react-original'
+      }, {
+        name: 'redux'
+      }, {
+        name: 'bootstrap',
+        icon: 'devicon-bootstrap-plain'
+      }, {
+        name: 'webpack'
+      }, {
+        name: 'node',
+        icon: 'devicon-nodejs-plain'
+      }, {
+        name: 'mongodb',
+        icon: 'devicon-mongodb-plain'
+      }, {
+        name: 'heroku',
+        icon: 'devicon-heroku-original'
+      }, {
+        name: 'vue'
+      }, {
+        name: 'material design'
+      }, {
+        name: 'angular',
+        icon: 'devicon-angularjs-plain'
+      }, {
+        name: 'ruby on rails', 
+        icon: 'devicon-rails-plain'
+      }, {
+        name: 'amazon s3',
+        icon: 'devicon-amazonwebservices-original'
       }]
+    }
+  },
+  methods: {
+    className: function(iconName) {
+      const tag = _.find(this.tags, {name: iconName})
+      return (tag ? tag.icon : undefined)
     }
   }
 }
@@ -81,6 +122,12 @@ h1 {
 .card {
   width: 400px;
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  flex: 1;
 }
 
 .tags {
@@ -93,6 +140,10 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+i {
+  margin-right: 5px;
 }
 
 img {
