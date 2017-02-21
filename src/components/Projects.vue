@@ -8,7 +8,9 @@
         </div>
         <div class="card-content">
           <span class="card-title">{{project.name}}</span>
-          <p>{{project.description}}</p>
+          <p class="description">{{project.description}}</p>
+          <div class="divider"></div>
+          <h6>Technologies</h6>
           <div class="tags">
             <div v-for="tag in project.tags" class="chip">
               <i v-bind:class="['colored', className(tag)]" v-if="className(tag)"></i>
@@ -17,7 +19,9 @@
           </div>
         </div>
         <div class="card-action">
-          <a :href="project.url" target="_blank">Go</a>
+          <a v-for="(url, key) in project.urls" :href="url" target="_blank">
+            {{key}}
+          </a>
         </div>
       </div>
     </div>
@@ -33,27 +37,50 @@ export default {
     return {
       projects: [{
         name: 'everee',
-        url: 'http://everee.io',
-        description: 'a project that does stuff',
-        tags: ['react', 'redux', 'bootstrap', 'webpack', 'node', 'mongodb', 'heroku'],
+        urls: {
+          view: 'http://everee.io',
+          github: 'https://github.com/jessicarobins/det'
+        },
+        description: `A single-page app that creates a bucket list based on 
+          queries to the Wolfram Alpha API. The bucket list items are crowd-sourced, 
+          so that when items get added to one person's list, the same items get added 
+          for everyone else who has that list.`,
+        tags: ['react', 'redux', 'bootstrap', 'webpack', 'node', 'mongodb', 'heroku', 'sass'],
         image: require('../assets/everee.png')
       }, {
         name: 'Jessboard',
-        url: 'https://jessicarobins.github.io/jessboard',
-        description: 'a soundboard of things I say',
+        urls: {
+          view: 'https://jessicarobins.github.io/jessboard',
+          github: 'https://github.com/jessicarobins/jessboard'
+        },
+        description: `As a parting gift to Kit Check, I built a soundboard of 
+          the things I was known to say on a regular basis.`,
         tags: ['vue', 'webpack'],
         image: require('../assets/jessboard.png')
       }, {
         name: 'ddescribe',
-        url: 'https://jessicarobins.github.io/formatter',
-        description: 'a test case formatter',
+        urls: {
+          view: 'https://jessicarobins.github.io/formatter',
+          github: 'https://github.com/jessicarobins/formatter'
+        },
+        description: `ddescribe takes test cases written with indentation to signify 
+          the parent/child relationship and formats them according to several 
+          unit/e2e test frameworks.`,
         tags: ['vue', 'material design', 'webpack'],
         image: require('../assets/ddescribe.png')
       }, {
         name: 'jessdocs',
-        description: 'a test case management tool',
-        url: 'http://jessdocs.io',
-        tags: ['angular', 'webpack', 'ruby on rails', 'material design', 'heroku', 'amazon s3'],
+        description: `A single-page app that organizes test cases into a taggable, 
+          filterable tree structure. While the majority of the frontend is built using 
+          AngularJS, I used some React components to optimize page load time.`,
+        urls: {
+          view: 'http://jessdocs.io',
+          'github (backend)': 'https://github.com/jessicarobins/jd-api',
+          'github (frontend)': 'https://github.com/jessicarobins/jd-ui'
+          
+        },
+        tags: ['angular', 'webpack', 'ruby on rails', 'material design', 
+          'heroku', 'amazon s3', 'sass', 'react', 'postgres'],
         image: require('../assets/jessdocs.png')
       }],
       tags: [{
@@ -88,6 +115,12 @@ export default {
       }, {
         name: 'amazon s3',
         icon: 'devicon-amazonwebservices-original'
+      }, {
+        name: 'sass',
+        icon: 'devicon-sass-original'
+      }, {
+        name: 'postgres',
+        icon: 'devicon-postgresql-plain'
       }]
     }
   },
@@ -113,6 +146,7 @@ export default {
 .project-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 h1 {
@@ -127,6 +161,12 @@ h1 {
 }
 
 .card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
   flex: 1;
 }
 
@@ -149,5 +189,10 @@ i {
 img {
   width: auto;
   height: auto;
+}
+
+.divider {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 </style>
