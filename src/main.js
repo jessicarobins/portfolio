@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 
+import vueSmoothScroll from 'vue-smoothscroll';
+Vue.use(vueSmoothScroll);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

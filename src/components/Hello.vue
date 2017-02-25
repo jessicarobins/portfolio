@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <down></down>
+    <down anchor="#truths"></down>
   </section>
 </template>
 
@@ -38,7 +38,7 @@ export default {
 }
 
 .about {
-  padding: 40px 20px;
+  padding: 40px 20px 0 20px;
   width: 100%;
 }
 

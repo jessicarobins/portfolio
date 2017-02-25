@@ -1,5 +1,5 @@
 <template>
-  <section class="facts-container">
+  <section id="truths">
   	<div class="container">
       <h1 class="center-align">Three truths and a lie</h1>
       <div class="facts">
@@ -79,7 +79,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.facts-container {
+#truths {
   background: linear-gradient(white 0%, #c9dbe9 100%);
 	background: -webkit-linear-gradient(white 0%, #c9dbe9 100%);
 	background: -linear-gradient(white 0%, #c9dbe9 100%);
