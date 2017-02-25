@@ -47,5 +47,6 @@ section {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 </style>

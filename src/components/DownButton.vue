@@ -1,7 +1,8 @@
 <template>
   <div class="down-button-container">
-    <div class="down-button" @click="scroll">
-      <i class="medium material-icons animated pulse infinite">keyboard_arrow_down</i>
+    <div class="down-button animated pulse infinite" @click="scroll">
+      <div class="text" v-if="text">{{text}}</div>
+      <i class="medium material-icons">keyboard_arrow_down</i>
     </div>
   </div>
 </template>
@@ -10,7 +11,7 @@
 
 export default {
   name: 'down',
-  props: ['anchor'],
+  props: ['anchor', 'text'],
   methods: {
     scroll: function() {
       const scrollElement = document.querySelector(this.anchor)
@@ -23,13 +24,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .down-button-container {
-    position: relative;
+    position: absolute;
     bottom: 5px;
-    width: 100%;
     text-align: center;
   }
   
   .down-button {
     cursor: pointer;
+  }
+  
+  .text {
+    text-transform: uppercase;
+    font-size: 20px;
   }
 </style>

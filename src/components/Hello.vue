@@ -2,16 +2,16 @@
   <section class="hello">
   	<div class="about">
   	  <div class="row">
-  	    <div class="col s12 m4">
+  	    <div class="col s12 m4 center-align">
   	      <jess></jess>
   	    </div>
   	    <div class="col s12 m8">
-          <h1>Hi, I'm Jess</h1>
+          <h1>Hi, I'm Jess!</h1>
           <h4>A full-stack engineer in Washington, DC</h4>
         </div>
       </div>
     </div>
-    <down anchor="#truths"></down>
+    <down anchor="#truths" text="more about me"></down>
   </section>
 </template>
 
