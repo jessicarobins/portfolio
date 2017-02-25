@@ -28,7 +28,10 @@ export default {
     display: inline-block;
     width: 90px;
     height: 120px;
-    left: 205px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     top: 0;
     background-color: #faf0e6;
     background-image: radial-gradient(circle, #000000 15%, #654321 15%, #654321 35%, #ffffff 30%, #ffffff 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(circle, #000000 15%, #654321 15%, #654321 35%, #ffffff 30%, #ffffff 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse, #faf0e6 40%, #800080 10%, #800080 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse, #faf0e6 40%, #800080 10%, #800080 50%, rgba(0, 0, 0, 0) 50%), linear-gradient(0deg, transparent 20%, purple 20%), linear-gradient(#faf0e6, #faf0e6), radial-gradient(circle, #faf0e6 40%, #e9bd91 40%, #e9bd91 53%, rgba(0, 0, 0, 0) 42%), linear-gradient(#faf0e6, #faf0e6), linear-gradient(0deg, transparent 20%, white 20%), radial-gradient(ellipse, #000000 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(circle, #654321 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(circle, #654321 50%, rgba(0, 0, 0, 0) 50%);
@@ -39,14 +42,14 @@ export default {
 }
 
 .jess {
-  height: 500px;
-  width: 500px;
+  height: 430px;
+  width: 320px;
   position: relative;
   display: inline-block;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), linear-gradient(to right, #faf0e6, #faf0e6), radial-gradient(ellipse, #faf0e6 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse, #faf0e6 50%, rgba(0, 0, 0, 0) 50%), linear-gradient(to right, #570057, #570057 35%, #570057 35%, #570057 65%, #570057 65%), radial-gradient(ellipse at center 100px, #800080 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse at center 60px, #800080 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse at center 18px, #800080 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse, #faf0e6 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse at center 28px, #faf0e6 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse, #654321 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse at center 18px, #570057 50%, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse at center 18px, #570057 50%, rgba(0, 0, 0, 0) 50%), linear-gradient(to right, #faf0e6, #faf0e6 47%, #e9bd91 47%, #e9bd91 50%, #faf0e6 50%); 
   background-repeat: no-repeat;
   background-size: 35px 10px, 35px 45px, 30px 35px, 30px 35px, 85px 15px, 150px 145px, 130px 190px, 150px 65px, 90px 220px, 220px 40px, 190px 270px, 80px 25px, 80px 25px, 75px 120px;
-  background-position: center 115px, center 92px, 190px 55px, 280px 55px, center 221px, center 180px, center 130px, center 170px, 175px 102px, 190px 125px, center -42px, 181px 400px, 237px 400px, center 300px;   
+  background-position: center 115px, center 92px, 34% 55px, 66% 55px, center 221px, center 180px, center 130px, center 170px, 35% 102px, 75% 125px, center -42px, 62% 400px, 38% 400px, center 300px;   
 }
 
 .jess:after {
@@ -54,7 +57,7 @@ export default {
   position: absolute;
   width: 30px;
   height: 100px;
-  left: 349px;
+  left: 73%;
   top: 60px;
   border-radius: 100px;
   background-color: $skin-color;

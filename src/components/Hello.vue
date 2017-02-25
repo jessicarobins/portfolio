@@ -10,8 +10,8 @@
           <h4>A full-stack engineer in Washington, DC</h4>
         </div>
       </div>
-      <down></down>
     </div>
+    <down></down>
   </section>
 </template>
 
@@ -40,7 +40,6 @@ export default {
 .about {
   padding: 40px 20px;
   width: 100%;
-  height: 100%;
 }
 
 h1 {

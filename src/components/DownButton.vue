@@ -1,13 +1,14 @@
 <template>
   <div class="down-button">
-    <i class="medium material-icons">keyboard_arrow_down</i>
+    <i class="medium material-icons animated pulse">keyboard_arrow_down</i>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'down'
+  name: 'down',
+  props: ['anchor'],
 }
 </script>
 
