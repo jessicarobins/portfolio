@@ -4,6 +4,7 @@
       <h1>Hi, I'm Jess</h1>
       <h4>A full-stack engineer in Washington, DC</h4>
       <h5>About me: three truths and a lie</h5>
+      <jess></jess>
       <div class="facts">
         <div v-for="(fact, index) in facts">
           <transition name="fade" mode="out-in">
@@ -34,10 +35,13 @@
 </template>
 
 <script>
-import * as _ from 'lodash';
+import Jess from './Jess'
 
 export default {
   name: 'hello',
+  components: {
+    Jess
+  },
   data () {
     return {
       facts: [{
