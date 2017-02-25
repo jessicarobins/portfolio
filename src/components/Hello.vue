@@ -1,37 +1,41 @@
 <template>
   <section class="hello">
-    <h1>Hi, I'm Jess</h1>
-    <h4>A full-stack engineer in Washington, DC</h4>
-    <h5>About me: three truths and a lie</h5>
-    <div class="facts">
-      <div v-for="(fact, index) in facts">
-        <transition name="fade" mode="out-in">
-          <div 
-            key="`fact${index}`"
-            v-if="fact.active" 
-            @mouseleave="mouseOver(fact)" 
-            class="card-panel fact-reveal">
-            <div>
-              <span class="truth">{{fact.truth}}!</span> {{fact.revealText}}
+  	<div class="about">
+      <h1>Hi, I'm Jess</h1>
+      <h4>A full-stack engineer in Washington, DC</h4>
+      <h5>About me: three truths and a lie</h5>
+      <div class="facts">
+        <div v-for="(fact, index) in facts">
+          <transition name="fade" mode="out-in">
+            <div 
+              key="`fact${index}`"
+              v-if="fact.active" 
+              @mouseleave="mouseOver(fact)" 
+              class="card-panel fact-reveal">
+              <div>
+                <span class="truth">{{fact.truth}}!</span> {{fact.revealText}}
+              </div>
+              <div class="button">
+                <a class="waves-effect waves-light btn" :href="fact.link.anchor">{{fact.link.text}}</a>
+              </div>
             </div>
-            <div class="button">
-              <a class="waves-effect waves-light btn" :href="fact.link.anchor">{{fact.link.text}}</a>
+            <div 
+              key="`fact-reveal-${index}`"
+              v-else
+              @mouseover="mouseOver(fact)" 
+              class="fact">
+              {{index+1}}. {{fact.text}}
             </div>
-          </div>
-          <div 
-            key="`fact-reveal-${index}`"
-            v-else
-            @mouseover="mouseOver(fact)" 
-            class="fact">
-            {{index+1}}. {{fact.text}}
-          </div>
-        </transition>
+          </transition>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import * as _ from 'lodash';
+
 export default {
   name: 'hello',
   data () {
@@ -72,7 +76,7 @@ export default {
   methods: {
     mouseOver: function(fact){
       fact.active = !fact.active;   
-    }
+    },
   }
 }
 </script>
@@ -85,11 +89,20 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: lightblue;
+  background: linear-gradient(#c9dbe9 0%, #fff 100%);
+	background: -webkit-linear-gradient(#c9dbe9 0%, #fff 100%);
+	background: -linear-gradient(#c9dbe9 0%, #fff 100%);
+	background: -moz-linear-gradient(#c9dbe9 0%, #fff 100%);
+}
+
+.about {
+  z-index: 100;
+  text-align: center;
 }
 
 h1 {
-  font-size: 72px;
+  font-size: 172px;
+  font-family: 'Amatic SC', cursive;
 }
 
 h1, h2 {
