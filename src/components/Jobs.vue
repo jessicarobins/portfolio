@@ -12,48 +12,55 @@
           </label>
         </div>
       </div>
-      <table v-if="filteredJobs.length">
-        <thead>
-          <tr>
-            <th data-field="name">Name</th>
-            <th data-field="description">Responsibilities</th>
-            <th data-field="tech">Tech</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="job in filteredJobs">
-            <td class="name">
-              <h4>{{job.title}}</h4> 
-              <h5>{{job.name}}</h5>
-              {{job.dates}}
-            </td>
-            <td class="blurb">
-              <ul v-if="job.blurb.length">
-                <li v-for="bullet in job.blurb">
-                  {{bullet}}
-                </li>
-              </ul>
-              <transition enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp">
-                <ul v-if="job.more.length && job.showMore">
-                  <li v-for="bullet in job.more">
+      <transition 
+        enter-active-class="animated fadeInUp" 
+        leave-active-class="animated fadeOutDown" mode="out-in">
+        <table v-if="filteredJobs.length">
+          <thead>
+            <tr>
+              <th data-field="name">Name</th>
+              <th data-field="description">Responsibilities</th>
+              <th data-field="tech">Tech</th>
+            </tr>
+          </thead>
+          <transition-group 
+            name="job-list" 
+            tag="tbody" 
+            class="job-list">
+            <tr v-for="job in filteredJobs" class="job" :key="job">
+              <td class="name">
+                <h4>{{job.title}}</h4> 
+                <h5>{{job.name}}</h5>
+                {{job.dates}}
+              </td>
+              <td class="blurb">
+                <ul v-if="job.blurb.length">
+                  <li v-for="bullet in job.blurb">
                     {{bullet}}
                   </li>
                 </ul>
-              </transition>
-              <a @click="toggleShowMore(job)" v-if="job.more.length">
-                Show {{job.showMore ? 'less' : 'more'}}
-              </a>
-            </td>
-            <td class="tags">
-              <tag v-for="tag in job.tags" :tag="tag"></tag>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div v-else class="center-align">
-        <h4>No jobs meet the search criteria!</h4>
-        <h5><a @click="clearFilters">Clear the filters</a></h5>
-      </div>
+                <transition enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp">
+                  <ul v-if="job.more.length && job.showMore">
+                    <li v-for="bullet in job.more">
+                      {{bullet}}
+                    </li>
+                  </ul>
+                </transition>
+                <a @click="toggleShowMore(job)" v-if="job.more.length">
+                  Show {{job.showMore ? 'less' : 'more'}}
+                </a>
+              </td>
+              <td class="tags">
+                <tag v-for="tag in job.tags" :tag="tag"></tag>
+              </td>
+            </tr>
+          </transition-group>
+        </table>
+        <div v-else class="no-jobs">
+          <h4>No jobs meet the search criteria!</h4>
+          <h5><a @click="clearFilters">Clear the filters</a></h5>
+        </div>
+      </transition>
     </div>
     <down anchor="#hobbies" text="what I do for fun"></down>
   </section>
@@ -158,47 +165,68 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-  .container {
-    flex: 1;
-  }
-  
-  table {
-    font-size: 20px;
-    width: 100%;
-  }
-  
-  .blurb {
-    width: 50%;
-    line-height: 1.5;
-  }
-  
-  .name {
-    width: 25%;
-  }
-  
-  .tags {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  
-  .filter {
-    color: #9e9e9e;
-    font-size: 20px;
-    padding: 10px 20px;
-  }
-  
-  .filters {
-    display: flex;
-    flex-flow: row wrap;
-  }
-  
-  label {
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.no-jobs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  font-size: 20px;
+  width: 100%;
+}
+
+.blurb {
+  width: 50%;
+  line-height: 1.5;
+}
+
+.name {
+  width: 25%;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.filter {
+  color: #9e9e9e;
+  font-size: 20px;
+  padding: 10px 20px;
+}
+
+.filters {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+label {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job {
+  transition: all 1s;
+}
+
+.job-list-enter, .job-list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.job-list-leave-active {
+  position: absolute;
+}
 </style>
