@@ -19,8 +19,8 @@
           <span>{{tag.name}}</span>
         </div>
       </div>
-      <div class="project-list">
-        <div v-for="project in filteredProjects" class="card">
+      <transition-group name="project-list" tag="div" class="project-list">
+        <div v-for="project in filteredProjects" class="card project" :key="project">
           <div class="card-image">
             <img :src="project.image">
           </div>
@@ -41,7 +41,7 @@
               {{key}}
             </a>
           </div>
-        </div>
+        </transition-group>
       </div>
     </div>
   </section>
@@ -271,5 +271,17 @@ label {
   color: #9e9e9e;
   font-size: 20px;
   padding: 10px 20px;
+}
+
+.project {
+  transition: all 1s;
+}
+
+.project-list-enter, .project-list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.project-list-leave-active {
+  position: absolute;
 }
 </style>
