@@ -2,8 +2,8 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <ul v-for="(section, key) in sections" class="left hide-on-med-and-down">
-          <li><a @click="scrollTo(section)">{{key}}</a></li>
+        <ul v-for="section in sections" class="left hide-on-med-and-down">
+          <li :class="{active: section.active}"><a @click="scrollTo(section.anchor)">{{section.name}}</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
           <li>
@@ -28,24 +28,48 @@
 </template>
 
 <script>
+import bus from '../utils/Bus'
+import * as _ from 'lodash'
 
 export default {
   name: 'navbar',
   data() {
     return {
-      sections: {
-        'About Me': '#truths',
-        'Projects': '#projects',
-        'Jobs': '#jobs',
-        'Education': '#education'
-      }
+      sections: [{
+        name: 'About Me',
+        anchor: '#truths',
+        active: false
+      }, {
+        name: 'Projects',
+        anchor: '#projects',
+        active: false
+      }, {
+        name: 'Jobs',
+        anchor: '#jobs',
+        active: false
+      }, {
+        name: 'Education',
+        anchor: '#education',
+        active: false
+      }]
     }
   },
   methods: {
+    isActive(section) {
+      return this.activeSection.length && this.activeSection === section;
+    },
     scrollTo: function(anchor) {
       const scrollElement = document.querySelector(anchor)
       this.$SmoothScroll(scrollElement)
     }
+  },
+  created: function() {
+    let sections = this.sections
+    bus.$on('scrollEnter', function (data) {
+      console.log(sections)
+      _.each(sections, section => section.active = false)
+      _.find(sections, {name: data}).active = true;
+    })
   }
 }
 </script>

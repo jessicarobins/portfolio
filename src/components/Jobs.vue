@@ -1,5 +1,5 @@
 <template>
-  <section id="jobs" v-viewport="{onEnter: scrollEnter, onExit: scrollExit}">
+  <section id="jobs" v-viewport="{onEnter: scrollEnter}">
     <div class="container">
       <h1 class="center-align">Jobs</h1>
       <h5>Filter by tech</h5>
@@ -71,6 +71,7 @@ import Down from './DownButton'
 import Tag from './Tag'
 import TechTagService from '../services/TechTagService'
 import Viewport from '../directives/Viewport'
+import bus from '../utils/Bus'
 
 import * as _ from 'lodash'
 
@@ -162,10 +163,7 @@ export default {
       this.checkedTags = [];
     },
     scrollEnter: function() {
-      console.log('scroll has entered')
-    },
-    scrollExit: function() {
-      console.log('scroll has exited')
+      bus.$emit('scrollEnter', 'Jobs');
     }
   }
 }
