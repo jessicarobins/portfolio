@@ -7,9 +7,9 @@
         <div v-for="(fact, index) in facts">
           <transition enter-active-class="animated flipInY" leave-active-class="animated flipOutY" mode="out-in">
             <div 
-              key="`fact-${index}`"
-              v-if="fact.active" 
-              @mouseleave="mouseOver(fact)" 
+              :key="fact.id"
+              v-if="fact.id === activeFactId" 
+              @mouseleave="mouseOut()" 
               class="card-panel fact-reveal fact">
               <div class="fact-text">
                 <h5>
@@ -47,6 +47,7 @@ export default {
     return {
       facts: [{
         active: false,
+        id: 1,
         text: 'Javascript is my favorite programming language.',
         truth: 'True',
         revealText: `This should be evident from the several javascript 
@@ -57,6 +58,7 @@ export default {
         }
       }, {
         active: false,
+        id: 2,
         text: 'I\'ve visited 10 countries outside the USA.',
         truth: 'False',
         revealText: `I\'ve been to 12. I love to travel. I even have a scratch 
@@ -67,6 +69,7 @@ export default {
         }
       }, {
         active: false,
+        id: 3,
         text: 'Before I became a dev, I worked with children.',
         truth: 'True',
         revealText: `I worked with kids for 10 years before I 
@@ -77,6 +80,7 @@ export default {
         }
       }, {
         active: false,
+        id: 4,
         text: 'I majored in math.',
         truth: 'True',
         revealText: `I graduated in 2009 with a math and psychology double major 
@@ -85,12 +89,16 @@ export default {
           text: 'view education',
           anchor: '#education'
         }
-      }]
+      }],
+      activeFactId: null
     }
   },
   methods: {
     mouseOver: function(fact) {
-      fact.active = !fact.active;   
+      this.activeFactId = fact.id;
+    },
+    mouseOut: function() {
+      this.activeFactId = null;
     },
     scroll: function(anchor) {
       const scrollElement = document.querySelector(anchor)
