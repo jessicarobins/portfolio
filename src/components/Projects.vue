@@ -2,17 +2,25 @@
   <section class="projects" id="projects">
     <div class="container">
       <h1 class="center-align">Projects</h1>
+      <h5>Filter by tech</h5>
       <div class="filters">
         <div v-for="tag in tags" class="filter">
-          <input type="checkbox" :id="tag.name" />
+          <input type="checkbox" :id="tag.name" v-model="tag.checked" />
           <label :for="tag.name">
             <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
             <span>{{tag.name}}</span>
           </label>
         </div>
       </div>
+      <h5>Common to all projects</h5>
+      <div class="filters">
+        <div v-for="tag in commonTags" class="filter">
+          <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
+          <span>{{tag.name}}</span>
+        </div>
+      </div>
       <div class="project-list">
-        <div v-for="project in projects" class="card">
+        <div v-for="project in filteredProjects" class="card">
           <div class="card-image">
             <img :src="project.image">
           </div>
@@ -96,42 +104,56 @@ export default {
       }],
       tags: [{
         name: 'react',
-        icon: 'devicon-react-original'
+        icon: 'devicon-react-original',
+        checked: false
       }, {
-        name: 'redux'
+        name: 'redux',
+        checked: false
       }, {
         name: 'bootstrap',
-        icon: 'devicon-bootstrap-plain'
+        icon: 'devicon-bootstrap-plain',
+        checked: false
       }, {
-        name: 'webpack'
+        name: 'webpack',
+        checked: false
       }, {
         name: 'node',
-        icon: 'devicon-nodejs-plain'
+        icon: 'devicon-nodejs-plain',
+        checked: false
       }, {
         name: 'mongodb',
-        icon: 'devicon-mongodb-plain'
+        icon: 'devicon-mongodb-plain',
+        checked: false
       }, {
         name: 'heroku',
-        icon: 'devicon-heroku-original'
+        icon: 'devicon-heroku-original',
+        checked: false
       }, {
-        name: 'vue'
+        name: 'vue',
+        checked: false
       }, {
-        name: 'material design'
+        name: 'material design',
+        checked: false
       }, {
         name: 'angular',
-        icon: 'devicon-angularjs-plain'
+        icon: 'devicon-angularjs-plain',
+        checked: false
       }, {
         name: 'ruby on rails', 
-        icon: 'devicon-rails-plain'
+        icon: 'devicon-rails-plain',
+        checked: false
       }, {
         name: 'amazon s3',
-        icon: 'devicon-amazonwebservices-original'
+        icon: 'devicon-amazonwebservices-original',
+        checked: false
       }, {
         name: 'sass',
-        icon: 'devicon-sass-original'
+        icon: 'devicon-sass-original',
+        checked: false
       }, {
         name: 'postgres',
-        icon: 'devicon-postgresql-plain'
+        icon: 'devicon-postgresql-plain',
+        checked: false
       }],
       commonTags: [{
         name: 'github',
@@ -145,6 +167,9 @@ export default {
       }, {
         name: 'javascript',
         icon: 'devicon-javascript-plain'
+      }, {
+        name: 'trello',
+        icon: 'devicon-trello-plain'
       }]
     }
   },
@@ -152,6 +177,14 @@ export default {
     className: function(iconName) {
       const tag = _.find(this.tags, {name: iconName})
       return (tag ? tag.icon : undefined)
+    }
+  },
+  computed: {
+    filteredProjects: function() {
+      return this.projects.filter( (project) => {
+        const checkedTech = this.tags.filter( tag => tag.checked ).map( tag => tag.name )
+        return _.intersection(project.tags, checkedTech).length >= checkedTech.length
+      })
     }
   }
 }
@@ -235,6 +268,8 @@ label {
 }
 
 .filter {
-  padding: 20px;
+  color: #9e9e9e;
+  font-size: 20px;
+  padding: 10px 20px;
 }
 </style>
