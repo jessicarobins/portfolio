@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <navbar></navbar>
     <hello></hello>
     <truths></truths>
     <projects></projects>
@@ -12,6 +13,7 @@
 import Education from './components/Education'
 import Hello from './components/Hello'
 import Jobs from './components/Jobs'
+import Navbar from './components/Navbar'
 import Projects from './components/Projects'
 import Truths from './components/Truths'
 
@@ -21,6 +23,7 @@ export default {
     Education,
     Hello,
     Jobs,
+    Navbar,
     Projects,
     Truths
   }
@@ -33,6 +36,7 @@ export default {
 @import url('https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300|Material+Icons');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 body {
   margin: 0;
@@ -43,6 +47,7 @@ body {
 #app {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #2c3e50;
+  background-color: #c9dbe9;
 }
 
 h1 {
