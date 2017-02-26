@@ -2,46 +2,49 @@
   <section class="projects" id="projects">
     <div class="container">
       <h1 class="center-align">Projects</h1>
-      <h5>Filter by tech</h5>
-      <div class="filters">
-        <div v-for="tag in tags" class="filter">
-          <input type="checkbox" :id="tag.name" v-model="tag.checked" />
-          <label :for="tag.name">
-            <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
-            <span>{{tag.name}}</span>
-          </label>
-        </div>
-      </div>
-      <h5>Common to all projects</h5>
-      <div class="filters">
-        <div v-for="tag in commonTags" class="filter">
-          <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
-          <span>{{tag.name}}</span>
-        </div>
-      </div>
-      <transition-group name="project-list" tag="div" class="project-list">
-        <div v-for="project in filteredProjects" class="card project" :key="project">
-          <div class="card-image">
-            <img :src="project.image">
-          </div>
-          <div class="card-content">
-            <span class="card-title">{{project.name}}</span>
-            <p class="description">{{project.description}}</p>
-            <div class="divider"></div>
-            <h6>Technologies</h6>
-            <div class="tags">
-              <div v-for="tag in project.tags" class="chip">
-                <i v-bind:class="['colored', className(tag)]" v-if="className(tag)"></i>
-                {{tag}}
-              </div>
+      <div class="row">
+        <div class="col s12 m4">  
+          <h5>Filter by tech</h5>
+          <div class="filters">
+            <div v-for="tag in tags" class="filter">
+              <input type="checkbox" :id="tag.name" v-model="tag.checked" />
+              <label :for="tag.name">
+                <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
+                <span>{{tag.name}}</span>
+              </label>
             </div>
           </div>
-          <div class="card-action">
-            <a v-for="(url, key) in project.urls" :href="url" target="_blank">
-              {{key}}
-            </a>
+          <h5>Common to all projects</h5>
+          <div class="filters">
+            <div v-for="tag in commonTags" class="filter">
+              <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
+              <span>{{tag.name}}</span>
+            </div>
           </div>
-        </transition-group>
+        </div>
+        <div class="col s12 m8">
+          <transition-group name="project-list" tag="div" class="project-list">
+            <div v-for="project in filteredProjects" class="card project" :key="project">
+              <div class="card-image">
+                <img :src="project.image">
+              </div>
+              <div class="card-content">
+                <span class="card-title">{{project.name}}</span>
+                <p class="description">{{project.description}}</p>
+                <div class="divider"></div>
+                <h6>Technologies</h6>
+                <div class="tags">
+                  <tag v-for="tag in project.tags" :tag="tag"></tag>
+                </div>
+              </div>
+              <div class="card-action">
+                <a v-for="(url, key) in project.urls" :href="url" target="_blank">
+                  {{key}}
+                </a>
+              </div>
+            </div>
+          </transition-group>
+        </div>
       </div>
     </div>
     <down anchor="#jobs" text="see my work history"></down>
@@ -52,11 +55,13 @@
 import * as _ from 'lodash'
 
 import Down from './DownButton'
+import Tag from './Tag'
 
 export default {
   name: 'projects',
   components: {
-    Down
+    Down,
+    Tag
   },
   data () {
     return {
@@ -179,12 +184,6 @@ export default {
       }]
     }
   },
-  methods: {
-    className: function(iconName) {
-      const tag = _.find(this.tags, {name: iconName})
-      return (tag ? tag.icon : undefined)
-    }
-  },
   computed: {
     filteredProjects: function() {
       return this.projects.filter( (project) => {
@@ -213,7 +212,6 @@ export default {
 }
 
 .card {
-  width: 400px;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -241,16 +239,6 @@ export default {
   flex-wrap: wrap;
 }
 
-.chip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-i {
-  margin-right: 5px;
-}
-
 img {
   width: auto;
   height: auto;
@@ -266,6 +254,15 @@ img {
   flex-flow: row wrap;
 }
 
+.filter {
+  color: #9e9e9e;
+  font-size: 20px;
+  padding: 10px 20px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
 label {
   font-size: 20px;
   display: flex;
@@ -273,10 +270,8 @@ label {
   justify-content: center;
 }
 
-.filter {
-  color: #9e9e9e;
-  font-size: 20px;
-  padding: 10px 20px;
+i {
+  margin-right: 5px;
 }
 
 .project {
