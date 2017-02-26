@@ -57,4 +57,8 @@ section {
 a {
   cursor: pointer;
 }
+
+.colored {
+  margin-right: 5px;
+}
 </style>

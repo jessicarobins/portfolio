@@ -126,24 +126,7 @@ export default {
           'heroku', 'amazon s3', 'sass', 'react', 'postgres'],
         image: require('../assets/jessdocs.png')
       }],
-      commonTags: [{
-        name: 'github',
-        icon: 'devicon-github-plain'
-      }, {
-        name: 'html5',
-        icon: 'devicon-html5-plain'
-      }, {
-        name: 'css3',
-        icon: 'devicon-css3-plain'
-      }, {
-        name: 'javascript',
-        icon: 'devicon-javascript-plain'
-      }, {
-        name: 'trello',
-        icon: 'devicon-trello-plain'
-      }, {
-        name: 'webpack'
-      }],
+      common: ['github', 'html5', 'css3', 'javascript', 'trello', 'webpack'],
       checkedTags: []
     }
   },
@@ -154,7 +137,10 @@ export default {
   },
   computed: {
     tags: function() {
-      return TechTagService.getTagsByNames(this.projects)
+      return TechTagService.getTagsFromObjects(this.projects)
+    },
+    commonTags: function() {
+      return TechTagService.getTagsByNames(this.common)
     },
     filteredProjects: function() {
       return this.projects.filter( (project) => {
@@ -239,10 +225,6 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-i {
-  margin-right: 5px;
 }
 
 .project {

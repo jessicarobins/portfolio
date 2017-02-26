@@ -27,8 +27,4 @@ export default {
   justify-content: space-between;
   font-size: 20px;
 }
-
-i {
-  margin-right: 5px;
-}
 </style>

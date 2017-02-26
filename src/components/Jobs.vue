@@ -134,7 +134,7 @@ export default {
   },
   computed: {
     tags: function() {
-      return TechTagService.getTagsByNames(this.jobs)
+      return TechTagService.getTagsFromObjects(this.jobs)
     },
     filteredJobs: function() {
       return this.jobs.filter( (job) => {
