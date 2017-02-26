@@ -3,7 +3,7 @@
     <nav>
       <div class="nav-wrapper">
         <ul v-for="section in sections" class="left hide-on-med-and-down">
-          <li :class="{active: section.active}"><a @click="scrollTo(section.anchor)">{{section.name}}</a></li>
+          <li v-bind:class="[className(section.name)]"><a @click="scrollTo(section.anchor)">{{section.name}}</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
           <li>
@@ -38,25 +38,22 @@ export default {
       sections: [{
         name: 'About Me',
         anchor: '#truths',
-        active: false
       }, {
         name: 'Projects',
         anchor: '#projects',
-        active: false
       }, {
         name: 'Jobs',
         anchor: '#jobs',
-        active: false
       }, {
         name: 'Education',
         anchor: '#education',
-        active: false
-      }]
+      }],
+      activeSection: ''
     }
   },
   methods: {
-    isActive(section) {
-      return this.activeSection.length && this.activeSection === section;
+    className: function(name) {
+      return (name === this.activeSection ? 'active' : '')
     },
     scrollTo: function(anchor) {
       const scrollElement = document.querySelector(anchor)
@@ -64,11 +61,9 @@ export default {
     }
   },
   created: function() {
-    let sections = this.sections
+    let navbar = this;
     bus.$on('scrollEnter', function (data) {
-      console.log(sections)
-      _.each(sections, section => section.active = false)
-      _.find(sections, {name: data}).active = true;
+      navbar.activeSection = data
     })
   }
 }

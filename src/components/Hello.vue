@@ -1,5 +1,5 @@
 <template>
-  <section class="hello">
+  <section class="hello" v-viewport="{onEnter: scrollEnter}">
   	  <div class="about row">
   	    <div class="col s12 m4 center-align">
   	      <jess></jess>
@@ -16,12 +16,19 @@
 <script>
 import Jess from './Jess'
 import Down from './DownButton'
+import bus from '../utils/Bus'
 
 export default {
   name: 'hello',
   components: {
     Down,
     Jess
+  },
+  methods: {
+    scrollEnter: function() {
+      console.log('entering main')
+      bus.$emit('scrollEnter', '')
+    }
   }
 }
 </script>

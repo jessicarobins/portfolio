@@ -1,5 +1,5 @@
 <template>
-  <section id="truths">
+  <section id="truths" v-viewport="{onEnter: scrollEnter}">
   	<div class="container">
       <h1 class="center-align">three truths and a lie</h1>
       <h4 class="center-align">mouseover or tap a card to view the details</h4>
@@ -36,6 +36,7 @@
 
 <script>
 import Down from './DownButton'
+import bus from '../utils/Bus'
 
 export default {
   name: 'truths',
@@ -94,6 +95,9 @@ export default {
     scroll: function(anchor) {
       const scrollElement = document.querySelector(anchor)
       this.$SmoothScroll(scrollElement)
+    },
+    scrollEnter: function() {
+      bus.$emit('scrollEnter', 'About Me');
     }
   }
 }

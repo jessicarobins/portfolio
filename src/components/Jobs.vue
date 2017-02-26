@@ -70,14 +70,12 @@
 import Down from './DownButton'
 import Tag from './Tag'
 import TechTagService from '../services/TechTagService'
-import Viewport from '../directives/Viewport'
 import bus from '../utils/Bus'
 
 import * as _ from 'lodash'
 
 export default {
   name: 'jobs',
-  directives: {viewport: Viewport},
   components: {
     Down,
     Tag
@@ -163,7 +161,7 @@ export default {
       this.checkedTags = [];
     },
     scrollEnter: function() {
-      bus.$emit('scrollEnter', 'Jobs');
+      bus.$emit('scrollEnter', 'Jobs')
     }
   }
 }

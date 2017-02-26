@@ -1,5 +1,5 @@
 <template>
-  <section class="projects" id="projects">
+  <section class="projects" id="projects" v-viewport="{onEnter: scrollEnter}">
     <div class="container">
       <h1 class="center-align">Projects</h1>
       <div class="row">
@@ -69,6 +69,7 @@ import * as _ from 'lodash'
 import Down from './DownButton'
 import Tag from './Tag'
 import TechTagService from '../services/TechTagService'
+import bus from '../utils/Bus'
 
 export default {
   name: 'projects',
@@ -141,6 +142,9 @@ export default {
   methods: {
     clear: function() {
       this.checkedTags = [];
+    },
+    scrollEnter: function() {
+      bus.$emit('scrollEnter', 'Projects');
     }
   },
   computed: {

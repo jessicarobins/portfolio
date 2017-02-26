@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 
+import Viewport from './directives/Viewport'
+Vue.directive('viewport', Viewport)
+
 import vueSmoothScroll from 'vue-smoothscroll';
 Vue.use(vueSmoothScroll);
 

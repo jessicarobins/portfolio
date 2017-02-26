@@ -1,5 +1,5 @@
 <template>
-  <section id="education">
+  <section id="education" v-viewport="{onEnter: scrollEnter}">
 	  <div class="container">
 	    <h1 class="center-align">Education</h1>
 	    <div class="schools">
@@ -19,6 +19,7 @@
 
 <script>
 import Down from './DownButton'
+import bus from '../utils/Bus'
 
 export default {
   name: 'education',
@@ -33,6 +34,11 @@ export default {
         degree: 'Bachelor of Science in Mathematics and Psychology',
         text: 'Honors Thesis: The Impact of Stereotypes on the Memory of Preschool Children'
       }]
+    }
+  },
+  methods: {
+    scrollEnter: function() {
+      bus.$emit('scrollEnter', 'Education');
     }
   }
 }
