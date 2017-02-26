@@ -55,11 +55,17 @@ h1 {
 }
 
 section {
-  min-height: 100vh;
+  min-height: calc(100vh + 400px);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+section::after {
+  content: '';
+  width: 100%;
+  height: 400px;
 }
 
 a {
