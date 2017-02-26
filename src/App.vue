@@ -6,10 +6,12 @@
     <projects></projects>
     <jobs></jobs>
     <education></education>
+    <contact></contact>
   </div>
 </template>
 
 <script>
+import Contact from './components/Contact'
 import Education from './components/Education'
 import Hello from './components/Hello'
 import Jobs from './components/Jobs'
@@ -20,6 +22,7 @@ import Truths from './components/Truths'
 export default {
   name: 'app',
   components: {
+    Contact,
     Education,
     Hello,
     Jobs,
@@ -55,14 +58,17 @@ h1 {
 }
 
 section {
-  min-height: calc(100vh + 400px);
+  min-height: 100vh;
+  &:not(:last-of-type) {
+    min-height: calc(100vh + 400px);
+  }
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-section::after {
+section:not(:last-of-type)::after {
   content: '';
   width: 100%;
   height: 400px;

@@ -47,6 +47,9 @@ export default {
       }, {
         name: 'Education',
         anchor: '#education',
+      }, {
+        name: 'Contact',
+        anchor: '#contact'
       }],
       activeSection: ''
     }
