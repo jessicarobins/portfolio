@@ -48,6 +48,9 @@ export default {
         name: 'Education',
         anchor: '#education',
       }, {
+        name: 'Hobbies',
+        anchor: '#hobbies'
+      }, {
         name: 'Contact',
         anchor: '#contact'
       }],

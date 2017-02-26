@@ -6,6 +6,7 @@
     <projects></projects>
     <jobs></jobs>
     <education></education>
+    <hobbies></hobbies>
     <contact></contact>
   </div>
 </template>
@@ -14,6 +15,7 @@
 import Contact from './components/Contact'
 import Education from './components/Education'
 import Hello from './components/Hello'
+import Hobbies from './components/Hobbies'
 import Jobs from './components/Jobs'
 import Navbar from './components/Navbar'
 import Projects from './components/Projects'
@@ -25,6 +27,7 @@ export default {
     Contact,
     Education,
     Hello,
+    Hobbies,
     Jobs,
     Navbar,
     Projects,

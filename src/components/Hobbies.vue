@@ -1,8 +1,7 @@
 <template>
   <section>
-	  <div class="container" id="contact" v-viewport="{onEnter: scrollEnter}">
-	    <h1 class="center-align">Contact Me</h1>
-	    for now just <a href="mailto:jessrrobins@gmail.com" target="_blank">send me an email</a>
+	  <div class="container" id="hobbies" v-viewport="{onEnter: scrollEnter}">
+	    <h1 class="center-align">What I like to do</h1>
   </section>
 </template>
 
@@ -10,14 +9,14 @@
 import bus from '../utils/Bus'
 
 export default {
-  name: 'contact',
+  name: 'hobbies',
   data() {
     return {
     }
   },
   methods: {
     scrollEnter: function() {
-      bus.$emit('scrollEnter', 'Contact');
+      bus.$emit('scrollEnter', 'hobbies');
     }
   }
 }
