@@ -134,12 +134,7 @@ export default {
   },
   computed: {
     tags: function() {
-      const jobTags = _.chain(this.jobs)
-          .flatMap('tags')
-          .uniq()
-          .value()
-      
-      return TechTagService.tags().filter( t => _.includes(jobTags, t.name))
+      return TechTagService.getTagsByNames(this.jobs)
     },
     filteredJobs: function() {
       return this.jobs.filter( (job) => {

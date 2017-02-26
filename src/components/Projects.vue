@@ -7,7 +7,7 @@
           <h5>Filter by tech</h5>
           <div class="filters">
             <div v-for="tag in tags" class="filter">
-              <input type="checkbox" :id="tag.name" v-model="tag.checked" />
+              <input type="checkbox" :id="tag.name" :value="tag.name" v-model="checkedTags" />
               <label :for="tag.name">
                 <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
                 <span>{{tag.name}}</span>
@@ -23,27 +23,39 @@
           </div>
         </div>
         <div class="col s12 m8">
-          <transition-group name="project-list" tag="div" class="project-list">
-            <div v-for="project in filteredProjects" class="card project" :key="project">
-              <div class="card-image">
-                <img :src="project.image">
-              </div>
-              <div class="card-content">
-                <span class="card-title">{{project.name}}</span>
-                <p class="description">{{project.description}}</p>
-                <div class="divider"></div>
-                <h6>Technologies</h6>
-                <div class="tags">
-                  <tag v-for="tag in project.tags" :tag="tag"></tag>
+          <transition 
+            enter-active-class="animated fadeInUp" 
+            leave-active-class="animated fadeOutDown" mode="out-in">
+            <transition-group 
+              name="project-list" 
+              tag="div" 
+              class="project-list" 
+              v-if="filteredProjects.length">
+              <div v-for="project in filteredProjects" class="card project" :key="project">
+                <div class="card-image">
+                  <img :src="project.image">
+                </div>
+                <div class="card-content">
+                  <span class="card-title">{{project.name}}</span>
+                  <p class="description">{{project.description}}</p>
+                  <div class="divider"></div>
+                  <h5>Technologies</h5>
+                  <div class="tags">
+                    <tag v-for="tag in project.tags" :tag="tag"></tag>
+                  </div>
+                </div>
+                <div class="card-action">
+                  <a v-for="(url, key) in project.urls" :href="url" target="_blank">
+                    {{key}}
+                  </a>
                 </div>
               </div>
-              <div class="card-action">
-                <a v-for="(url, key) in project.urls" :href="url" target="_blank">
-                  {{key}}
-                </a>
-              </div>
+            </transition-group>
+            <div v-else>
+              <h4>No projects meet the selected criteria.</h4>
+              <h5><a @click="clear">Clear the filters</a></h5>
             </div>
-          </transition-group>
+          </transition>
         </div>
       </div>
     </div>
@@ -56,6 +68,7 @@ import * as _ from 'lodash'
 
 import Down from './DownButton'
 import Tag from './Tag'
+import TechTagService from '../services/TechTagService'
 
 export default {
   name: 'projects',
@@ -68,7 +81,7 @@ export default {
       projects: [{
         name: 'everee',
         urls: {
-          view: 'http://everee.io',
+          'open project': 'http://everee.io',
           github: 'https://github.com/jessicarobins/det'
         },
         description: `A single-page app that creates a bucket list based on 
@@ -80,7 +93,7 @@ export default {
       }, {
         name: 'Jessboard',
         urls: {
-          view: 'https://jessicarobins.github.io/jessboard',
+          'open project': 'https://jessicarobins.github.io/jessboard',
           github: 'https://github.com/jessicarobins/jessboard'
         },
         description: `As a parting gift to Kit Check, I built a soundboard of 
@@ -90,7 +103,7 @@ export default {
       }, {
         name: 'ddescribe',
         urls: {
-          view: 'https://jessicarobins.github.io/formatter',
+          'open project': 'https://jessicarobins.github.io/formatter',
           github: 'https://github.com/jessicarobins/formatter'
         },
         description: `ddescribe takes test cases written with indentation to signify 
@@ -104,7 +117,7 @@ export default {
           filterable tree structure. While the majority of the frontend is built using 
           AngularJS, I used some React components to optimize page load time.`,
         urls: {
-          view: 'http://jessdocs.io',
+          'open project': 'http://jessdocs.io',
           'github (backend)': 'https://github.com/jessicarobins/jd-api',
           'github (frontend)': 'https://github.com/jessicarobins/jd-ui'
           
@@ -112,59 +125,6 @@ export default {
         tags: ['angular', 'webpack', 'ruby on rails', 'material design', 
           'heroku', 'amazon s3', 'sass', 'react', 'postgres'],
         image: require('../assets/jessdocs.png')
-      }],
-      tags: [{
-        name: 'react',
-        icon: 'devicon-react-original',
-        checked: false
-      }, {
-        name: 'redux',
-        checked: false
-      }, {
-        name: 'bootstrap',
-        icon: 'devicon-bootstrap-plain',
-        checked: false
-      }, {
-        name: 'webpack',
-        checked: false
-      }, {
-        name: 'node',
-        icon: 'devicon-nodejs-plain',
-        checked: false
-      }, {
-        name: 'mongodb',
-        icon: 'devicon-mongodb-plain',
-        checked: false
-      }, {
-        name: 'heroku',
-        icon: 'devicon-heroku-original',
-        checked: false
-      }, {
-        name: 'vue',
-        checked: false
-      }, {
-        name: 'material design',
-        checked: false
-      }, {
-        name: 'angular',
-        icon: 'devicon-angularjs-plain',
-        checked: false
-      }, {
-        name: 'ruby on rails', 
-        icon: 'devicon-rails-plain',
-        checked: false
-      }, {
-        name: 'amazon s3',
-        icon: 'devicon-amazonwebservices-original',
-        checked: false
-      }, {
-        name: 'sass',
-        icon: 'devicon-sass-original',
-        checked: false
-      }, {
-        name: 'postgres',
-        icon: 'devicon-postgresql-plain',
-        checked: false
       }],
       commonTags: [{
         name: 'github',
@@ -181,14 +141,24 @@ export default {
       }, {
         name: 'trello',
         icon: 'devicon-trello-plain'
-      }]
+      }, {
+        name: 'webpack'
+      }],
+      checkedTags: []
+    }
+  },
+  methods: {
+    clear: function() {
+      this.checkedTags = [];
     }
   },
   computed: {
+    tags: function() {
+      return TechTagService.getTagsByNames(this.projects)
+    },
     filteredProjects: function() {
       return this.projects.filter( (project) => {
-        const checkedTech = this.tags.filter( tag => tag.checked ).map( tag => tag.name )
-        return _.intersection(project.tags, checkedTech).length >= checkedTech.length
+        return _.intersection(project.tags, this.checkedTags).length >= this.checkedTags.length
       })
     }
   }
@@ -231,6 +201,7 @@ export default {
   flex: 1;
   line-height: 1.5;
   font-size: 25px;
+  padding: 20px 0 40px 0;
 }
 
 .tags {

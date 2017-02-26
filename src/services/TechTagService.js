@@ -7,6 +7,14 @@ export default {
     return _.find(this.tags(), {name: tagName})
   },
   
+  getTagsByNames(objArray) {
+    const tArray = _.chain(objArray)
+          .flatMap('tags')
+          .uniq()
+          .value()
+    return this.tags().filter( t => _.includes(tArray, t.name))
+  },
+  
   tags() {
     return [{
         name: 'react',
