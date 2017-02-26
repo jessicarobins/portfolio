@@ -32,7 +32,7 @@
               class="project-list" 
               v-if="filteredProjects.length">
               <div v-for="project in filteredProjects" class="card project" :key="project">
-                <div class="card-image">
+                <div class="card-image" v-if="project.image">
                   <img :src="project.image">
                 </div>
                 <div class="card-content">
@@ -91,6 +91,14 @@ export default {
         tags: ['react', 'redux', 'bootstrap', 'webpack', 'node', 'mongodb', 'heroku', 'sass'],
         image: require('../assets/everee.png')
       }, {
+        name: 'portfolio',
+        urls: {
+          github: 'https://github.com/jessicarobins/portfolio'
+        },
+        description: `What you're looking at right now! A single-page Vue app 
+          that describes my accomplishments.`,
+        tags: ['vue', 'postcss', 'material design', 'webpack']
+      }, {
         name: 'Jessboard',
         urls: {
           'open project': 'https://jessicarobins.github.io/jessboard',
@@ -100,7 +108,7 @@ export default {
           the things I was known to say on a regular basis.`,
         tags: ['vue', 'webpack'],
         image: require('../assets/jessboard.png')
-      }, {
+      },{
         name: 'ddescribe',
         urls: {
           'open project': 'https://jessicarobins.github.io/formatter',

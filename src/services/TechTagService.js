@@ -94,6 +94,8 @@ export default {
         name: 'selenium webdriver'
       }, {
         name: 'agile'
+      }, {
+        name: 'postcss'
       }]
   },
   

@@ -5,8 +5,8 @@
 	    <div class="schools">
   	    <div v-for="school in schools">
   	      <div class="name-and-dates">
-  	        <h2>{{school.name}}</h2>
-  	        <h5>, {{school.dates}}</h5>
+  	        <h2>{{school.name}}</h2>,
+  	        <h5>{{school.dates}}</h5>
   	      </div>
   	      <h4>{{school.degree}}</h4>
   	      <h5>{{school.text}}</h5>
@@ -50,6 +50,16 @@ export default {
   flex: 1;
   display: flex;
   align-items: center;
+  
+  .name-and-dates {
+    h2 {
+      margin: 0;
+    }
+    
+    h5 {
+      margin: 0 0 0 10px;
+    }
+  }
 }
 
 .name-and-dates {
