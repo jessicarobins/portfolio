@@ -4,10 +4,12 @@
     <truths></truths>
     <projects></projects>
     <jobs></jobs>
+    <education></education>
   </div>
 </template>
 
 <script>
+import Education from './components/Education'
 import Hello from './components/Hello'
 import Jobs from './components/Jobs'
 import Projects from './components/Projects'
@@ -16,6 +18,7 @@ import Truths from './components/Truths'
 export default {
   name: 'app',
   components: {
+    Education,
     Hello,
     Jobs,
     Projects,

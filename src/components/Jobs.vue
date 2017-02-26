@@ -62,7 +62,7 @@
         </div>
       </transition>
     </div>
-    <down anchor="#hobbies" text="what I do for fun"></down>
+    <down anchor="#education" text="where I went to school"></down>
   </section>
 </template>
 

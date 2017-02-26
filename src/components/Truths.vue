@@ -1,7 +1,7 @@
 <template>
   <section id="truths">
   	<div class="container">
-      <h1 class="center-align">two truths and a lie</h1>
+      <h1 class="center-align">three truths and a lie</h1>
       <h4 class="center-align">mouseover or tap a card to view the details</h4>
       <div class="facts">
         <div v-for="(fact, index) in facts">
@@ -51,7 +51,7 @@ export default {
         revealText: `This should be evident from the several javascript 
           projects I've created, using several frameworks.`,
         link: {
-          text: 'view my projects',
+          text: 'view projects',
           anchor: '#projects'
         }
       }, {
@@ -61,7 +61,7 @@ export default {
         revealText: `I\'ve been to 12. I love to travel. I even have a scratch 
           map to keep track of all the places I've been.`,
         link: {
-          text: 'view my hobbies',
+          text: 'view hobbies',
           anchor: '#hobbies'
         }
       }, {
@@ -71,8 +71,18 @@ export default {
         revealText: `I worked with kids for 10 years before I 
           decided to turn my web-development hobby into a career.`,
         link: {
-          text: 'view my jobs',
+          text: 'view jobs',
           anchor: '#jobs'
+        }
+      }, {
+        active: false,
+        text: 'I majored in math.',
+        truth: 'True',
+        revealText: `I graduated in 2009 with a math and psychology double major 
+          from Carnegie Mellon University.`,
+        link: {
+          text: 'view education',
+          anchor: '#education'
         }
       }]
     }
