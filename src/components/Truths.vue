@@ -99,6 +99,9 @@ export default {
 	justify-content: flex-start;
 }
 
+.container {
+  flex: 1;
+}
 
 .truth {
   font-weight: bold;

@@ -1,7 +1,6 @@
 <template>
   <section class="hello">
-  	<div class="about">
-  	  <div class="row">
+  	  <div class="about row">
   	    <div class="col s12 m4 center-align">
   	      <jess></jess>
   	    </div>
@@ -10,7 +9,6 @@
           <h4>A full-stack engineer in Washington, DC</h4>
         </div>
       </div>
-    </div>
     <down anchor="#truths" text="more about me"></down>
   </section>
 </template>
@@ -40,6 +38,9 @@ export default {
 .about {
   padding: 40px 20px 0 20px;
   width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 h1 {

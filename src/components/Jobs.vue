@@ -17,7 +17,23 @@
               <h5>{{job.name}}</h5>
               {{job.dates}}
             </td>
-            <td class="blurb">{{job.blurb}}</td>
+            <td class="blurb">
+              <ul v-if="job.blurb.length">
+                <li v-for="bullet in job.blurb">
+                  {{bullet}}
+                </li>
+              </ul>
+              <transition enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp">
+                <ul v-if="job.more.length && job.showMore">
+                  <li v-for="bullet in job.more">
+                    {{bullet}}
+                  </li>
+                </ul>
+              </transition>
+              <a @click="toggleShowMore(job)" v-if="job.more.length">
+                Show {{job.showMore ? 'less' : 'more'}}
+              </a>
+            </td>
             <td class="tags">
               <tag v-for="tag in job.tags" :tag="tag"></tag>
             </td>
@@ -47,7 +63,9 @@ export default {
         title: 'Frontend Engineer',
         dates: 'February 2017 to Present',
         location: 'Washington, DC',
-        blurb: 'TBA',
+        blurb: ['TBD'],
+        more: [],
+        showMore: false,
         tags: ['jquery', 'java', 'agile', 'github'],
         tech: true
       }, {
@@ -56,25 +74,25 @@ export default {
         dates: 'June 2015 to February 2017',
         location: 'Washington, DC',
         tags: ['angular', 'ruby on rails', 'circle ci', 'buildkite ci', 
-          'protractor', 'jasmine', 'github'],
-        blurb: `
-          - Completed frontend and backend components for small features and 
-          internally-used tools. This involved creating components, controllers, 
-          services, templates, and stylesheets using AngularJS, HTML, and SASS 
-          on the frontend, as well as creating and modifying endpoints, models, 
-          forms, and unit tests for the Ruby on Rails backend.
-          - Identified, documented, debugged, and fixed bugs in backend and 
-          frontend code.
-          - Wrote and maintained automated test suite using Protractor and 
-          Jasmine, with data seeded using Ruby on Rails, that ran in Circle CI 
-          on every developer branch pushed to Git.
-          - Negotiated with product, project managers, and other engineers on 
-          the feasibility, design, and implication of features.
-          - Designed a process and format for test plan creation and test case 
+          'protractor', 'jasmine', 'github', 'agile'],
+        blurb: [
+          `Completed frontend and backend components for both client-facing features  
+          and internally-used tools using Angular and Ruby on Rails.`,
+          `Identified, documented, debugged, and fixed bugs in frontend and 
+          backend code.`,
+          `Wrote and maintained automated test suite using Protractor and 
+          Jasmine, with data seeded using Ruby on Rails.`
+        ],
+        more: [
+          `Negotiated with product, project managers, and other engineers on 
+          the feasibility, design, and implication of features.`,
+          `Designed a process and format for test plan creation and test case 
           documentation in order to provide visibility into which cases are 
-          automated and which cases needed to be automated.
-          - Trained junior team members on the QA processes for both manual 
-          testing and automation.`,
+          automated and which cases needed to be automated.`,
+          `Trained junior team members on the QA processes for both manual 
+          testing and automation.`
+        ],
+        showMore: false,
         tech: true
       }, {
         name: 'Sungard Availability Services',
@@ -82,19 +100,25 @@ export default {
         dates: 'March 2014 to June 2015',
         location: 'Annapolis, MD',
         tags: ['java', 'selenium webdriver', 'bitbucket'],
-        blurb: `
-          - Generated a comprehensive suite of manual and automated tests 
-          for several web-based applications.
-          - Ran automated tests on an automation server, which used Jenkins 
-          to regularly run a set of Selenium WebDriver regression scripts. 
-          - Created a standardized Google Sheets template used by the QA team 
-          to write test plans for new features.`,
+        blurb: [
+          `Generated a comprehensive suite of manual and automated tests 
+          for several web-based applications.`
+        ],
+        more: [
+          `Ran automated tests on an automation server, which used Jenkins 
+          to regularly run a set of Selenium WebDriver regression scripts.`,
+          `Created a standardized Google Sheets template used by the QA team 
+          to write test plans for new features.`
+        ],
+        showMore: false,
         tech: true
       }]
     }
   },
-  computed: {
-    
+  methods: {
+    toggleShowMore: function(job) {
+      job.showMore = !job.showMore;
+    }
   }
 }
 </script>
@@ -108,6 +132,7 @@ export default {
   
   .blurb {
     width: 50%;
+    line-height: 1.5;
   }
   
   .name {
@@ -118,5 +143,7 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-end;
   }
+  
 </style>
