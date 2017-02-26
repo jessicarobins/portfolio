@@ -1,27 +1,38 @@
 <template>
   <section class="projects" id="projects">
-    <h1>Projects</h1>
-    <div class="project-list">
-      <div v-for="project in projects" class="card">
-        <div class="card-image">
-          <img :src="project.image">
+    <div class="container">
+      <h1 class="center-align">Projects</h1>
+      <div class="filters">
+        <div v-for="tag in tags" class="filter">
+          <input type="checkbox" :id="tag.name" />
+          <label :for="tag.name">
+            <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
+            <span>{{tag.name}}</span>
+          </label>
         </div>
-        <div class="card-content">
-          <span class="card-title">{{project.name}}</span>
-          <p class="description">{{project.description}}</p>
-          <div class="divider"></div>
-          <h6>Technologies</h6>
-          <div class="tags">
-            <div v-for="tag in project.tags" class="chip">
-              <i v-bind:class="['colored', className(tag)]" v-if="className(tag)"></i>
-              {{tag}}
+      </div>
+      <div class="project-list">
+        <div v-for="project in projects" class="card">
+          <div class="card-image">
+            <img :src="project.image">
+          </div>
+          <div class="card-content">
+            <span class="card-title">{{project.name}}</span>
+            <p class="description">{{project.description}}</p>
+            <div class="divider"></div>
+            <h6>Technologies</h6>
+            <div class="tags">
+              <div v-for="tag in project.tags" class="chip">
+                <i v-bind:class="['colored', className(tag)]" v-if="className(tag)"></i>
+                {{tag}}
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card-action">
-          <a v-for="(url, key) in project.urls" :href="url" target="_blank">
-            {{key}}
-          </a>
+          <div class="card-action">
+            <a v-for="(url, key) in project.urls" :href="url" target="_blank">
+              {{key}}
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -121,6 +132,19 @@ export default {
       }, {
         name: 'postgres',
         icon: 'devicon-postgresql-plain'
+      }],
+      commonTags: [{
+        name: 'github',
+        icon: 'devicon-github-plain'
+      }, {
+        name: 'html5',
+        icon: 'devicon-html5-plain'
+      }, {
+        name: 'css3',
+        icon: 'devicon-css3-plain'
+      }, {
+        name: 'javascript',
+        icon: 'devicon-javascript-plain'
       }]
     }
   },
@@ -149,10 +173,6 @@ export default {
   justify-content: center;
 }
 
-h1 {
-  font-size: 72px;
-}
-
 .card {
   width: 400px;
   margin: 20px;
@@ -166,8 +186,14 @@ h1 {
   flex-direction: column;
 }
 
+.card-title {
+  font-size: 36px;
+}
+
 .description {
   flex: 1;
+  line-height: 1.5;
+  font-size: 25px;
 }
 
 .tags {
@@ -194,5 +220,21 @@ img {
 .divider {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.filters {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+label {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter {
+  padding: 20px;
 }
 </style>
