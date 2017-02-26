@@ -1,7 +1,7 @@
 <template>
   <section id="truths">
   	<div class="container">
-      <h1 class="center-align">Three truths and a lie</h1>
+      <h1 class="center-align">two truths and a lie</h1>
       <h4 class="center-align">mouseover or tap a card to view the details</h4>
       <div class="facts">
         <div v-for="(fact, index) in facts">

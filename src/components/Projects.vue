@@ -44,14 +44,20 @@
         </transition-group>
       </div>
     </div>
+    <down anchor="#jobs" text="see my work history"></down>
   </section>
 </template>
 
 <script>
-import * as _ from 'lodash';
+import * as _ from 'lodash'
+
+import Down from './DownButton'
 
 export default {
   name: 'projects',
+  components: {
+    Down
+  },
   data () {
     return {
       projects: [{
