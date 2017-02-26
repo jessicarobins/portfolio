@@ -3,6 +3,10 @@ import * as _ from 'lodash'
 
 export default {
   
+  getTagByName(tagName) {
+    return _.find(this.tags(), {name: tagName})
+  },
+  
   tags() {
     return [{
         name: 'react',
@@ -66,6 +70,18 @@ export default {
       }, {
         name: 'java',
         icon: 'devicon-java-plain'
+      }, {
+        name: 'circle ci'
+      }, {
+        name: 'buildkite ci'
+      }, {
+        name: 'protractor'
+      }, {
+        name: 'jasmine'
+      }, {
+        name: 'selenium webdriver'
+      }, {
+        name: 'agile'
       }]
   },
   

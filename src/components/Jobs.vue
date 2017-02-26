@@ -1,8 +1,18 @@
 <template>
   <section id="jobs">
     <div class="container">
-    <h1 class="center-align">Jobs</h1>
-      <table>
+      <h1 class="center-align">Jobs</h1>
+      <h5>Filter by tech</h5>
+      <div class="filters">
+        <div v-for="tag in tags" class="filter">
+          <input type="checkbox" :id="checkboxId(tag)" :value="tag.name" v-model="checkedTags" />
+          <label :for="checkboxId(tag)">
+            <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
+            <span>{{tag.name}}</span>
+          </label>
+        </div>
+      </div>
+      <table v-if="filteredJobs.length">
         <thead>
           <tr>
             <th data-field="name">Name</th>
@@ -11,7 +21,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="job in jobs">
+          <tr v-for="job in filteredJobs">
             <td class="name">
               <h4>{{job.title}}</h4> 
               <h5>{{job.name}}</h5>
@@ -40,6 +50,10 @@
           </tr>
         </tbody>
       </table>
+      <div v-else class="center-align">
+        <h4>No jobs meet the search criteria!</h4>
+        <h5><a @click="clearFilters">Clear the filters</a></h5>
+      </div>
     </div>
     <down anchor="#hobbies" text="what I do for fun"></down>
   </section>
@@ -49,6 +63,8 @@
 import Down from './DownButton'
 import Tag from './Tag'
 import TechTagService from '../services/TechTagService'
+
+import * as _ from 'lodash'
 
 export default {
   name: 'jobs',
@@ -112,12 +128,34 @@ export default {
         ],
         showMore: false,
         tech: true
-      }]
+      }],
+      checkedTags: []
+    }
+  },
+  computed: {
+    tags: function() {
+      const jobTags = _.chain(this.jobs)
+          .flatMap('tags')
+          .uniq()
+          .value()
+      
+      return TechTagService.tags().filter( t => _.includes(jobTags, t.name))
+    },
+    filteredJobs: function() {
+      return this.jobs.filter( (job) => {
+        return _.intersection(job.tags, this.checkedTags).length >= this.checkedTags.length
+      })
     }
   },
   methods: {
     toggleShowMore: function(job) {
       job.showMore = !job.showMore;
+    },
+    checkboxId: function(tag) {
+      return `jobs-${tag.name}`
+    },
+    clearFilters: function() {
+      this.checkedTags = [];
     }
   }
 }
@@ -125,6 +163,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+  .container {
+    flex: 1;
+  }
+  
   table {
     font-size: 20px;
     width: 100%;
@@ -146,4 +189,21 @@ export default {
     justify-content: flex-end;
   }
   
+  .filter {
+    color: #9e9e9e;
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+  
+  .filters {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  label {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 </style>

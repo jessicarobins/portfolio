@@ -72,7 +72,7 @@ export default {
           decided to turn my web-development hobby into a career.`,
         link: {
           text: 'view my jobs',
-          anchor: '#career'
+          anchor: '#jobs'
         }
       }]
     }
