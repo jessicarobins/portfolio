@@ -1,6 +1,6 @@
 <template>
-  <section id="education" v-viewport="{onEnter: scrollEnter}">
-	  <div class="container">
+  <section>
+	  <div class="container" id="education" v-viewport="{onEnter: scrollEnter}">
 	    <h1 class="center-align">Education</h1>
 	    <div class="schools">
   	    <div v-for="school in schools">

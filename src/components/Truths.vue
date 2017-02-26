@@ -1,6 +1,6 @@
 <template>
-  <section id="truths" v-viewport="{onEnter: scrollEnter}">
-  	<div class="container">
+  <section class="truths">
+  	<div class="container" id="truths" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align">three truths and a lie</h1>
       <h4 class="center-align">mouseover or tap a card to view the details</h4>
       <div class="facts">
@@ -105,7 +105,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#truths {
+.truths {
   background: linear-gradient(white 0%, #c9dbe9 100%);
 	background: -webkit-linear-gradient(white 0%, #c9dbe9 100%);
 	background: -linear-gradient(white 0%, #c9dbe9 100%);

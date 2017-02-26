@@ -1,6 +1,6 @@
 <template>
-  <section class="projects" id="projects" v-viewport="{onEnter: scrollEnter}">
-    <div class="container">
+  <section class="projects">
+    <div class="container" id="projects" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align">Projects</h1>
       <div class="row">
         <div class="col s12 m4">  

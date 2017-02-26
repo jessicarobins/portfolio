@@ -1,6 +1,6 @@
 <template>
-  <section id="jobs" v-viewport="{onEnter: scrollEnter}">
-    <div class="container">
+  <section>
+    <div class="container" id="jobs" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align">Jobs</h1>
       <h5>Filter by tech</h5>
       <div class="filters">
