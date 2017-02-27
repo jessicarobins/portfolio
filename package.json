@@ -9,8 +9,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "d3": "^4.6.0",
     "lodash": "^4.17.4",
     "scrollmonitor": "^1.2.3",
+    "topojson": "^2.2.0",
+    "topojson-client": "^2.1.0",
     "vue": "^2.1.10",
     "vue-smoothscroll": "^0.1.1"
   },
