@@ -61,7 +61,7 @@ export default {
         id: 2,
         text: 'I\'ve visited 10 countries outside the USA.',
         truth: 'False',
-        revealText: `I\'ve been to 12. I love to travel. I even have a scratch 
+        revealText: `I\'ve been to more than that! I love to travel. I even have a scratch 
           map to keep track of all the places I've been.`,
         link: {
           text: 'view hobbies',

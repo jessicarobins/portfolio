@@ -84,4 +84,20 @@ a {
 .colored {
   margin-right: 5px;
 }
+
+.country {
+  
+  &.visited {
+    fill: purple;
+  }
+  
+  &.unvisited {
+    fill: black;
+  }
+  
+  &:hover {
+    stroke: #fff;
+    stroke-width: 1.5px;
+  }
+}
 </style>
