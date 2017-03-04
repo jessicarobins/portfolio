@@ -96,6 +96,12 @@ export default {
         name: 'agile'
       }, {
         name: 'postcss'
+      }, {
+        name: 'd3',
+        icon: 'devicon-d3js-plain'
+      }, {
+        name: 'gulp',
+        icon: 'devicon-gulp-plain'
       }]
   },
   

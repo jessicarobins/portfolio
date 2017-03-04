@@ -98,7 +98,7 @@ export default {
         },
         description: `What you're looking at right now! A single-page Vue app 
           that describes my accomplishments.`,
-        tags: ['vue', 'postcss', 'material design', 'webpack']
+        tags: ['vue', 'postcss', 'd3', 'material design', 'webpack']
       }, {
         name: 'Jessboard',
         urls: {

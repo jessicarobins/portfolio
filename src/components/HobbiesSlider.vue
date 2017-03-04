@@ -5,7 +5,7 @@
         <jess-map class="map"></jess-map>
         <div class="caption center-align">
           <h3 class="indigo-text text-darken-4">Traveling</h3>
-          <h5 class="light grey-text text-darken-1">
+          <h5 class="light blue-grey-text text-darken-1">
             This is an interactive map (using d3) of all the countries I've been to.
           </h5>
         </div>
@@ -14,7 +14,7 @@
         <img :src="catsPhoto">
         <div class="caption right-align">
           <h3 class="indigo-text text-darken-3">Cats</h3>
-          <h5 class="light grey-text text-lighten-3">
+          <h5 class="light blue-grey-text text-lighten-4">
             These are my cats, Thor and Loki.
           </h5>
         </div>
@@ -23,7 +23,7 @@
         <img :src="sushiPhoto">
         <div class="caption left-align">
           <h3>Going out to eat</h3>
-          <h5 class="light grey-text text-lighten-3">
+          <h5 class="light blue-grey-text text-lighten-3">
             But especially sushi.
           </h5>
         </div>

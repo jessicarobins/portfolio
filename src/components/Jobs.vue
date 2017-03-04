@@ -90,7 +90,7 @@ export default {
         blurb: ['TBD'],
         more: [],
         showMore: false,
-        tags: ['jquery', 'java', 'agile', 'github'],
+        tags: ['jquery', 'java', 'gulp', 'agile', 'github'],
         tech: true
       }, {
         name: 'Kit Check',
