@@ -6,7 +6,7 @@
         <div class="caption center-align">
           <h3>Traveling</h3>
           <h5 class="light grey-text text-lighten-3">
-            These are all the countries I've been to.
+            This is an interactive map (using d3) of all the countries I've been to.
           </h5>
         </div>
       </li>
@@ -20,17 +20,18 @@
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <img :src="sushiPhoto">
+        <div class="caption left-align">
+          <h3>Going out to eat</h3>
+          <h5 class="light grey-text text-lighten-3">
+            But especially sushi.
+          </h5>
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <img :src="gamesPhoto">
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>Board games</h3>
         </div>
       </li>
     </ul>
@@ -52,7 +53,9 @@ export default {
     return {
       height: 400,
       interval: 10000,
-      catsPhoto: require('../assets/cats.jpg')
+      catsPhoto: require('../assets/cats.jpg'),
+      gamesPhoto: require('../assets/games.jpg'),
+      sushiPhoto: require('../assets/sushi.jpg')
     }
   },
   methods: {
@@ -78,5 +81,10 @@ export default {
 <style scoped>
 #map-slider {
   overflow: inherit;
+}
+
+img {
+  opacity: 0.8;
+  filter: blur(2px);
 }
 </style>
