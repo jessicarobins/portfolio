@@ -135,5 +135,6 @@ div.tooltip {
   box-shadow: 0px 0px 2px 0px #a6a6a6; 
   opacity: 0.9; 
   position: absolute;
+  z-index: 999;
 }
 </style>

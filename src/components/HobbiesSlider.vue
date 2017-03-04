@@ -1,9 +1,9 @@
 <template>
   <div class="slider">
     <ul class="slides">
-      <li>
+      <li id="map-slider">
         <jess-map></jess-map>
-        <div class="caption right-align">
+        <div class="caption center-align">
           <h3>Traveling</h3>
           <h5 class="light grey-text text-lighten-3">
             These are all the countries I've been to.
@@ -11,10 +11,12 @@
         </div>
       </li>
       <li>
-        <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+        <img :src="catsPhoto">
+        <div class="caption right-align">
+          <h3>Cats</h3>
+          <h5 class="light grey-text text-lighten-3">
+            These are my cats, Thor and Loki.
+          </h5>
         </div>
       </li>
       <li>
@@ -49,7 +51,8 @@ export default {
   data() {
     return {
       height: 400,
-      interval: 10000
+      interval: 10000,
+      catsPhoto: require('../assets/cats.jpg')
     }
   },
   methods: {
@@ -73,5 +76,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+#map-slider {
+  overflow: inherit;
+}
 </style>

@@ -64,8 +64,8 @@ export default {
         revealText: `I\'ve been to more than that! I love to travel. I even have a scratch 
           map to keep track of all the places I've been.`,
         link: {
-          text: 'view hobbies',
-          anchor: '#hobbies'
+          text: 'view interests',
+          anchor: '#interests'
         }
       }, {
         active: false,

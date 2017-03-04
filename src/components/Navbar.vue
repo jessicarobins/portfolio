@@ -48,8 +48,8 @@ export default {
         name: 'Education',
         anchor: '#education',
       }, {
-        name: 'Hobbies',
-        anchor: '#hobbies'
+        name: 'Interests',
+        anchor: '#interests'
       }, {
         name: 'Contact',
         anchor: '#contact'

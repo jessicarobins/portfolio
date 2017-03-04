@@ -1,7 +1,7 @@
 <template>
   <section>
-	 <div class="container" id="hobbies" v-viewport="{onEnter: scrollEnter}">
-	    <h1 class="center-align">What I like to do</h1>
+	 <div class="container" id="interests" v-viewport="{onEnter: scrollEnter}">
+	    <h1 class="center-align">Things I Like</h1>
 	    <hobbies-slider></hobbies-slider>
 	 </div>
 	 <down anchor="#contact" text="say hi!"></down>
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     scrollEnter: function() {
-      bus.$emit('scrollEnter', 'Hobbies')
+      bus.$emit('scrollEnter', 'Interests')
     }
   }
 }
