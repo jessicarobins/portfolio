@@ -96,8 +96,10 @@ export default {
 
 <style>
 
-$unvisited-color: black;
-$visited-color: purple;
+$unvisited-color: lightgray;
+$unvisited-color-hover: gray;
+$visited-color: #3f51b5;
+$visited-color-hover: #303f9f;
 $map-background-color: #c9dbe9;
 $map-border-width: 4px;
 
@@ -110,10 +112,18 @@ svg {
   
   &.visited {
     fill: $visited-color;
+    
+     &:hover {
+      fill: $visited-color-hover;
+    }
   }
   
   &.unvisited {
     fill: $unvisited-color;
+    
+    &:hover {
+      fill: $unvisited-color-hover;
+    }
   }
   
   &:hover {

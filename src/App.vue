@@ -44,6 +44,8 @@ export default {
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+$accent-color: #3f51b5;
+
 body {
   margin: 0;
   font-size: 20px;
@@ -86,4 +88,7 @@ a {
   margin-right: 5px;
 }
 
+.slider .indicators .indicator-item.active {
+  background-color: $accent-color;
+}
 </style>

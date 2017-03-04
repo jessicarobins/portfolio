@@ -1,7 +1,7 @@
 var utils = require('./utils')
 var config = require('../config')
 var isProduction = process.env.NODE_ENV === 'production'
-var postcssScss = require('postcss-scss');
+var postcssScss = require('postcss-scss')
 
 module.exports = {
   loaders: utils.cssLoaders({

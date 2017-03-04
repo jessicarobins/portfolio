@@ -2,10 +2,10 @@
   <div class="slider">
     <ul class="slides">
       <li id="map-slider">
-        <jess-map></jess-map>
+        <jess-map class="map"></jess-map>
         <div class="caption center-align">
-          <h3>Traveling</h3>
-          <h5 class="light grey-text text-lighten-3">
+          <h3 class="indigo-text text-darken-4">Traveling</h3>
+          <h5 class="light grey-text text-darken-1">
             This is an interactive map (using d3) of all the countries I've been to.
           </h5>
         </div>
@@ -13,7 +13,7 @@
       <li>
         <img :src="catsPhoto">
         <div class="caption right-align">
-          <h3>Cats</h3>
+          <h3 class="indigo-text text-darken-3">Cats</h3>
           <h5 class="light grey-text text-lighten-3">
             These are my cats, Thor and Loki.
           </h5>
@@ -26,12 +26,6 @@
           <h5 class="light grey-text text-lighten-3">
             But especially sushi.
           </h5>
-        </div>
-      </li>
-      <li>
-        <img :src="gamesPhoto">
-        <div class="caption center-align">
-          <h3>Board games</h3>
         </div>
       </li>
     </ul>
@@ -52,9 +46,8 @@ export default {
   data() {
     return {
       height: 400,
-      interval: 10000,
+      interval: 20000,
       catsPhoto: require('../assets/cats.jpg'),
-      gamesPhoto: require('../assets/games.jpg'),
       sushiPhoto: require('../assets/sushi.jpg')
     }
   },
@@ -63,6 +56,8 @@ export default {
       this.height = height;
       $(this.$el).slider({height: height, interval: this.interval})
       $(this.$el).slider('next')
+      $(this.$el).slider('prev')
+      $(this.$el).slider('pause')
     }
   },
   created: function() {
@@ -79,12 +74,32 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 #map-slider {
   overflow: inherit;
+  
+  .map {
+    filter: grayscale(.8);
+    
+    &:hover {
+      filter: none;
+    }
+  }
 }
 
 img {
-  opacity: 0.8;
-  filter: blur(2px);
+  opacity: 0.6;
+  filter: blur(2px) grayscale(.8);
+}
+
+li:hover {
+  img {
+    opacity: 1;
+    filter: none;
+  }
+  
+  .caption {
+    display: none;
+  }
 }
 </style>
