@@ -61,14 +61,15 @@ h1 {
 }
 
 section {
-  min-height: 100vh;
-  &:not(:last-of-type) {
-    min-height: calc(100vh + 400px);
-  }
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  min-height: 100vh;
+  
+  &:not(:last-of-type) {
+    min-height: calc(100vh + 400px);
+  }
 }
 
 section:not(:last-of-type)::after {

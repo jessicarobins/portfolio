@@ -8,7 +8,8 @@ import * as d3 from 'd3'
 import * as topojson from 'topojson-client'
 import * as _ from 'lodash'
 
-var mapData = require('../assets/world-topo-min.json')
+const mapData = require('../assets/world-topo-min.json')
+import bus from '../utils/Bus'
 
 export default {
   name: 'jessMap',
@@ -34,7 +35,9 @@ export default {
     draw() {
       const hobbies = this;
       
-      const height = this.width / 2;
+      const height = this.width / 2
+      
+      bus.$emit('mapHeightChange', height)
       
       const svg = d3.select("#map").append("svg")
         .attr("width", this.width)
@@ -48,8 +51,8 @@ export default {
     
       const path = d3.geoPath().projection(projection);
       
-      const offsetL = this.$el.offsetLeft+10;
-      const offsetT = this.$el.offsetTop+10;
+      const offsetL = this.$el.offsetLeft+20;
+      const offsetT = this.$el.offsetTop;
 
       const tooltip = d3.select("#map")
         .append("div")
@@ -71,6 +74,7 @@ export default {
             const mouse = d3.mouse(svg.node()).map( d => parseInt(d) )
     
             tooltip.classed("hidden", false)
+              .classed("animated fadeIn", true)
               .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
               .html(d.properties.name)
           })
@@ -92,14 +96,24 @@ export default {
 
 <style>
 
+$unvisited-color: black;
+$visited-color: purple;
+$map-background-color: #c9dbe9;
+$map-border-width: 4px;
+
+svg {
+  background-color: $map-background-color;
+  border: $map-border-width solid black;
+}
+
 .country {
   
   &.visited {
-    fill: purple;
+    fill: $visited-color;
   }
   
   &.unvisited {
-    fill: black;
+    fill: $unvisited-color;
   }
   
   &:hover {
