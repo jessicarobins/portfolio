@@ -34,7 +34,7 @@ export default {
     draw() {
       const hobbies = this;
       
-      var height = this.width / 2;
+      const height = this.width / 2;
       
       const svg = d3.select("#map").append("svg")
         .attr("width", this.width)
@@ -42,24 +42,41 @@ export default {
         
       const g = svg.append('g')
       
-      var projection = d3.geoMercator()
-        .translate([(this.width/2), (height/2)])
-        .scale( this.width / 2 / Math.PI)  
+      const projection = d3.geoMercator()
+        .translate([this.width / 1.5, height / .85])
+        .scale( this.width / Math.PI)  
     
-      var path = d3.geoPath().projection(projection);
-  
+      const path = d3.geoPath().projection(projection);
+      
+      const offsetL = this.$el.offsetLeft+10;
+      const offsetT = this.$el.offsetTop+10;
+
+      const tooltip = d3.select("#map")
+        .append("div")
+        .attr("class", "tooltip hidden")
+
       //'https://d3js.org/world-50m.v1.json'
       d3.json(mapData, function(error, world) {
       
-        var topo = topojson.feature(world, world.objects.countries).features;
+        const topo = topojson.feature(world, world.objects.countries).features;
       
-        var country = g.selectAll(".country").data(topo);
+        const country = g.selectAll(".country").data(topo);
       
         country.enter().insert("path")
           .attr("d", path)
           .attr("id", function(d,i) { return d.id; })
           .attr("title", function(d,i) { return d.properties.name; })
-          .attr('class', (d, i) => hobbies.countryClass(d.properties.name))
+          .attr("class", (d, i) => hobbies.countryClass(d.properties.name))
+          .on("mouseover", (d, i) => {
+            const mouse = d3.mouse(svg.node()).map( d => parseInt(d) )
+    
+            tooltip.classed("hidden", false)
+              .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
+              .html(d.properties.name)
+          })
+          .on("mouseout", () => {
+            tooltip.classed("hidden", true)
+          })
       });
     }
   },
@@ -89,5 +106,20 @@ export default {
     stroke: #fff;
     stroke-width: 1.5px;
   }
+}
+
+.hidden {
+  display: none;
+}
+
+div.tooltip {
+  color: #222; 
+  background: #fff; 
+  padding: .5em; 
+  text-shadow: #f5f5f5 0 1px 0;
+  border-radius: 2px; 
+  box-shadow: 0px 0px 2px 0px #a6a6a6; 
+  opacity: 0.9; 
+  position: absolute;
 }
 </style>
