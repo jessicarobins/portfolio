@@ -68,7 +68,6 @@ export default {
         country.enter().insert("path")
           .attr("d", path)
           .attr("id", function(d,i) { return d.id; })
-          .attr("title", function(d,i) { return d.properties.name; })
           .attr("class", (d, i) => hobbies.countryClass(d.properties.name))
           .on("mouseover", (d, i) => {
             const mouse = d3.mouse(svg.node()).map( d => parseInt(d) )
@@ -81,6 +80,33 @@ export default {
           .on("mouseout", () => {
             tooltip.classed("hidden", true)
           })
+        
+        const legendX = hobbies.width / 3;
+        const legendY = height/1.2;
+        const circleRadius = 10;
+        const legendItemWidth = 100;
+        
+        const legend = svg.append('g')
+          .attr("class","legend")
+	        .attr("transform",`translate(${legendX}, ${legendY})`)
+        
+        legend.selectAll('circle')
+          .data(['visited', 'unvisited'])
+          .enter()
+          .append("circle")
+    	    .attr("cx", circleRadius)
+    	    .attr("cy", circleRadius)
+    	    .attr("r", circleRadius)
+    	    .attr("transform",(d, i) => `translate(${i*legendItemWidth}, ${-2*circleRadius})`)
+    	    .attr("class", (d) => `legend-item ${d}`)
+    	  
+    	  legend.selectAll('text')
+          .data(['visited', 'unvisited'])
+          .enter()
+          .append("text")
+    	    .text(d => d)
+    	    .attr("transform",(d, i) => `translate(${(i*legendItemWidth) + 3*circleRadius},-3)`)
+    	    .attr("class", (d) => `legend-item-text ${d}`)
       });
     }
   },
@@ -129,6 +155,30 @@ svg {
   &:hover {
     stroke: #fff;
     stroke-width: 1.5px;
+  }
+}
+
+.legend {
+  .legend-item {
+    &.visited {
+      fill: $visited-color;
+      stroke: $visited-color-hover;
+    }
+    
+    &.unvisited {
+      fill: $unvisited-color;
+      stroke: $visited-color-hover;
+    }
+  }
+  
+  .legend-item-text {
+    &.visited {
+      fill: $visited-color-hover;
+    }
+    
+    &.unvisited {
+      fill: $unvisited-color-hover;
+    }
   }
 }
 
