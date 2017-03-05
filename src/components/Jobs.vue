@@ -23,33 +23,32 @@
       <transition 
         enter-active-class="animated fadeInUp" 
         leave-active-class="animated fadeOutDown" mode="out-in">
-        <table v-if="filteredJobs.length">
-          <thead>
-            <tr>
-              <th data-field="name">Name</th>
-              <th data-field="description">Responsibilities</th>
-              <th data-field="tech">Tech</th>
-            </tr>
-          </thead>
-          <transition-group 
-            name="job-list" 
-            tag="tbody" 
-            class="job-list">
-            <tr v-for="job in filteredJobs" class="job" :key="job">
-              <td class="name">
-                <h4>{{job.title}}</h4> 
-                <h5>{{job.name}}</h5>
-                {{job.dates}}
-              </td>
-              <td class="blurb">
-                <ul v-if="job.blurb.length">
+        <transition-group 
+          v-if="filteredJobs.length"
+          name="job-list" 
+          tag="div" 
+          class="job-list">
+          <div v-for="(job, index) in filteredJobs" class="job" :key="job">
+            <div class="name">
+              <h4 class="title">{{job.title}}</h4> 
+              <h5 class="org">{{job.name}}</h5>
+              <span class="dates">{{job.dates}}</span>
+            </div>
+            <div class="row">
+              <div class="tags col s12 m4 push-m8">
+                <tag v-for="tag in job.tags" :tag="tag"></tag>
+              </div>
+              <div class="blurb col s12 m8 pull-m4">
+                <ul class="fa-ul" v-if="job.blurb.length">
                   <li v-for="bullet in job.blurb">
+                    <i class="fa-li fa fa-code-fork"></i>
                     {{bullet}}
                   </li>
                 </ul>
                 <transition enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp">
-                  <ul v-if="job.more.length && job.showMore">
+                  <ul class="fa-ul" v-if="job.more.length && job.showMore">
                     <li v-for="bullet in job.more">
+                      <i class="fa-li fa fa-code-fork"></i>
                       {{bullet}}
                     </li>
                   </ul>
@@ -57,13 +56,11 @@
                 <a @click="toggleShowMore(job)" v-if="job.more.length">
                   Show {{job.showMore ? 'less' : 'more'}}
                 </a>
-              </td>
-              <td class="tags">
-                <tag v-for="tag in job.tags" :tag="tag"></tag>
-              </td>
-            </tr>
-          </transition-group>
-        </table>
+              </div>
+            </div>
+            <div class="divider" v-if="index !== filteredJobs.length-1"></div>
+          </div>
+        </transition-group>
         <div v-else class="no-jobs">
           <h4>No jobs meet the search criteria!</h4>
           <h5><a @click="clearFilters">Clear the filters</a></h5>
@@ -133,12 +130,13 @@ export default {
         location: 'Annapolis, MD',
         tags: ['java', 'selenium webdriver', 'bitbucket'],
         blurb: [
-          `Generated a comprehensive suite of manual and automated tests 
-          for several web-based applications.`
+          `Generated a comprehensive suite of automated tests 
+          for several web-based applications using Java and
+          Selenium Webdriver.`
         ],
         more: [
-          `Ran automated tests on an automation server, which used Jenkins 
-          to regularly run a set of Selenium WebDriver regression scripts.`,
+          `Ran nightly builds of the automation suite on a continuous 
+          integration server, Jenkins.`,
           `Created a standardized Google Sheets template used by the QA team 
           to write test plans for new features.`
         ],
@@ -174,8 +172,8 @@ export default {
         blurb: [
           `Collaborated with a special education teacher to instruct students 
           in Autism Pre-Kindergarten and Kindergarten classrooms.`,
-          `Created an iPhone application to facilitate gathering data for 
-          assessments.`
+          `Created an iPhone application using Objective-C to facilitate 
+          gathering data for assessments.`
         ],
         more: [
           `Administered assessments, such as GOLD and the VB-MAPP.`,
@@ -230,6 +228,10 @@ section {
   flex-direction: column;
 }
 
+.divider {
+  margin: 40px 0;
+}
+
 .no-jobs {
   flex: 1;
   display: flex;
@@ -238,18 +240,23 @@ section {
   justify-content: center;
 }
 
-table {
-  font-size: 20px;
-  width: 100%;
-}
-
 .blurb {
-  width: 50%;
   line-height: 1.5;
 }
 
 .name {
-  width: 25%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  
+  .org {
+    flex: 1;
+  }
+  
+  .title {
+    margin-right: 20px;
+  }
 }
 
 .tags {
@@ -257,6 +264,7 @@ table {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
+  margin: 20px 0;
 }
 
 .filter {
