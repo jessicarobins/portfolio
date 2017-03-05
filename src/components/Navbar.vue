@@ -42,7 +42,7 @@ export default {
         name: 'Projects',
         anchor: '#projects',
       }, {
-        name: 'Jobs',
+        name: 'Career',
         anchor: '#jobs',
       }, {
         name: 'Education',

@@ -13,7 +13,7 @@
   	    </div>
 	    </div>
     </div>
-    <down anchor="#hobbies" text="what I do for fun"></down>
+    <down anchor="#interests" text="what I do for fun"></down>
   </section>
 </template>
 

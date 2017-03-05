@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container" id="jobs" v-viewport="{onEnter: scrollEnter}">
-      <h1 class="center-align">Jobs</h1>
+      <h1 class="center-align">Career</h1>
       <div class="switch">
         <label>
           All Jobs
@@ -210,7 +210,7 @@ export default {
       this.checkedTags = [];
     },
     scrollEnter: function() {
-      bus.$emit('scrollEnter', 'Jobs')
+      bus.$emit('scrollEnter', 'Career')
     }
   }
 }
