@@ -16,6 +16,7 @@
     "topojson": "^2.2.0",
     "topojson-client": "^2.1.0",
     "vue": "^2.1.10",
+    "vue-material": "^0.7.1",
     "vue-smoothscroll": "^0.1.1"
   },
   "devDependencies": {

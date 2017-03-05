@@ -129,9 +129,11 @@ $visited-color-hover: #303f9f;
 $map-background-color: #c9dbe9;
 $map-border-width: 4px;
 
-svg {
-  background-color: $map-background-color;
-  border: $map-border-width solid black;
+#map {
+  svg {
+    background-color: $map-background-color;
+    border: $map-border-width solid black;
+  }
 }
 
 .country {
