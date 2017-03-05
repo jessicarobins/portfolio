@@ -2,6 +2,14 @@
   <section>
     <div class="container" id="jobs" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align">Jobs</h1>
+      <div class="switch">
+        <label>
+          All Jobs
+          <input type="checkbox" v-model="showOnlyTech">
+          <span class="lever"></span>
+          Only Tech Jobs
+        </label>
+      </div>
       <h5>Filter by tech</h5>
       <div class="filters">
         <div v-for="tag in tags" class="filter">
@@ -90,14 +98,14 @@ export default {
         blurb: ['TBD'],
         more: [],
         showMore: false,
-        tags: ['jquery', 'java', 'gulp', 'agile', 'github'],
+        tags: ['jquery', 'java', 'gulp', 'sass', 'agile', 'github'],
         tech: true
       }, {
         name: 'Kit Check',
         title: 'QA Engineer',
         dates: 'June 2015 to February 2017',
         location: 'Washington, DC',
-        tags: ['angular', 'ruby on rails', 'circle ci', 'buildkite ci', 
+        tags: ['angular', 'ruby on rails', 'sass', 'circle ci', 'buildkite ci', 
           'protractor', 'jasmine', 'github', 'agile'],
         blurb: [
           `Completed frontend and backend components for both client-facing features  
@@ -136,7 +144,48 @@ export default {
         ],
         showMore: false,
         tech: true
+      }, {
+        name: 'Learning Together, LLC',
+        title: 'Applied Behavior Analysis Therapist',
+        dates: 'January 2012 to March 2014',
+        location: 'Washington, DC',
+        tags: [],
+        blurb: [
+          `Created and implemented research-based interventions for children 
+          with autism.`,
+          `Collected and graphed data in order to monitor each child’s 
+          progress, analyze the efficacy of current programs, and troubleshoot 
+          problems with existing interventions.`
+        ],
+        more: [
+          `Collaborated with caregivers and related service providers to 
+          create and modify goals and interventions based on data collected.`,
+          `Wrote reports based on collected data in order to inform both 
+          caregivers and insurance providers of each child’s progress.`
+        ],
+        showMore: false,
+        tech: false
+      }, {
+        name: 'DC Public Schools',
+        title: 'Special Education Aide',
+        dates: 'September 2010 to August 2012',
+        location: 'Washington, DC',
+        tags: ['objective-c'],
+        blurb: [
+          `Collaborated with a special education teacher to instruct students 
+          in Autism Pre-Kindergarten and Kindergarten classrooms.`,
+          `Created an iPhone application to facilitate gathering data for 
+          assessments.`
+        ],
+        more: [
+          `Administered assessments, such as GOLD and the VB-MAPP.`,
+          `Assisted the teacher with the development and execution of IEPs 
+          and ABA programs.`
+        ],
+        showMore: false,
+        tech: false
       }],
+      showOnlyTech: true,
       checkedTags: []
     }
   },
@@ -147,6 +196,8 @@ export default {
     filteredJobs: function() {
       return this.jobs.filter( (job) => {
         return _.intersection(job.tags, this.checkedTags).length >= this.checkedTags.length
+      }).filter( job => {
+        return !this.showOnlyTech || job.tech
       })
     }
   },

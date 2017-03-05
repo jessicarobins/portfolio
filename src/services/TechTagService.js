@@ -4,7 +4,7 @@ import * as _ from 'lodash'
 export default {
   
   getTagByName(tagName) {
-    return _.find(this.tags(), {name: tagName})
+    return _.find(this.tags(), {name: tagName}) || {name: tagName}
   },
   
   getTagsFromObjects(objArray) {
@@ -102,6 +102,9 @@ export default {
       }, {
         name: 'gulp',
         icon: 'devicon-gulp-plain'
+      }, {
+        name: 'objective-c',
+        icon: 'devicon-c-plain'
       }]
   },
   

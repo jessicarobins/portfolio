@@ -10,7 +10,7 @@
               <input type="checkbox" :id="tag.name" :value="tag.name" v-model="checkedTags" />
               <label :for="tag.name">
                 <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
-                <span>{{tag.name}}</span>
+                <span class="truncate">{{tag.name}}</span>
               </label>
             </div>
           </div>
@@ -18,7 +18,7 @@
           <div class="filters">
             <div v-for="tag in commonTags" class="filter">
               <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
-              <span>{{tag.name}}</span>
+              <span class="truncate">{{tag.name}}</span>
             </div>
           </div>
         </div>
