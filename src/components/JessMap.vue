@@ -167,7 +167,7 @@ svg {
     
     &.unvisited {
       fill: $unvisited-color;
-      stroke: $visited-color-hover;
+      stroke: $unvisited-color-hover;
     }
   }
   

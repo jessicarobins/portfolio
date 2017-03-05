@@ -8,7 +8,7 @@
           <input type="checkbox" :id="checkboxId(tag)" :value="tag.name" v-model="checkedTags" />
           <label :for="checkboxId(tag)">
             <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
-            <span>{{tag.name}}</span>
+            <span class="truncate">{{tag.name}}</span>
           </label>
         </div>
       </div>
@@ -169,6 +169,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+section {
+  background-color: white;
+}
+
 .container {
   flex: 1;
   display: flex;
@@ -213,6 +217,7 @@ table {
 .filters {
   display: flex;
   flex-flow: row wrap;
+  margin-bottom: 40px;
 }
 
 label {

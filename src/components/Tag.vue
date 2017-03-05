@@ -1,7 +1,7 @@
 <template>
   <div class="chip">
     <i v-bind:class="['colored', className()]" v-if="className()"></i>
-    {{this.tag}}
+    <span class="truncate">{{this.tag}}</span>
   </div>
 </template>
 
