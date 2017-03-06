@@ -1,8 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 
-require('materialize-css')
-
 import Vue from 'vue'
 import App from './App'
 
@@ -18,6 +16,7 @@ require('vue-material/dist/components/mdButton/index.css')
 require('vue-material/dist/components/mdCore/index.css')
 require('vue-material/dist/components/mdToolbar/index.css')
 require('vue-material/dist/components/mdChips/index.css')
+require('vue-material/dist/components/mdInputContainer/index.css')
 import VueMaterial from 'vue-material'
 Vue.use(VueMaterial.MdCore)
 Vue.use(VueMaterial.MdSnackbar)
@@ -25,6 +24,7 @@ Vue.use(VueMaterial.MdSpinner)
 Vue.use(VueMaterial.MdButton)
 Vue.use(VueMaterial.MdToolbar)
 Vue.use(VueMaterial.MdChips)
+Vue.use(VueMaterial.MdInputContainer)
 
 /* eslint-disable no-new */
 new Vue({

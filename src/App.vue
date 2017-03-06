@@ -55,7 +55,7 @@ body {
   background-color: #c9dbe9;
   font-size: 20px !important;
   
-  button {
+  .md-button {
     font-size: 20px;
   }
 }

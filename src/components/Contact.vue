@@ -6,29 +6,30 @@
 	      <div class="col s12 m8 offset-m2">
   	      <div class="card-panel">
       	    <form v-on:submit.prevent="sendEmail" novalidate>
-      	      <div class="input-field">
-                <input 
+      	      <md-input-container>
+      	        <label for="name">Name</label>
+                <md-input 
                   v-model="name"
                   id="name"
                   type="text"
                   v-bind:class="[className(name)]" />
-                <label for="name">Name</label>
-              </div>
-              <div class="input-field">
-                <input
+              </md-input-container>
+              <md-input-container>
+                <label for="email">Email</label>
+                <md-input
                   v-model="email"
                   id="email"
                   type="email"
                   v-bind:class="[className(email)]" />
-                <label for="email">Email</label>
-              </div>
-              <div class="input-field">
-                <textarea 
+              </md-input-container>
+              <md-input-container>
+                <label for="message">Message</label>
+                <md-textarea 
+                  rows="4"
                   v-model="message" 
                   id="message"
-                  v-bind:class="['materialize-textarea', className(message)]"></textarea>
-                <label for="message">Message</label>
-              </div>
+                  v-bind:class="[className(message)]"></md-textarea>
+              </md-input-container>
               <md-button class="md-primary md-raised" type="submit">
                 Send <i class="material-icons">send</i>
               </md-button>
@@ -150,6 +151,15 @@ button {
 form {
   input, textarea, label {
     font-size: 20px;
+  }
+  
+  .md-input {
+    margin: 0;
+    
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
   }
 }
 </style>
