@@ -65,9 +65,9 @@ h1 {
 }
 
 section {
-  min-height: 100vh;
-  &:not(:last-of-type) {
-    min-height: calc(100vh + 400px);
+  min-height: calc(100vh + 400px);
+  &:first-of-type, &:last-of-type {
+    min-height: calc(100vh + 200px);
   }
   display: flex;
   align-items: center;
@@ -78,7 +78,13 @@ section {
 section:not(:last-of-type)::after {
   content: '';
   width: 100%;
-  height: 400px;
+  height: 200px;
+}
+
+section:not(:first-of-type)::before {
+  content: '';
+  width: 100%;
+  height: 200px;
 }
 
 a {

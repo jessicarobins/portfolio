@@ -1,6 +1,6 @@
 <template>
-  <section class="projects" id="projects">
-    <div class="container">
+  <section class="projects">
+    <div class="container" id="projects" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align">Projects</h1>
       <div class="row">
         <div class="col s12 m4">  
@@ -66,6 +66,7 @@
 <script>
 import * as _ from 'lodash'
 
+import bus from '../utils/Bus'
 import Down from './DownButton'
 import Tag from './Tag'
 import TechTagService from '../services/TechTagService'
@@ -97,7 +98,7 @@ export default {
         },
         description: `What you're looking at right now! A single-page Vue app 
           that describes my accomplishments.`,
-        tags: ['vue', 'postcss', 'material design', 'webpack']
+        tags: ['vue', 'postcss', 'd3', 'material design', 'webpack']
       }, {
         name: 'Jessboard',
         urls: {
@@ -141,6 +142,9 @@ export default {
   methods: {
     clear: function() {
       this.checkedTags = [];
+    },
+    scrollEnter: function() {		
+      bus.$emit('scrollEnter', 'Projects')
     }
   },
   computed: {
@@ -167,6 +171,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: white;
 }
 
 .project-list {
