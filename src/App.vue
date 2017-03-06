@@ -88,5 +88,4 @@ a {
 .colored {
   margin-right: 5px;
 }
-
 </style>

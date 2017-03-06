@@ -17,8 +17,7 @@
                 </h5>
                 
                 <div class="button">
-
-                  <button class="waves-effect waves-light btn" @click="scroll(fact.link.anchor)">{{fact.link.text}}</button>
+                  <md-button class="md-raised md-primary" @click="scroll(fact.link.anchor)">{{fact.link.text}}</button>
                 </div>
               </div>
             </div>

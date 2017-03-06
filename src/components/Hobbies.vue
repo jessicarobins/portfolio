@@ -9,10 +9,10 @@
 	    <jess-map class="map"></jess-map>
 	    <h4>Other things with less interesting visuals</h4>
 	    <div class="likes">
-  	    <div class="chip" v-for="like in likes">
+  	    <md-chip v-for="like in likes">
   	      <span class="emoji">{{like.emoji}}</span>
   	      <span class="truncate">{{like.label}}</span>
-        </div>
+        </md-chip>
       </div>
 	 </div>
 	 <down anchor="#contact" text="say hi!"></down>
@@ -83,9 +83,13 @@ section {
   flex-wrap: wrap;
 }
 
-.chip {
+.md-chip {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-size: 20px;
+  line-height: 30px;
+  margin: 5px 5px 0 0;
   
   .emoji {
     margin-right: 5px;

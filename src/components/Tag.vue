@@ -1,8 +1,8 @@
 <template>
-  <div class="chip">
+  <md-chip>
     <i v-bind:class="['colored', className()]" v-if="className()"></i>
     <span class="truncate">{{this.tag}}</span>
-  </div>
+  </md-chip>
 </template>
 
 <script>
@@ -21,10 +21,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.chip {
+.md-chip {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
+  line-height: 30px;
+  margin: 5px 5px 0 0;
 }
 </style>
