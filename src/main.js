@@ -14,10 +14,15 @@ Vue.use(vueSmoothScroll);
 
 require('vue-material/dist/components/mdSnackbar/index.css')
 require('vue-material/dist/components/mdSpinner/index.css')
+require('vue-material/dist/components/mdButton/index.css')
+require('vue-material/dist/components/mdCore/index.css')
+require('vue-material/dist/components/mdToolbar/index.css')
 import VueMaterial from 'vue-material'
 Vue.use(VueMaterial.MdCore)
 Vue.use(VueMaterial.MdSnackbar)
 Vue.use(VueMaterial.MdSpinner)
+Vue.use(VueMaterial.MdButton)
+Vue.use(VueMaterial.MdToolbar)
 
 /* eslint-disable no-new */
 new Vue({

@@ -29,9 +29,9 @@
                   v-bind:class="['materialize-textarea', className(message)]"></textarea>
                 <label for="message">Message</label>
               </div>
-              <button class="waves-effect waves-light btn" type="submit">
+              <md-button class="md-primary md-raised" type="submit">
                 Send <i class="material-icons">send</i>
-              </button>
+              </md-button>
             </form>
             <div class="spinner-container" v-if="sending">
               <md-spinner md-indeterminate></md-spinner>
@@ -44,6 +44,7 @@
       </md-snackbar>
     </div>
   </section>
+  
 </template>
 
 <script>
@@ -135,8 +136,11 @@ export default {
   z-index: 99999;
 }
 
-.btn {
+button {
   display: flex;
+  align-items: center;
+  margin-right: 0;
+  margin-left: auto;
   
   i {
     padding-left: 20px;
@@ -146,11 +150,6 @@ export default {
 form {
   input, textarea, label {
     font-size: 20px;
-  }
-  
-  .btn {
-    margin-left: auto;
-    margin-right: 0;
   }
 }
 </style>

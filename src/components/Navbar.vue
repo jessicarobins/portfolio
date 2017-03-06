@@ -86,6 +86,11 @@ nav {
   ul a {
     color: inherit;
     font-size: inherit;
+    text-decoration: none !important;
+  }
+  
+  li {
+    margin: 0 !important;
   }
 }
 </style>

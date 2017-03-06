@@ -15,8 +15,10 @@
                 <h5>
                   <span class="truth">{{fact.truth}}!</span> {{fact.revealText}}
                 </h5>
+                
                 <div class="button">
-                  <a class="waves-effect waves-light btn" @click="scroll(fact.link.anchor)">{{fact.link.text}}</a>
+
+                  <button class="waves-effect waves-light btn" @click="scroll(fact.link.anchor)">{{fact.link.text}}</button>
                 </div>
               </div>
             </div>

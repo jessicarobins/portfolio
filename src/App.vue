@@ -46,7 +46,6 @@ export default {
 
 body {
   margin: 0;
-  font-size: 20px;
   overflow-x: hidden;
 }
 
@@ -54,6 +53,11 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #2c3e50;
   background-color: #c9dbe9;
+  font-size: 20px !important;
+  
+  button {
+    font-size: 20px;
+  }
 }
 
 h1 {
