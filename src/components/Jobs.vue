@@ -2,14 +2,7 @@
   <section>
     <div class="container" id="jobs" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align">Career</h1>
-      <div class="switch">
-        <label>
-          All Jobs
-          <input type="checkbox" v-model="showOnlyTech">
-          <span class="lever"></span>
-          Only Tech Jobs
-        </label>
-      </div>
+      
       <h5>Filter by tech</h5>
       <div class="filters">
         <div v-for="tag in tags" class="filter">
@@ -20,6 +13,9 @@
           </label>
         </div>
       </div>
+      <md-switch v-model="showOnlyTech" class="md-primary">
+        <span @click="toggleTech" class="tech-toggle-label">Show only tech jobs</span>
+      </md-switch>
       <transition 
         enter-active-class="animated fadeInUp" 
         leave-active-class="animated fadeOutDown" mode="out-in">
@@ -203,6 +199,9 @@ export default {
     toggleShowMore: function(job) {
       job.showMore = !job.showMore;
     },
+    toggleTech() {
+      this.showOnlyTech = !this.showOnlyTech
+    },
     checkboxId: function(tag) {
       return `jobs-${tag.name}`
     },
@@ -284,6 +283,10 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.tech-toggle-label {
+  cursor: pointer;
 }
 
 .job {

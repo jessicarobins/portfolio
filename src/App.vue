@@ -55,7 +55,7 @@ body {
   background-color: #c9dbe9;
   font-size: 20px !important;
   
-  .md-button {
+  .md-button, .md-switch-label {
     font-size: 20px;
   }
 }
