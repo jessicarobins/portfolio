@@ -1,7 +1,7 @@
 <template>
   <section class="truths">
   	<div class="container" id="truths" v-viewport="{onEnter: scrollEnter}">
-      <h1 class="center-align">three truths and a lie</h1>
+      <h1 class="center-align md-display-4">three truths and a lie</h1>
       <h4 class="center-align">mouseover or tap a card to view the details</h4>
       <div class="facts">
         <div v-for="(fact, index) in facts">
@@ -17,7 +17,7 @@
                 </h5>
                 
                 <div class="button">
-                  <md-button class="md-raised md-primary" @click="scroll(fact.link.anchor)">{{fact.link.text}}</button>
+                  <md-button class="md-raised md-primary" @click.native="scroll(fact.link.anchor)">{{fact.link.text}}</button>
                 </div>
               </div>
             </div>
@@ -114,11 +114,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+$zig-zag: #8c9eff;
+
 .truths {
-  background: linear-gradient(white 0%, #c9dbe9 100%);
-	background: -webkit-linear-gradient(white 0%, #c9dbe9 100%);
-	background: -linear-gradient(white 0%, #c9dbe9 100%);
-	background: -moz-linear-gradient(white 0%, #c9dbe9 100%);
 	justify-content: flex-start;
 }
 

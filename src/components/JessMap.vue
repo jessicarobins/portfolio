@@ -122,10 +122,10 @@ export default {
 
 <style>
 
-$unvisited-color: lightgray;
-$unvisited-color-hover: gray;
+$unvisited-color: #9e9e9e;
+$unvisited-color-hover: #424242;
 $visited-color: #3f51b5;
-$visited-color-hover: #303f9f;
+$visited-color-hover: #283593;
 $map-background-color: #c9dbe9;
 $map-border-width: 4px;
 
@@ -174,6 +174,8 @@ $map-border-width: 4px;
   }
   
   .legend-item-text {
+    font-style: normal;
+    
     &.visited {
       fill: $visited-color-hover;
     }

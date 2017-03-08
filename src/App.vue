@@ -44,6 +44,8 @@ export default {
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+$zig-zag: #e91e63;
+
 body {
   margin: 0;
   overflow-x: hidden;
@@ -52,7 +54,7 @@ body {
 #app {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #2c3e50;
-  background-color: #c9dbe9;
+  background-color: white;
   font-size: 20px !important;
   
   .md-button, .md-switch-label {
@@ -75,16 +77,19 @@ section {
   flex-direction: column;
 }
 
-section:not(:last-of-type)::after {
+section:not(:last-of-type)::after, section:not(:first-of-type)::before {
   content: '';
   width: 100%;
   height: 200px;
-}
-
-section:not(:first-of-type)::before {
-  content: '';
-  width: 100%;
-  height: 200px;
+  
+  background: 
+    linear-gradient(135deg, white 25%, transparent 25%) -100px 0,
+    linear-gradient(225deg, white 25%, transparent 25%) -100px 0,
+    linear-gradient(315deg, white 25%, transparent 25%),
+    linear-gradient(45deg, white 25%, transparent 25%);
+  background-size: 200px 200px;
+  background-repeat: repeat round;
+  background-color: $zig-zag;
 }
 
 a {

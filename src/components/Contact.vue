@@ -1,34 +1,34 @@
 <template>
   <section>
 	  <div class="container" id="contact" v-viewport="{onEnter: scrollEnter}">
-	    <h1 class="center-align">Contact Me</h1>
+	    <h1 class="center-align md-display-4">Contact Me</h1>
 	    <div class="row">
 	      <div class="col s12 m8 offset-m2">
   	      <div class="card-panel">
       	    <form v-on:submit.prevent="sendEmail" novalidate>
-      	      <md-input-container>
+      	      <md-input-container v-bind:class="[className(name)]">
       	        <label for="name">Name</label>
                 <md-input 
+                  required
                   v-model="name"
                   id="name"
-                  type="text"
-                  v-bind:class="[className(name)]" />
+                  type="text" />
               </md-input-container>
-              <md-input-container>
+              <md-input-container v-bind:class="[className(name)]" >
                 <label for="email">Email</label>
                 <md-input
+                  required
                   v-model="email"
                   id="email"
-                  type="email"
-                  v-bind:class="[className(email)]" />
+                  type="email" />
               </md-input-container>
-              <md-input-container>
+              <md-input-container v-bind:class="[className(name)]" >
                 <label for="message">Message</label>
                 <md-textarea 
+                  required
                   rows="4"
                   v-model="message" 
-                  id="message"
-                  v-bind:class="[className(message)]"></md-textarea>
+                  id="message" ></md-textarea>
               </md-input-container>
               <md-button class="md-primary md-raised" type="submit">
                 Send <i class="material-icons">send</i>
@@ -70,7 +70,7 @@ export default {
         return 'valid'
       }
       else {
-        return (this.dirty ? 'invalid' : '')
+        return (this.dirty ? 'md-input-invalid' : '')
       }
     },
     scrollEnter() {
@@ -118,6 +118,7 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .card-panel {

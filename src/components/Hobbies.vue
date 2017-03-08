@@ -1,7 +1,7 @@
 <template>
   <section>
 	 <div class="container" id="interests" v-viewport="{onEnter: scrollEnter}">
-	    <h1 class="center-align">Things I Like</h1>
+	    <h1 class="center-align md-display-4">Things I Like</h1>
 	    <h4>Traveling</h4>
       <h5>
         This is an interactive map (created using d3) of the countries I've been to.

@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container" id="jobs" v-viewport="{onEnter: scrollEnter}">
-      <h1 class="center-align">Career</h1>
+      <h1 class="center-align md-display-4">Career</h1>
       
       <h5>Filter by tech</h5>
       <div class="filters">
