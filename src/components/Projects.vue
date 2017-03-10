@@ -31,25 +31,41 @@
               tag="div" 
               class="project-list" 
               v-if="filteredProjects.length">
-              <div v-for="project in filteredProjects" class="card project" :key="project">
-                <div class="card-image" v-if="project.image">
-                  <img :src="project.image">
-                </div>
-                <div class="card-content">
-                  <span class="card-title">{{project.name}}</span>
-                  <p class="description">{{project.description}}</p>
-                  <div class="divider"></div>
+              <md-card v-for="project in filteredProjects" class="project" :key="project">
+                
+                <md-card-media-cover md-text-scrim>
+                  <md-card-media>
+                    <img :src="project.image">
+                  </md-card-media>
+                  <md-card-area>
+                    <md-card-header>
+                      <h3 class="md-title">{{project.name}}</h3>
+                    </md-card-header>
+                  </md-card-area>
+                </md-card-media-cover>
+                
+                <md-card-actions>
+                  <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
+                    {{key}}
+                  </md-button>
+                </md-card-actions>
+                
+                <md-card-area md-inset>
+                  <md-card-content>
+                    <p class="description">{{project.description}}</p>
+                  </md-card-content>
+                </md-card-area>
+                
+                <md-card-content>
                   <h5>Technologies</h5>
                   <div class="tags">
                     <tag v-for="tag in project.tags" :tag="tag"></tag>
                   </div>
-                </div>
-                <div class="card-action">
-                  <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
-                    {{key}}
-                  </md-button>
-                </div>
-              </div>
+                </md-card-content>
+                
+                
+                
+              </md-card>
             </transition-group>
             <div v-else>
               <h4>No projects meet the selected criteria.</h4>
@@ -81,6 +97,7 @@ export default {
     return {
       projects: [{
         name: 'everee',
+        subtitle: 'a crowd-sourced bucket list',
         urls: {
           'open project': 'http://everee.io',
           github: 'https://github.com/jessicarobins/det'
@@ -93,6 +110,7 @@ export default {
         image: require('../assets/everee.png')
       }, {
         name: 'portfolio',
+        subtitle: 'this!',
         urls: {
           github: 'https://github.com/jessicarobins/portfolio'
         },
@@ -101,6 +119,7 @@ export default {
         tags: ['vue', 'postcss', 'd3', 'material design', 'webpack']
       }, {
         name: 'Jessboard',
+        subtitle: 'a soundboard',
         urls: {
           'open project': 'https://jessicarobins.github.io/jessboard',
           github: 'https://github.com/jessicarobins/jessboard'
@@ -111,6 +130,7 @@ export default {
         image: require('../assets/jessboard.png')
       },{
         name: 'ddescribe',
+        subtitle: 'a test case formatter',
         urls: {
           'open project': 'https://jessicarobins.github.io/formatter',
           github: 'https://github.com/jessicarobins/formatter'
@@ -122,6 +142,7 @@ export default {
         image: require('../assets/ddescribe.png')
       }, {
         name: 'jessdocs',
+        subtitle: 'a test case management tool',
         description: `A single-page app that organizes test cases into a taggable, 
           filterable tree structure. While the majority of the frontend is built using 
           AngularJS, I used some React components to optimize page load time.`,
@@ -180,27 +201,18 @@ export default {
   justify-content: center;
 }
 
-.card {
+.md-card {
   margin: 20px;
-  display: flex;
-  flex-direction: column;
 }
 
-.card-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-title {
-  font-size: 36px;
+h3.md-title {
+  font-size: 48px;
 }
 
 .description {
   flex: 1;
   line-height: 1.5;
-  font-size: 25px;
-  padding: 20px 0 40px 0;
+  font-size: 20px;
 }
 
 .tags {

@@ -18,6 +18,7 @@ require('vue-material/dist/components/mdToolbar/index.css')
 require('vue-material/dist/components/mdChips/index.css')
 require('vue-material/dist/components/mdInputContainer/index.css')
 require('vue-material/dist/components/mdSwitch/index.css')
+require('vue-material/dist/components/mdCard/index.css')
 import VueMaterial from 'vue-material'
 Vue.use(VueMaterial.MdCore)
 Vue.use(VueMaterial.MdSnackbar)
@@ -27,6 +28,7 @@ Vue.use(VueMaterial.MdToolbar)
 Vue.use(VueMaterial.MdChips)
 Vue.use(VueMaterial.MdInputContainer)
 Vue.use(VueMaterial.MdSwitch)
+Vue.use(VueMaterial.MdCard)
 
 /* eslint-disable no-new */
 new Vue({
