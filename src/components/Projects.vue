@@ -24,52 +24,56 @@
         </div>
       </div>
       <transition 
-      enter-active-class="animated fadeInUp" 
-      leave-active-class="animated fadeOutDown" mode="out-in">
-      <transition-group 
-        name="project-list" 
-        tag="div" 
-        class="project-list grid"
-        v-if="filteredProjects.length">
-        <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
-          
-          <md-card-media-cover md-text-scrim>
-            <md-card-media>
-              <img :src="project.image">
-            </md-card-media>
-            <md-card-area>
-              <md-card-header>
-                <h3 class="md-title">{{project.name}}</h3>
-              </md-card-header>
+        enter-active-class="animated fadeInUp" 
+        leave-active-class="animated fadeOutDown" mode="out-in">
+        <transition-group 
+          name="project-list" 
+          tag="div" 
+          class="project-list grid"
+          ref="grid"
+          v-if="filteredProjects.length">
+          <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
+            
+            <md-card-media-cover md-text-scrim v-if="project.image">
+              <md-card-media>
+                <img :src="project.image">
+              </md-card-media>
+              <md-card-area>
+                <md-card-header>
+                  <h3 class="md-title">{{project.name}}</h3>
+                </md-card-header>
+              </md-card-area>
+            </md-card-media-cover>
+            <md-card-header v-else>
+              <h3 class="md-title">{{project.name}}</h3>
+            </md-card-header>
+                
+            <md-card-actions>
+              <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
+                {{key}}
+              </md-button>
+            </md-card-actions>
+            
+            <md-card-area md-inset>
+              <md-card-content>
+                <p class="description">{{project.description}}</p>
+              </md-card-content>
             </md-card-area>
-          </md-card-media-cover>
-          
-          <md-card-actions>
-            <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
-              {{key}}
-            </md-button>
-          </md-card-actions>
-          
-          <md-card-area md-inset>
+            
             <md-card-content>
-              <p class="description">{{project.description}}</p>
+              <h5>Technologies</h5>
+              <div class="tags">
+                <tag v-for="tag in project.tags" :tag="tag"></tag>
+              </div>
             </md-card-content>
-          </md-card-area>
-          
-          <md-card-content>
-            <h5>Technologies</h5>
-            <div class="tags">
-              <tag v-for="tag in project.tags" :tag="tag"></tag>
-            </div>
-          </md-card-content>
-          
-        </md-card>
-      </transition-group>
-      <div v-else>
-        <h4>No projects meet the selected criteria.</h4>
-        <h5><a @click="clear">Clear the filters</a></h5>
-      </div>
-    </transition>
+            
+          </md-card>
+        </transition-group>
+        <div v-else>
+          <h4>No projects meet the selected criteria.</h4>
+          <h5><a @click="clear">Clear the filters</a></h5>
+        </div>
+      </transition>
     </div>
     <down anchor="#jobs" text="see my work history"></down>
   </section>
@@ -155,7 +159,8 @@ export default {
         image: require('../assets/jessdocs.png')
       }],
       common: ['github', 'html5', 'css3', 'javascript', 'trello', 'webpack'],
-      checkedTags: []
+      checkedTags: [],
+      msnry: null
     }
   },
   methods: {
@@ -180,16 +185,18 @@ export default {
     }
   },
   mounted() {
-    var elem = document.querySelector('.grid')
-    var msnry = new Masonry( elem, {
+    const el = this.$refs.grid.$el
+    const Projects = this;
+    
+    this.msnry = new Masonry(el, {
       // options
       itemSelector: '.grid-item',
       columnWidth: 500
     })
-    imagesLoaded( document.querySelector('.grid'), function( instance ) {
-      console.log('all images are loaded');
-      msnry.layout();
-    });
+    
+    imagesLoaded(el, () => {
+      Projects.msnry.layout();
+    })
   }
 }
 </script>
