@@ -6,27 +6,32 @@
       <div class="facts">
         <div v-for="(fact, index) in facts">
           <transition enter-active-class="animated flipInY" leave-active-class="animated flipOutY" mode="out-in">
-            <div 
+            <md-card 
               :key="fact.id"
               v-if="fact.id === activeFactId" 
-              @mouseleave="mouseOut()" 
-              class="card-panel fact-reveal fact">
-              <div class="fact-text">
-                <h5>
-                  <span class="truth">{{fact.truth}}!</span> {{fact.revealText}}
-                </h5>
-                
-                <div class="button">
-                  <md-button class="md-raised md-primary" @click.native="scroll(fact.link.anchor)">{{fact.link.text}}</button>
+              @mouseleave.native="mouseOut()" 
+              class="fact-reveal fact md-primary">
+              <md-card-content>
+                <div class="fact-text">
+                  <h5>
+                    <span class="truth">{{fact.truth}}!</span> {{fact.revealText}}
+                  </h5>
+                  
+                  <div class="button">
+                    <md-button class="md-raised" @click.native="scroll(fact.link.anchor)">{{fact.link.text}}</button>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div 
+              </md-card-content>
+            </md-card>
+            <md-card 
               key="`fact-reveal-${index}`"
               v-else
-              @mouseover="mouseOver(fact)">
-              <h3 class="card-panel fact">{{fact.text}}</h3>
-            </div>
+              class="md-primary fact"
+              @mouseover.native="mouseOver(fact)">
+              <md-card-content>
+                <h3>{{fact.text}}</h3>
+              </md-card-content>
+            </md-card>
           </transition>
         </div>
       </div>
@@ -114,8 +119,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-$zig-zag: #8c9eff;
-
 .truths {
 	justify-content: flex-start;
 }

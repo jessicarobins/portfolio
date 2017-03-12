@@ -150,18 +150,28 @@ export default {
           'heroku', 'amazon s3', 'sass', 'react', 'postgres'],
         image: require('../assets/jessdocs.png')
       }, {
+        name: 'jessbot',
+        subtitle: 'March 2017',
+        description: `Hubot clone with a script to display information about 
+          nearby food trucks.`,
+        urls: {
+          'github': 'https://github.com/jessicarobins/jessbot'
+        },
+        tags: ['javascript', 'heroku']
+      }, {
         name: 'Escape from the Aliens in Outer Space',
         subtitle: 'November 2014 to March 2015',
         description: `An android companion app for the board game Escape from 
           the Aliens in Outer Space. It replaces the pencil and paper 
           component of tracking player movement on a hexagonal grid.`,
         urls: {
+          'play store': 'https://play.google.com/store/apps/details?id=com.jrobins.jrobins.escape2',
           'github': 'https://github.com/jessicarobins/escapegame'
         },
         image: require('../assets/aliens.png'),
         tags: ['java', 'android sdk']
       }],
-      common: ['github', 'html5', 'css3', 'javascript', 'trello', 'webpack'],
+      common: ['github', 'html5', 'css3', 'javascript', 'trello'],
       checkedTags: [],
       msnry: null
     }
