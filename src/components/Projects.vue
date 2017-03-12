@@ -22,58 +22,54 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m8">
-          <transition 
-            enter-active-class="animated fadeInUp" 
-            leave-active-class="animated fadeOutDown" mode="out-in">
-            <transition-group 
-              name="project-list" 
-              tag="div" 
-              class="project-list" 
-              v-if="filteredProjects.length">
-              <md-card v-for="project in filteredProjects" class="project" :key="project">
-                
-                <md-card-media-cover md-text-scrim>
-                  <md-card-media>
-                    <img :src="project.image">
-                  </md-card-media>
-                  <md-card-area>
-                    <md-card-header>
-                      <h3 class="md-title">{{project.name}}</h3>
-                    </md-card-header>
-                  </md-card-area>
-                </md-card-media-cover>
-                
-                <md-card-actions>
-                  <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
-                    {{key}}
-                  </md-button>
-                </md-card-actions>
-                
-                <md-card-area md-inset>
-                  <md-card-content>
-                    <p class="description">{{project.description}}</p>
-                  </md-card-content>
-                </md-card-area>
-                
-                <md-card-content>
-                  <h5>Technologies</h5>
-                  <div class="tags">
-                    <tag v-for="tag in project.tags" :tag="tag"></tag>
-                  </div>
-                </md-card-content>
-                
-                
-                
-              </md-card>
-            </transition-group>
-            <div v-else>
-              <h4>No projects meet the selected criteria.</h4>
-              <h5><a @click="clear">Clear the filters</a></h5>
-            </div>
-          </transition>
-        </div>
       </div>
+      <transition 
+      enter-active-class="animated fadeInUp" 
+      leave-active-class="animated fadeOutDown" mode="out-in">
+      <transition-group 
+        name="project-list" 
+        tag="div" 
+        class="project-list grid"
+        v-if="filteredProjects.length">
+        <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
+          
+          <md-card-media-cover md-text-scrim>
+            <md-card-media>
+              <img :src="project.image">
+            </md-card-media>
+            <md-card-area>
+              <md-card-header>
+                <h3 class="md-title">{{project.name}}</h3>
+              </md-card-header>
+            </md-card-area>
+          </md-card-media-cover>
+          
+          <md-card-actions>
+            <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
+              {{key}}
+            </md-button>
+          </md-card-actions>
+          
+          <md-card-area md-inset>
+            <md-card-content>
+              <p class="description">{{project.description}}</p>
+            </md-card-content>
+          </md-card-area>
+          
+          <md-card-content>
+            <h5>Technologies</h5>
+            <div class="tags">
+              <tag v-for="tag in project.tags" :tag="tag"></tag>
+            </div>
+          </md-card-content>
+          
+        </md-card>
+      </transition-group>
+      <div v-else>
+        <h4>No projects meet the selected criteria.</h4>
+        <h5><a @click="clear">Clear the filters</a></h5>
+      </div>
+    </transition>
     </div>
     <down anchor="#jobs" text="see my work history"></down>
   </section>
@@ -86,6 +82,8 @@ import bus from '../utils/Bus'
 import Down from './DownButton'
 import Tag from './Tag'
 import TechTagService from '../services/TechTagService'
+import Masonry from 'masonry-layout'
+import imagesLoaded from 'imagesloaded'
 
 export default {
   name: 'projects',
@@ -180,6 +178,18 @@ export default {
         return _.intersection(project.tags, this.checkedTags).length >= this.checkedTags.length
       })
     }
+  },
+  mounted() {
+    var elem = document.querySelector('.grid')
+    var msnry = new Masonry( elem, {
+      // options
+      itemSelector: '.grid-item',
+      columnWidth: 500
+    })
+    imagesLoaded( document.querySelector('.grid'), function( instance ) {
+      console.log('all images are loaded');
+      msnry.layout();
+    });
   }
 }
 </script>
@@ -195,14 +205,25 @@ export default {
   background-color: white;
 }
 
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+/*.project-list {*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+/*  justify-content: center;*/
+/*}*/
 
 .md-card {
-  margin: 20px;
+  width: 500px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  .md-card {
+    margin: 20px;
+    width: 400px;
+  }
 }
 
 h3.md-title {
@@ -224,11 +245,6 @@ h3.md-title {
 img {
   width: auto;
   height: auto;
-}
-
-.divider {
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 .filters {
