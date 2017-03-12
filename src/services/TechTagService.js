@@ -105,6 +105,9 @@ export default {
       }, {
         name: 'objective-c',
         icon: 'devicon-c-plain'
+      }, {
+        name: 'android sdk',
+        icon: 'devicon-android-plain'
       }]
   },
   
