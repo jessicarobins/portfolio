@@ -60,4 +60,14 @@ h1 {
 h1, h2 {
   font-weight: 200;
 }
+
+@media screen and (max-width: 992px) {
+  h1, h2 {
+    text-align: center;
+  }
+  
+  .jess {
+    margin-top: 20px;
+  }
+}
 </style>
