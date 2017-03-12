@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <navbar></navbar>
+    <navbar :sections="sections"></navbar>
     <hello></hello>
     <truths></truths>
     <projects></projects>
@@ -8,6 +8,7 @@
     <education></education>
     <hobbies></hobbies>
     <contact></contact>
+    <sidenav :sections="sections"></sidenav>
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import Hobbies from './components/Hobbies'
 import Jobs from './components/Jobs'
 import Navbar from './components/Navbar'
 import Projects from './components/Projects'
+import Sidenav from './components/Sidenav'
 import Truths from './components/Truths'
 
 export default {
@@ -31,7 +33,31 @@ export default {
     Jobs,
     Navbar,
     Projects,
+    Sidenav,
     Truths
+  },
+  data() {
+    return {
+      sections: [{
+        name: 'About Me',
+        anchor: '#truths',
+      }, {
+        name: 'Projects',
+        anchor: '#projects',
+      }, {
+        name: 'Career',
+        anchor: '#jobs',
+      }, {
+        name: 'Education',
+        anchor: '#education',
+      }, {
+        name: 'Interests',
+        anchor: '#interests'
+      }, {
+        name: 'Contact',
+        anchor: '#contact'
+      }]
+    }
   }
 }
 </script>

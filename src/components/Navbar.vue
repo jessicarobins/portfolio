@@ -2,8 +2,14 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <ul v-for="section in sections" class="left hide-on-med-and-down">
-          <li v-bind:class="[className(section.name)]"><a @click="scrollTo(section.anchor)">{{section.name}}</a></li>
+        <a @click="toggleSidenav" class="left hamburger hide-on-large-only">
+          <i class="material-icons">menu</i>
+        </a>
+        
+        <ul class="left hide-on-med-and-down">
+          <li
+            v-for="section in sections"
+            v-bind:class="[className(section.name)]"><a @click="scrollTo(section.anchor)">{{section.name}}</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
           <li>
@@ -33,27 +39,9 @@ import * as _ from 'lodash'
 
 export default {
   name: 'navbar',
+  props: ['sections'],
   data() {
     return {
-      sections: [{
-        name: 'About Me',
-        anchor: '#truths',
-      }, {
-        name: 'Projects',
-        anchor: '#projects',
-      }, {
-        name: 'Career',
-        anchor: '#jobs',
-      }, {
-        name: 'Education',
-        anchor: '#education',
-      }, {
-        name: 'Interests',
-        anchor: '#interests'
-      }, {
-        name: 'Contact',
-        anchor: '#contact'
-      }],
       activeSection: ''
     }
   },
@@ -64,6 +52,9 @@ export default {
     scrollTo: function(anchor) {
       const scrollElement = document.querySelector(anchor)
       this.$SmoothScroll(scrollElement)
+    },
+    toggleSidenav() {
+      bus.$emit('toggleSidenav')
     }
   },
   created: function() {
@@ -87,10 +78,14 @@ nav {
   color: inherit;
   font-size: inherit;
   
-  ul a {
+  a {
     color: inherit;
     font-size: inherit;
     text-decoration: none !important;
+    
+    &.hamburger {
+      margin: 0 20px;
+    }
   }
   
   li {
