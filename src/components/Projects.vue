@@ -1,6 +1,6 @@
 <template>
   <section class="projects">
-    <div class="container" id="projects" v-viewport="{onEnter: scrollEnter}">
+    <div id="projects" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align md-display-4">Projects</h1>
       <div class="row">
         <div class="col s12 m4">  
@@ -32,6 +32,7 @@
           class="project-list grid"
           ref="grid"
           v-if="filteredProjects.length">
+          <div class="grid-sizer" key="sizer"></div>
           <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
             
             <md-card-media-cover md-text-scrim v-if="project.image">
@@ -179,6 +180,10 @@ export default {
       return TechTagService.getTagsByNames(this.common)
     },
     filteredProjects: function() {
+      if (this.msnry) {
+        this.msnry.layout()
+      }
+      
       return this.projects.filter( (project) => {
         return _.intersection(project.tags, this.checkedTags).length >= this.checkedTags.length
       })
@@ -191,7 +196,8 @@ export default {
     this.msnry = new Masonry(el, {
       // options
       itemSelector: '.grid-item',
-      columnWidth: 500
+      columnWidth: '.grid-sizer',
+      percentPosition: true
     })
     
     imagesLoaded(el, () => {
@@ -212,15 +218,27 @@ export default {
   background-color: white;
 }
 
+.grid-sizer,
+.md-card {
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-sizer,
+  .md-card {
+    width: 400px;
+  }
+}
+
 /*.project-list {*/
 /*  display: flex;*/
 /*  flex-wrap: wrap;*/
 /*  justify-content: center;*/
 /*}*/
 
-.md-card {
-  width: 500px;
-}
+/*.md-card {*/
+/*  width: 100%;*/
+/*}*/
 
 .cards {
   display: flex;
