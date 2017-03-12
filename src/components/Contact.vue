@@ -119,6 +119,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 1;
 }
 
 .card-panel {
@@ -162,5 +163,24 @@ form {
       box-shadow: none;
     }
   }
+}
+
+$zig-zag: #e91e63;
+section::after {
+  content: '';
+  width: 100%;
+  height: 200px;
+  
+  background: 
+    linear-gradient(135deg, white 25%, transparent 25%) -100px 0,
+    linear-gradient(225deg, white 25%, transparent 25%) -100px 0,
+    linear-gradient(315deg, white 25%, transparent 25%),
+    linear-gradient(45deg, white 25%, transparent 25%);
+  background-size: 200px 200px;
+  background-repeat: repeat round;
+  background-color: $zig-zag;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
 }
 </style>

@@ -25,6 +25,7 @@ export default {
 <style scoped>
   .down-button-container {
     text-align: center;
+    padding-top: 20px;
   }
   
   .down-button {
