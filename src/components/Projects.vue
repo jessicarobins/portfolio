@@ -1,9 +1,9 @@
 <template>
   <section class="projects">
-    <div class="container" id="projects" v-viewport="{onEnter: scrollEnter}">
+    <div id="projects" class="container" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align md-display-4">Projects</h1>
       <div class="row">
-        <div class="col s12 m4">  
+        <div class="col s12">  
           <h5>Filter by tech</h5>
           <div class="filters">
             <div v-for="tag in tags" class="filter">
@@ -14,7 +14,7 @@
               </label>
             </div>
           </div>
-          <h5>Common to all projects</h5>
+          <h5>Common to most projects</h5>
           <div class="filters">
             <div v-for="tag in commonTags" class="filter">
               <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
@@ -22,58 +22,58 @@
             </div>
           </div>
         </div>
-        <div class="col s12 m8">
-          <transition 
-            enter-active-class="animated fadeInUp" 
-            leave-active-class="animated fadeOutDown" mode="out-in">
-            <transition-group 
-              name="project-list" 
-              tag="div" 
-              class="project-list" 
-              v-if="filteredProjects.length">
-              <md-card v-for="project in filteredProjects" class="project" :key="project">
-                
-                <md-card-media-cover md-text-scrim>
-                  <md-card-media>
-                    <img :src="project.image">
-                  </md-card-media>
-                  <md-card-area>
-                    <md-card-header>
-                      <h3 class="md-title">{{project.name}}</h3>
-                    </md-card-header>
-                  </md-card-area>
-                </md-card-media-cover>
-                
-                <md-card-actions>
-                  <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
-                    {{key}}
-                  </md-button>
-                </md-card-actions>
-                
-                <md-card-area md-inset>
-                  <md-card-content>
-                    <p class="description">{{project.description}}</p>
-                  </md-card-content>
-                </md-card-area>
-                
-                <md-card-content>
-                  <h5>Technologies</h5>
-                  <div class="tags">
-                    <tag v-for="tag in project.tags" :tag="tag"></tag>
-                  </div>
-                </md-card-content>
-                
-                
-                
-              </md-card>
-            </transition-group>
-            <div v-else>
-              <h4>No projects meet the selected criteria.</h4>
-              <h5><a @click="clear">Clear the filters</a></h5>
-            </div>
-          </transition>
-        </div>
       </div>
+        <transition-group 
+          name="project-list" 
+          tag="div" 
+          class="project-list grid"
+          ref="grid"
+          v-show="filteredProjects.length">
+          <div class="grid-sizer" key="sizer"></div>
+          <div class="gutter-sizer" key="gutter"></div>
+          <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
+            
+            <md-card-media-cover md-text-scrim v-if="project.image">
+              <md-card-media>
+                <img :src="project.image">
+              </md-card-media>
+              <md-card-area>
+                <md-card-header>
+                  <h3 class="md-title">{{project.name}}</h3>
+                  <div class="md-subhead">{{project.subtitle}}</div>
+                </md-card-header>
+              </md-card-area>
+            </md-card-media-cover>
+            <md-card-header v-else>
+              <h3 class="md-title">{{project.name}}</h3>
+              <div class="md-subhead">{{project.subtitle}}</div>
+            </md-card-header>
+                
+            <md-card-actions>
+              <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
+                {{key}}
+              </md-button>
+            </md-card-actions>
+            
+            <md-card-area md-inset>
+              <md-card-content>
+                <p class="description">{{project.description}}</p>
+              </md-card-content>
+            </md-card-area>
+            
+            <md-card-content>
+              <h5>Technologies</h5>
+              <div class="tags">
+                <tag v-for="tag in project.tags" :tag="tag"></tag>
+              </div>
+            </md-card-content>
+            
+          </md-card>
+        </transition-group>
+        <div v-show="!filteredProjects.length">
+          <h4>No projects meet the selected criteria.</h4>
+          <h5><a @click="clear">Clear the filters</a></h5>
+        </div>
     </div>
     <down anchor="#jobs" text="see my work history"></down>
   </section>
@@ -86,6 +86,8 @@ import bus from '../utils/Bus'
 import Down from './DownButton'
 import Tag from './Tag'
 import TechTagService from '../services/TechTagService'
+import Masonry from 'masonry-layout'
+import imagesLoaded from 'imagesloaded'
 
 export default {
   name: 'projects',
@@ -97,7 +99,7 @@ export default {
     return {
       projects: [{
         name: 'everee',
-        subtitle: 'a crowd-sourced bucket list',
+        subtitle: 'November 2016 to present',
         urls: {
           'open project': 'http://everee.io',
           github: 'https://github.com/jessicarobins/det'
@@ -110,7 +112,7 @@ export default {
         image: require('../assets/everee.png')
       }, {
         name: 'portfolio',
-        subtitle: 'this!',
+        subtitle: 'February 2017 to present',
         urls: {
           github: 'https://github.com/jessicarobins/portfolio'
         },
@@ -119,7 +121,7 @@ export default {
         tags: ['vue', 'postcss', 'd3', 'material design', 'webpack']
       }, {
         name: 'Jessboard',
-        subtitle: 'a soundboard',
+        subtitle: 'February 2017',
         urls: {
           'open project': 'https://jessicarobins.github.io/jessboard',
           github: 'https://github.com/jessicarobins/jessboard'
@@ -130,7 +132,7 @@ export default {
         image: require('../assets/jessboard.png')
       },{
         name: 'ddescribe',
-        subtitle: 'a test case formatter',
+        subtitle: 'February 2017',
         urls: {
           'open project': 'https://jessicarobins.github.io/formatter',
           github: 'https://github.com/jessicarobins/formatter'
@@ -142,7 +144,7 @@ export default {
         image: require('../assets/ddescribe.png')
       }, {
         name: 'jessdocs',
-        subtitle: 'a test case management tool',
+        subtitle: 'February 2016 to September 2016',
         description: `A single-page app that organizes test cases into a taggable, 
           filterable tree structure. While the majority of the frontend is built using 
           AngularJS, I used some React components to optimize page load time.`,
@@ -155,9 +157,20 @@ export default {
         tags: ['angular', 'webpack', 'ruby on rails', 'material design', 
           'heroku', 'amazon s3', 'sass', 'react', 'postgres'],
         image: require('../assets/jessdocs.png')
+      }, {
+        name: 'Escape from the Aliens in Outer Space',
+        subtitle: 'November 2014 to March 2015',
+        description: `An android companion app for the board game Escape from 
+          the Aliens in Outer Space. It replaces the pencil and paper 
+          component of tracking player movement on a hexagonal grid.`,
+        urls: {
+          'github': 'https://github.com/jessicarobins/escapegame'
+        },
+        tags: ['java', 'android sdk']
       }],
       common: ['github', 'html5', 'css3', 'javascript', 'trello', 'webpack'],
-      checkedTags: []
+      checkedTags: [],
+      msnry: null
     }
   },
   methods: {
@@ -180,34 +193,90 @@ export default {
         return _.intersection(project.tags, this.checkedTags).length >= this.checkedTags.length
       })
     }
+  },
+  updated() {
+    const Projects = this;
+    const grid = this.$refs.grid
+    if (grid) {
+      this.$nextTick(() => {
+        Projects.msnry.reloadItems()
+        imagesLoaded(grid.$el, () => {
+          Projects.msnry.layout();
+        })
+      })
+    }
+  },
+  mounted() {
+    const el = this.$refs.grid.$el
+    const Projects = this;
+    
+    this.msnry = new Masonry(el, {
+      // options
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer',
+      percentPosition: true
+    })
+    
+    imagesLoaded(el, () => {
+      Projects.msnry.layout();
+    })
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.projects {
+#projects {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: white;
 }
 
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.grid-sizer,
+.project {
+  width: 100%;
 }
 
-.md-card {
-  margin: 20px;
+.gutter-sizer {
+  width: 0%
 }
 
-h3.md-title {
-  font-size: 48px;
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .grid-sizer,
+  .project {
+    width: 48%;
+  }
+  
+  .gutter-sizer {
+    width: 1%;
+  }
 }
+
+@media screen and (min-width: 1200px) {
+  .grid-sizer,
+  .project {
+    width: 32%;
+  }
+  
+  .gutter-sizer {
+    width: 1%;
+  }
+}
+
+.project {
+  margin: 10px 0;
+  
+  .md-card-actions {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .md-title {
+    font-size: 48px;
+    line-height: 50px;
+  }
+}
+
+
 
 .description {
   flex: 1;
@@ -226,11 +295,6 @@ img {
   height: auto;
 }
 
-.divider {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
 .filters {
   display: flex;
   flex-flow: row wrap;
@@ -239,8 +303,8 @@ img {
 .filter {
   color: #9e9e9e;
   font-size: 20px;
+  line-height: 25px;
   padding: 10px 20px;
-  flex: 1;
   display: flex;
   align-items: center;
 }
@@ -252,15 +316,5 @@ label {
   justify-content: center;
 }
 
-.project {
-  transition: all 1s;
-}
 
-.project-list-enter, .project-list-leave-to {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.project-list-leave-active {
-  position: absolute;
-}
 </style>
