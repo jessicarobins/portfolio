@@ -1,9 +1,9 @@
 <template>
   <section class="projects">
-    <div id="projects" v-viewport="{onEnter: scrollEnter}">
+    <div id="projects" class="container" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align md-display-4">Projects</h1>
       <div class="row">
-        <div class="col s12 m4">  
+        <div class="col s12">  
           <h5>Filter by tech</h5>
           <div class="filters">
             <div v-for="tag in tags" class="filter">
@@ -23,58 +23,58 @@
           </div>
         </div>
       </div>
-      <transition 
-        enter-active-class="animated fadeInUp" 
-        leave-active-class="animated fadeOutDown" mode="out-in">
-        <transition-group 
-          name="project-list" 
-          tag="div" 
-          class="project-list grid"
-          ref="grid"
-          v-if="filteredProjects.length">
-          <div class="grid-sizer" key="sizer"></div>
-          <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
-            
-            <md-card-media-cover md-text-scrim v-if="project.image">
-              <md-card-media>
-                <img :src="project.image">
-              </md-card-media>
-              <md-card-area>
-                <md-card-header>
-                  <h3 class="md-title">{{project.name}}</h3>
-                </md-card-header>
+        <transition 
+          enter-active-class="animated fadeInUp" 
+          leave-active-class="animated fadeOutDown" mode="out-in">
+          <transition-group 
+            name="project-list" 
+            tag="div" 
+            class="project-list grid"
+            ref="grid"
+            v-if="filteredProjects.length">
+            <div class="grid-sizer" key="sizer"></div>
+            <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
+              
+              <md-card-media-cover md-text-scrim v-if="project.image">
+                <md-card-media>
+                  <img :src="project.image">
+                </md-card-media>
+                <md-card-area>
+                  <md-card-header>
+                    <h3 class="md-title">{{project.name}}</h3>
+                  </md-card-header>
+                </md-card-area>
+              </md-card-media-cover>
+              <md-card-header v-else>
+                <h3 class="md-title">{{project.name}}</h3>
+              </md-card-header>
+                  
+              <md-card-actions>
+                <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
+                  {{key}}
+                </md-button>
+              </md-card-actions>
+              
+              <md-card-area md-inset>
+                <md-card-content>
+                  <p class="description">{{project.description}}</p>
+                </md-card-content>
               </md-card-area>
-            </md-card-media-cover>
-            <md-card-header v-else>
-              <h3 class="md-title">{{project.name}}</h3>
-            </md-card-header>
-                
-            <md-card-actions>
-              <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
-                {{key}}
-              </md-button>
-            </md-card-actions>
-            
-            <md-card-area md-inset>
+              
               <md-card-content>
-                <p class="description">{{project.description}}</p>
+                <h5>Technologies</h5>
+                <div class="tags">
+                  <tag v-for="tag in project.tags" :tag="tag"></tag>
+                </div>
               </md-card-content>
-            </md-card-area>
-            
-            <md-card-content>
-              <h5>Technologies</h5>
-              <div class="tags">
-                <tag v-for="tag in project.tags" :tag="tag"></tag>
-              </div>
-            </md-card-content>
-            
-          </md-card>
-        </transition-group>
-        <div v-else>
-          <h4>No projects meet the selected criteria.</h4>
-          <h5><a @click="clear">Clear the filters</a></h5>
-        </div>
-      </transition>
+              
+            </md-card>
+          </transition-group>
+          <div v-else>
+            <h4>No projects meet the selected criteria.</h4>
+            <h5><a @click="clear">Clear the filters</a></h5>
+          </div>
+        </transition>
     </div>
     <down anchor="#jobs" text="see my work history"></down>
   </section>
@@ -179,14 +179,18 @@ export default {
     commonTags: function() {
       return TechTagService.getTagsByNames(this.common)
     },
+    filter: function() {
+      this.msnry.layout()
+    },
     filteredProjects: function() {
-      if (this.msnry) {
-        this.msnry.layout()
-      }
-      
       return this.projects.filter( (project) => {
         return _.intersection(project.tags, this.checkedTags).length >= this.checkedTags.length
       })
+    }
+  },
+  watch: {
+    tags: function() {
+      this.nextTick(this.msnry.layout)
     }
   },
   mounted() {
@@ -223,10 +227,17 @@ export default {
   width: 100%;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
   .grid-sizer,
   .md-card {
-    width: 400px;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .grid-sizer,
+  .md-card {
+    width: 33%;
   }
 }
 
@@ -245,9 +256,14 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   
-  .md-card {
+  .project {
     margin: 20px;
     width: 400px;
+    
+    .md-card-actions {
+      display: flex;
+      flex-flow: row wrap;
+    }
   }
 }
 
