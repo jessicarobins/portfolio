@@ -33,19 +33,11 @@
           <div class="gutter-sizer" key="gutter"></div>
           <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
             
-            <md-card-media-cover md-text-scrim v-if="project.image">
-              <md-card-media>
-                <img :src="project.image">
-              </md-card-media>
-              <md-card-area>
-                <md-card-header>
-                  <h3 class="md-title">{{project.name}}</h3>
-                  <div class="md-subhead">{{project.subtitle}}</div>
-                </md-card-header>
-              </md-card-area>
-            </md-card-media-cover>
-            <md-card-header v-else>
-              <h3 class="md-title">{{project.name}}</h3>
+            <md-card-media v-if="project.image">
+              <img :src="project.image">
+            </md-card-media>
+            <md-card-header>
+              <div class="md-title">{{project.name}}</div>
               <div class="md-subhead">{{project.subtitle}}</div>
             </md-card-header>
                 
@@ -166,6 +158,7 @@ export default {
         urls: {
           'github': 'https://github.com/jessicarobins/escapegame'
         },
+        image: require('../assets/aliens.png'),
         tags: ['java', 'android sdk']
       }],
       common: ['github', 'html5', 'css3', 'javascript', 'trello', 'webpack'],
@@ -270,10 +263,6 @@ export default {
     flex-flow: row wrap;
   }
   
-  .md-title {
-    font-size: 48px;
-    line-height: 50px;
-  }
 }
 
 
