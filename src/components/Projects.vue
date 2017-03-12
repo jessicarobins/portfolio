@@ -23,58 +23,59 @@
           </div>
         </div>
       </div>
-        <transition 
-          enter-active-class="animated fadeInUp" 
-          leave-active-class="animated fadeOutDown" mode="out-in">
-          <transition-group 
-            name="project-list" 
-            tag="div" 
-            class="project-list grid"
-            ref="grid"
-            v-if="filteredProjects.length">
-            <div class="grid-sizer" key="sizer"></div>
-            <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
-              
-              <md-card-media-cover md-text-scrim v-if="project.image">
-                <md-card-media>
-                  <img :src="project.image">
-                </md-card-media>
-                <md-card-area>
-                  <md-card-header>
-                    <h3 class="md-title">{{project.name}}</h3>
-                  </md-card-header>
-                </md-card-area>
-              </md-card-media-cover>
-              <md-card-header v-else>
-                <h3 class="md-title">{{project.name}}</h3>
-              </md-card-header>
-                  
-              <md-card-actions>
-                <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
-                  {{key}}
-                </md-button>
-              </md-card-actions>
-              
-              <md-card-area md-inset>
-                <md-card-content>
-                  <p class="description">{{project.description}}</p>
-                </md-card-content>
+      <transition 
+        enter-active-class="animated fadeInUp" 
+        leave-active-class="animated fadeOutDown" mode="out-in">
+        <transition-group 
+          name="project-list" 
+          tag="div" 
+          class="project-list grid"
+          ref="grid"
+          v-if="filteredProjects.length">
+          <div class="grid-sizer" key="sizer"></div>
+          <div class="gutter-sizer" key="gutter"></div>
+          <md-card v-for="project in filteredProjects" class="project grid-item" :key="project">
+            
+            <md-card-media-cover md-text-scrim v-if="project.image">
+              <md-card-media>
+                <img :src="project.image">
+              </md-card-media>
+              <md-card-area>
+                <md-card-header>
+                  <h3 class="md-title">{{project.name}}</h3>
+                </md-card-header>
               </md-card-area>
-              
+            </md-card-media-cover>
+            <md-card-header v-else>
+              <h3 class="md-title">{{project.name}}</h3>
+            </md-card-header>
+                
+            <md-card-actions>
+              <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
+                {{key}}
+              </md-button>
+            </md-card-actions>
+            
+            <md-card-area md-inset>
               <md-card-content>
-                <h5>Technologies</h5>
-                <div class="tags">
-                  <tag v-for="tag in project.tags" :tag="tag"></tag>
-                </div>
+                <p class="description">{{project.description}}</p>
               </md-card-content>
-              
-            </md-card>
-          </transition-group>
-          <div v-else>
-            <h4>No projects meet the selected criteria.</h4>
-            <h5><a @click="clear">Clear the filters</a></h5>
-          </div>
-        </transition>
+            </md-card-area>
+            
+            <md-card-content>
+              <h5>Technologies</h5>
+              <div class="tags">
+                <tag v-for="tag in project.tags" :tag="tag"></tag>
+              </div>
+            </md-card-content>
+            
+          </md-card>
+        </transition-group>
+        <div v-else>
+          <h4>No projects meet the selected criteria.</h4>
+          <h5><a @click="clear">Clear the filters</a></h5>
+        </div>
+      </transition>
     </div>
     <down anchor="#jobs" text="see my work history"></down>
   </section>
@@ -188,10 +189,24 @@ export default {
       })
     }
   },
-  watch: {
-    tags: function() {
-      this.nextTick(this.msnry.layout)
-    }
+  // watch: {
+  //   checkedTags: function() {
+  //     const Projects = this;
+  //     this.$nextTick(() => {
+  //       Projects.msnry.reloadItems()
+  //       Projects.msnry.layout()
+  //     })
+  //   }
+  // },
+  updated() {
+    const Projects = this;
+    this.$nextTick(() => {
+      Projects.msnry.reloadItems()
+      imagesLoaded(Projects.$refs.grid.$el, () => {
+        Projects.msnry.layout();
+      })
+      
+    })
   },
   mounted() {
     const el = this.$refs.grid.$el
@@ -201,6 +216,7 @@ export default {
       // options
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer',
       percentPosition: true
     })
     
@@ -227,17 +243,29 @@ export default {
   width: 100%;
 }
 
+.gutter-sizer {
+  width: 0%
+}
+
 @media screen and (min-width: 992px) and (max-width: 1200px) {
   .grid-sizer,
   .md-card {
-    width: 50%;
+    width: 48%;
+  }
+  
+  .gutter-sizer {
+    width: 1%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .grid-sizer,
   .md-card {
-    width: 33%;
+    width: 32%;
+  }
+  
+  .gutter-sizer {
+    width: 1%;
   }
 }
 
@@ -309,15 +337,5 @@ label {
   justify-content: center;
 }
 
-.project {
-  transition: all 1s;
-}
 
-.project-list-enter, .project-list-leave-to {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.project-list-leave-active {
-  position: absolute;
-}
 </style>
