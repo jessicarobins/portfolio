@@ -2,28 +2,24 @@
   <section class="projects">
     <div class="container" id="projects" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align md-display-4">Projects</h1>
-      <div class="row">
-        <div class="col s12 m4">  
-          <h5>Filter by tech</h5>
-          <div class="filters">
-            <div v-for="tag in tags" class="filter">
-              <input type="checkbox" :id="tag.name" :value="tag.name" v-model="checkedTags" />
-              <label :for="tag.name">
-                <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
-                <span class="truncate">{{tag.name}}</span>
-              </label>
-            </div>
+        <h5>Filter by tech</h5>
+        <div class="filters">
+          <div v-for="tag in tags" class="filter">
+            <input type="checkbox" :id="tag.name" :value="tag.name" v-model="checkedTags" />
+            <label :for="tag.name">
+              <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
+              <span class="truncate">{{tag.name}}</span>
+            </label>
           </div>
-          <h5>Common to all projects</h5>
-          <div class="filters">
+        </div>
+        <h5>Common to most projects</h5>
+        <div class="filters">
             <div v-for="tag in commonTags" class="filter">
               <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
               <span class="truncate">{{tag.name}}</span>
             </div>
           </div>
-        </div>
-        <div class="col s12 m8">
-          <transition 
+        <transition 
             enter-active-class="animated fadeInUp" 
             leave-active-class="animated fadeOutDown" mode="out-in">
             <transition-group 
@@ -33,16 +29,21 @@
               v-if="filteredProjects.length">
               <md-card v-for="project in filteredProjects" class="project" :key="project">
                 
-                <md-card-media-cover md-text-scrim>
+                <md-card-media-cover md-text-scrim v-if="project.image">
                   <md-card-media>
                     <img :src="project.image">
                   </md-card-media>
                   <md-card-area>
                     <md-card-header>
                       <h3 class="md-title">{{project.name}}</h3>
+                      <div class="md-subhead">{{project.subtitle}}</div>
                     </md-card-header>
                   </md-card-area>
                 </md-card-media-cover>
+                <md-card-header v-else>
+                  <h3 class="md-title">{{project.name}}</h3>
+                  <div class="md-subhead">{{project.subtitle}}</div>
+                </md-card-header>
                 
                 <md-card-actions>
                   <md-button class="md-accent" v-for="(url, key) in project.urls" :href="url" target="_blank">
@@ -72,8 +73,6 @@
               <h5><a @click="clear">Clear the filters</a></h5>
             </div>
           </transition>
-        </div>
-      </div>
     </div>
     <down anchor="#jobs" text="see my work history"></down>
   </section>
@@ -97,7 +96,7 @@ export default {
     return {
       projects: [{
         name: 'everee',
-        subtitle: 'a crowd-sourced bucket list',
+        subtitle: 'November 2016 to present',
         urls: {
           'open project': 'http://everee.io',
           github: 'https://github.com/jessicarobins/det'
@@ -110,7 +109,7 @@ export default {
         image: require('../assets/everee.png')
       }, {
         name: 'portfolio',
-        subtitle: 'this!',
+        subtitle: 'February 2017 to present',
         urls: {
           github: 'https://github.com/jessicarobins/portfolio'
         },
@@ -119,7 +118,7 @@ export default {
         tags: ['vue', 'postcss', 'd3', 'material design', 'webpack']
       }, {
         name: 'Jessboard',
-        subtitle: 'a soundboard',
+        subtitle: 'February 2017',
         urls: {
           'open project': 'https://jessicarobins.github.io/jessboard',
           github: 'https://github.com/jessicarobins/jessboard'
@@ -130,7 +129,7 @@ export default {
         image: require('../assets/jessboard.png')
       },{
         name: 'ddescribe',
-        subtitle: 'a test case formatter',
+        subtitle: 'February 2017',
         urls: {
           'open project': 'https://jessicarobins.github.io/formatter',
           github: 'https://github.com/jessicarobins/formatter'
@@ -142,7 +141,7 @@ export default {
         image: require('../assets/ddescribe.png')
       }, {
         name: 'jessdocs',
-        subtitle: 'a test case management tool',
+        subtitle: 'February 2016 to September 2016',
         description: `A single-page app that organizes test cases into a taggable, 
           filterable tree structure. While the majority of the frontend is built using 
           AngularJS, I used some React components to optimize page load time.`,
@@ -155,6 +154,16 @@ export default {
         tags: ['angular', 'webpack', 'ruby on rails', 'material design', 
           'heroku', 'amazon s3', 'sass', 'react', 'postgres'],
         image: require('../assets/jessdocs.png')
+      }, {
+        name: 'Escape from the Aliens in Outer Space',
+        subtitle: 'November 2014 to March 2015',
+        description: `An android companion app for the board game Escape from 
+          the Aliens in Outer Space. It replaces the pencil and paper 
+          component of tracking player movement on a hexagonal grid.`,
+        urls: {
+          'github (backend)': 'https://github.com/jessicarobins/escapegame'
+        },
+        tags: ['java', 'android sdk']
       }],
       common: ['github', 'html5', 'css3', 'javascript', 'trello', 'webpack'],
       checkedTags: []
@@ -195,19 +204,48 @@ export default {
   background-color: white;
 }
 
+
 .project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  break-inside: avoid;
+  column-fill: auto;
+  
+  .project {
+    display: inline-block;
+    margin: 10px 0;
+    overflow: visible;
+    
+    .md-card-actions {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    
+    .md-title {
+      font-size: 48px;
+      line-height: 1;
+    }
+  }
 }
 
-.md-card {
-  margin: 20px;
+@media only screen and (max-width : 993px) {
+  .project-list {
+    column-count: 1;
+  }
 }
 
-h3.md-title {
-  font-size: 48px;
+@media only screen and (min-width : 993px) and (max-width : 1200px) {
+  .project-list {
+    column-count: 2;
+  }
 }
+
+@media only screen and (min-width : 1200px) {
+  .project-list {
+    column-count: 3;
+  }
+}
+
+
 
 .description {
   flex: 1;
@@ -240,7 +278,6 @@ img {
   color: #9e9e9e;
   font-size: 20px;
   padding: 10px 20px;
-  flex: 1;
   display: flex;
   align-items: center;
 }
