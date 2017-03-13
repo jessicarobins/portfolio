@@ -58,6 +58,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.md-sidenav {
+  position: fixed;
+  z-index: 99999;
+}
+
 #sidenav {
   .md-sidenav-content {
     position: fixed;

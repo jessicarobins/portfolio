@@ -66,6 +66,10 @@ h1, h2 {
     text-align: center;
   }
   
+  h1 {
+    font-size: 100px;
+  }
+  
   .jess {
     margin-top: 20px;
   }

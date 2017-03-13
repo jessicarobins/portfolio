@@ -7,7 +7,8 @@
         This is an interactive map (created using d3) of the countries I've been to.
       </h5>
 	    <jess-map class="map"></jess-map>
-	    <h4>Other things with less interesting visuals</h4>
+	    <h5>I mostly just created this section in order to mess around with d3, 
+	      but here are some other things I like (with less interesting visuals)</h5>
 	    <div class="likes">
   	    <md-chip v-for="like in likes">
   	      <span class="emoji">{{like.emoji}}</span>
@@ -54,6 +55,9 @@ export default {
       }, {
         label: 'roller coasters',
         emoji: '🎢'
+      }, {
+        label: 'maps',
+        emoji: '🗺️'
       }]
     }
   },
