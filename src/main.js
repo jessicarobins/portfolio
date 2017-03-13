@@ -36,6 +36,12 @@ Vue.use(VueMaterial.MdSidenav)
 Vue.use(VueMaterial.MdBackdrop)
 Vue.use(VueMaterial.MdList)
 
+import VueAnalytics from 'vue-analytics'
+if (process.env.NODE_ENV === 'production') {
+  const id = 'UA-93535433-1'
+  Vue.use(VueAnalytics, { id })
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

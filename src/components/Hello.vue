@@ -2,10 +2,10 @@
   <section v-viewport="{onEnter: scrollEnter}" id="hello">
       <div class="container">
     	  <div class="row">
-    	    <div class="col s12 m4 center-align">
+    	    <div class="col s12 m5 center-align">
     	      <jess></jess>
     	    </div>
-    	    <div class="col s12 m8">
+    	    <div class="col s12 m7">
             <h1>Hi, I'm Jess!</h1>
             <h4>A full-stack engineer in Washington, DC</h4>
           </div>
