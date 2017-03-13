@@ -51,8 +51,7 @@ export default {
     
       const path = d3.geoPath().projection(projection);
       
-      const offsetL = this.$el.offsetLeft+20;
-      const offsetT = this.$el.offsetTop;
+      
 
       const tooltip = d3.select("#map")
         .append("div")
@@ -70,11 +69,14 @@ export default {
           .attr("id", function(d,i) { return d.id; })
           .attr("class", (d, i) => hobbies.countryClass(d.properties.name))
           .on("mouseover", (d, i) => {
-            const mouse = d3.mouse(svg.node()).map( d => parseInt(d) )
-    
+            
+            const mouse = d3.mouse(svg.node())
+            const offsetL = hobbies.$el.offsetLeft+20 + mouse[0]
+            const offsetT = hobbies.$el.offsetTop + mouse[1]
+            
             tooltip.classed("hidden", false)
               .classed("animated fadeIn", true)
-              .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
+              .attr("style", "left:"+offsetL+"px;top:"+offsetT+"px")
               .html(d.properties.name)
           })
           .on("mouseout", () => {
@@ -133,6 +135,7 @@ $map-border-width: 4px;
   svg {
     background-color: $map-background-color;
     border: $map-border-width solid black;
+    position: relative;
   }
 }
 
