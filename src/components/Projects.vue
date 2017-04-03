@@ -90,6 +90,21 @@ export default {
   data () {
     return {
       projects: [{
+        name: 'when\'s the last bike',
+        subtitle: 'March 2017',
+        urls: {
+          'open project': 'http://whensthelast.bike',
+          'github (frontend)': 'https://github.com/jessicarobins/wakeup-ui',
+          'github (backend)': 'https://github.com/jessicarobins/wakeup-api',
+          medium: 'https://medium.com/@jessrrobins/what-time-do-i-have-to-wake-up-to-get-a-bike-112a110a91dd',
+        },
+        description: `A single-page app that creates a bucket list based on 
+          queries to the Wolfram Alpha API. The bucket list items are crowd-sourced, 
+          so that when items get added to one person's list, the same items get added 
+          for everyone else who has that list.`,
+        tags: ['angular 2', 'ruby on rails', 'webpack', 'heroku'],
+        image: require('../assets/whensthelastbike.png')
+      },{
         name: 'everee',
         subtitle: 'November 2016 to present',
         urls: {
@@ -281,6 +296,10 @@ export default {
   flex: 1;
   line-height: 1.5;
   font-size: 20px;
+  
+  @media screen and (max-width: 992px) {
+    font-size: 40px;
+  }
 }
 
 .tags {

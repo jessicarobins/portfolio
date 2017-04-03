@@ -2,10 +2,10 @@
   <section v-viewport="{onEnter: scrollEnter}" id="hello">
       <div class="container">
     	  <div class="row">
-    	    <div class="col s12 m5 center-align">
+    	    <div class="col m12 l5 center-align">
     	      <jess></jess>
     	    </div>
-    	    <div class="col s12 m7">
+    	    <div class="col m12 l7">
             <h1>Hi, I'm Jess!</h1>
             <h4>A full-stack engineer in Washington, DC</h4>
           </div>
@@ -62,16 +62,16 @@ h1, h2 {
 }
 
 @media screen and (max-width: 992px) {
-  h1, h2 {
+  h1, h2, h4 {
     text-align: center;
   }
   
   h1 {
-    font-size: 100px;
+    font-size: 150px;
   }
   
-  .jess {
-    margin-top: 20px;
+  h4 {
+    font-size: 72px;
   }
 }
 </style>

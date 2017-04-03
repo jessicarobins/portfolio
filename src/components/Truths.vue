@@ -151,6 +151,21 @@ export default {
   margin: 10px;
 }
 
+@media screen and (max-width: 992px) {
+  .fact {
+    width: 500px;
+    height: 500px;
+    
+    h3 {
+      font-size: 50px;
+    }
+    
+    h5 {
+      font-size: 40px;
+    }
+  }
+}
+
 .button {
   text-align: right;
 }

@@ -47,6 +47,9 @@ export default {
         name: 'angular',
         icon: 'devicon-angularjs-plain',
       }, {
+        name: 'angular 2',
+        icon: 'devicon-angularjs-plain',
+      },{
         name: 'ruby on rails', 
         icon: 'devicon-rails-plain',
       }, {

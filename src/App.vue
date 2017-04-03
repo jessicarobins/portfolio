@@ -86,6 +86,20 @@ body {
   .md-button, .md-switch-label {
     font-size: 20px;
   }
+  
+  @media screen and (max-width: 992px) {
+    font-size: 40px !important;
+    
+    .md-button, .md-switch-label {
+      font-size: 40px;
+    }
+    
+    .md-button {
+      min-height: 40px;
+      min-width: 40px;
+      padding: 20px;
+    }
+  }
 }
 
 h1 {

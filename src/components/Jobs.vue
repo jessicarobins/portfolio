@@ -31,10 +31,10 @@
               <span class="dates">{{job.dates}}</span>
             </div>
             <div class="row">
-              <div class="tags col s12 m4 push-m8">
+              <div class="tags col m12 l4 push-l8">
                 <tag v-for="tag in job.tags" :tag="tag"></tag>
               </div>
-              <div class="blurb col s12 m8 pull-m4">
+              <div class="blurb col m12 l8 pull-l4">
                 <ul class="fa-ul" v-if="job.blurb.length">
                   <li v-for="bullet in job.blurb">
                     <i class="fa-li fa fa-code-fork"></i>
