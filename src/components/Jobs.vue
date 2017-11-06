@@ -88,10 +88,26 @@ export default {
         title: 'Frontend Engineer',
         dates: 'February 2017 to Present',
         location: 'Washington, DC',
-        blurb: ['TBD'],
-        more: [],
+        blurb: [
+          `Introduced, set up the infrastructure for, and trained 
+          team members in the following concepts and technologies: continuous 
+          integration and deployment, code linting, unit testing, 
+          module bundling, and React`,
+          `Led the technical direction for the company's newest, most 
+          highly-visible client, including modernizing the team's existing 
+          technology, implementation, and processes.`,
+          `Mentored junior team members and became the "go-to" person for 
+          javascript, git, and CSS questions`
+        ],
+        more: [
+          `Created a developer tool using React, Redux, and Electron, which 
+          simplifies the creation of test data by allowing users to create and 
+          post JSON data that conforms to an arbitrary schema`,
+          `Led several workshops for the front-end team, including how to write 
+          unit tests, and an introduction to React`
+        ],
         showMore: false,
-        tags: ['jquery', 'java', 'gulp', 'sass', 'agile', 'github'],
+        tags: ['javascript', 'jquery', 'react', 'webpack', 'postcss', 'jasmine', 'circle ci', 'java', 'gulp', 'sass', 'agile', 'github'],
         tech: true
       }, {
         name: 'Kit Check',

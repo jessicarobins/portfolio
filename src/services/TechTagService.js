@@ -30,6 +30,7 @@ export default {
         icon: 'devicon-bootstrap-plain',
       }, {
         name: 'webpack',
+        icon: 'devicon-webpack-plain'
       }, {
         name: 'node',
         icon: 'devicon-nodejs-plain',
@@ -41,6 +42,7 @@ export default {
         icon: 'devicon-heroku-original',
       }, {
         name: 'vue',
+        icon: 'devicon-vuejs-plain'
       }, {
         name: 'material design',
       }, {
@@ -90,9 +92,11 @@ export default {
       }, {
         name: 'buildkite ci'
       }, {
-        name: 'protractor'
+        name: 'protractor',
+        icon: 'devicon-protractor-plain'
       }, {
-        name: 'jasmine'
+        name: 'jasmine',
+        icon: 'devicon-jasmine-plain'
       }, {
         name: 'selenium webdriver'
       }, {

@@ -64,7 +64,6 @@ export default {
 
 <style>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.css');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300|Material+Icons');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');

@@ -109,13 +109,13 @@ export default {
         subtitle: 'November 2016 to present',
         urls: {
           'open project': 'http://everee.io',
-          github: 'https://github.com/jessicarobins/det'
+          github: 'https://github.com/jessicarobins/everee'
         },
         description: `A single-page app that creates a bucket list based on 
           queries to the Wolfram Alpha API. The bucket list items are crowd-sourced, 
           so that when items get added to one person's list, the same items get added 
           for everyone else who has that list.`,
-        tags: ['react', 'redux', 'bootstrap', 'webpack', 'node', 'mongodb', 'heroku', 'sass'],
+        tags: ['react', 'redux', 'material design', 'webpack', 'node', 'mongodb', 'heroku'],
         image: require('../assets/everee.png')
       }, {
         name: 'portfolio',

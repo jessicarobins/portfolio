@@ -18,7 +18,7 @@ export default {
       width: 100,
       countries: ['United States', 'Canada', 'Denmark', 'Mexico', 'Sweden', 'Estonia',
         'Latvia', 'Finland', 'Russia', 'United Kingdom', 'Israel', 'France',
-        'Spain', 'Bermuda', 'Bahamas']
+        'Spain', 'Bermuda', 'Bahamas', 'Netherlands', 'Belgium']
     }
   },
   methods: {
