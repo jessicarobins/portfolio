@@ -2,11 +2,11 @@ import Vue from 'vue'
 import * as _ from 'lodash'
 
 export default {
-  
+
   getTagByName(tagName) {
     return _.find(this.tags(), {name: tagName}) || {name: tagName}
   },
-  
+
   getTagsFromObjects(objArray) {
     const tArray = _.chain(objArray)
           .flatMap('tags')
@@ -14,11 +14,11 @@ export default {
           .value()
     return this.getTagsByNames(tArray)
   },
-  
+
   getTagsByNames(tArray) {
     return this.tags().filter( t => _.includes(tArray, t.name))
   },
-  
+
   tags() {
     return [{
         name: 'react',
@@ -52,7 +52,7 @@ export default {
         name: 'angular 2',
         icon: 'devicon-angularjs-plain',
       },{
-        name: 'ruby on rails', 
+        name: 'ruby on rails',
         icon: 'devicon-rails-plain',
       }, {
         name: 'amazon s3',
@@ -115,12 +115,16 @@ export default {
       }, {
         name: 'android sdk',
         icon: 'devicon-android-plain'
+      }, {
+        name: 'flow'
+      }, {
+        name: 'jest'
       }]
   },
-  
+
   getClassName(iconName) {
     const tag = _.find(this.tags(), {name: iconName})
-    
+
     return (tag ? tag.icon : undefined)
   },
 }

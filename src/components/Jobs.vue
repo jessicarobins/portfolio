@@ -84,9 +84,19 @@ export default {
   data () {
     return {
       jobs: [{
+        name: 'LevelUp',
+        title: 'Software Engineer',
+        dates: 'December 2017 to Present',
+        location: 'Washington, DC',
+        blurb: ['TBD'],
+        more: [],
+        showMore: false,
+        tags: ['javascript', 'react', 'jest', 'flow', 'webpack', 'sass', 'ruby on rails', 'github'],
+        tech: true
+      }, {
         name: 'Washington Post',
         title: 'Frontend Engineer',
-        dates: 'February 2017 to Present',
+        dates: 'February 2017 to December 2017',
         location: 'Washington, DC',
         blurb: [
           `Introduced, set up the infrastructure for, and trained

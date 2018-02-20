@@ -90,6 +90,18 @@ export default {
   data () {
     return {
       projects: [{
+        name: 'Date-o-Matic',
+        subtitle: 'February 2018',
+        urls: {
+          'open project': 'https://www.ineedadate.in',
+          'github (frontend)': 'https://github.com/jessicarobins/datr-ui',
+          'github (backend)': 'https://github.com/jessicarobins/datr-api'
+        },
+        description: `Uses the Google Places API to suggest a restaurant, activity, and
+          bar to go to within a given radius.`,
+        tags: ['vue', 'node', 'amazon s3'],
+        image: require('../assets/dateomatic.png')
+      }, {
         name: 'when\'s the last bike',
         subtitle: 'March 2017',
         urls: {
@@ -98,20 +110,19 @@ export default {
           'github (backend)': 'https://github.com/jessicarobins/wakeup-api',
           medium: 'https://medium.com/@jessrrobins/what-time-do-i-have-to-wake-up-to-get-a-bike-112a110a91dd',
         },
-        description: `A single-page app that creates a bucket list based on
-          queries to the Wolfram Alpha API. The bucket list items are crowd-sourced,
-          so that when items get added to one person's list, the same items get added
-          for everyone else who has that list.`,
+        description: `Uses Capital Bikeshare data and Google BigQuery to predict
+          when to wake up in the morning in order to be able to get a bike before they
+          run out at any given bikeshare station in DC.`,
         tags: ['angular 2', 'ruby on rails', 'webpack', 'heroku'],
         image: require('../assets/whensthelastbike.png')
-      },{
+      }, {
         name: 'everee',
         subtitle: 'November 2016 to present',
         urls: {
           'open project': 'http://everee.io',
           github: 'https://github.com/jessicarobins/everee'
         },
-        description: `A single-page app that creates a bucket list based on
+        description: `An app that creates a bucket list based on
           queries to the Wolfram Alpha API. The bucket list items are crowd-sourced,
           so that when items get added to one person's list, the same items get added
           for everyone else who has that list.`,
