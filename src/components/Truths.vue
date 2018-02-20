@@ -6,24 +6,24 @@
       <div class="facts">
         <div v-for="(fact, index) in facts">
           <transition enter-active-class="animated flipInY" leave-active-class="animated flipOutY" mode="out-in">
-            <md-card 
+            <md-card
               :key="fact.id"
-              v-if="fact.id === activeFactId" 
-              @mouseleave.native="mouseOut()" 
+              v-if="fact.id === activeFactId"
+              @mouseleave.native="mouseOut()"
               class="fact-reveal fact md-primary">
               <md-card-content>
                 <div class="fact-text">
                   <h5>
                     <span class="truth">{{fact.truth}}!</span> {{fact.revealText}}
                   </h5>
-                  
+
                   <div class="button">
-                    <md-button class="md-raised" @click.native="scroll(fact.link.anchor)">{{fact.link.text}}</button>
+                    <md-button class="md-raised" @click.native="scroll(fact.link.anchor)">{{fact.link.text}}</md-button>
                   </div>
                 </div>
               </md-card-content>
             </md-card>
-            <md-card 
+            <md-card
               key="`fact-reveal-${index}`"
               v-else
               class="md-primary fact"
@@ -56,7 +56,7 @@ export default {
         id: 1,
         text: 'Javascript is my favorite programming language.',
         truth: 'True',
-        revealText: `This should be evident from the several javascript 
+        revealText: `This should be evident from the several javascript
           projects I've created, using several frameworks.`,
         link: {
           text: 'view projects',
@@ -67,7 +67,7 @@ export default {
         id: 2,
         text: 'I\'ve visited 10 countries outside the USA.',
         truth: 'False',
-        revealText: `I\'ve been to more than that! I love to travel. I even have a scratch 
+        revealText: `I\'ve been to more than that! I love to travel. I even have a scratch
           map to keep track of all the places I've been.`,
         link: {
           text: 'view interests',
@@ -78,7 +78,7 @@ export default {
         id: 3,
         text: 'Before I became a dev, I worked with children.',
         truth: 'True',
-        revealText: `I worked with kids for 10 years before I 
+        revealText: `I worked with kids for 10 years before I
           decided to turn my web-development hobby into a career.`,
         link: {
           text: 'view jobs',
@@ -89,7 +89,7 @@ export default {
         id: 4,
         text: 'I majored in math.',
         truth: 'True',
-        revealText: `I graduated in 2009 with a math and psychology double major 
+        revealText: `I graduated in 2009 with a math and psychology double major
           from Carnegie Mellon University.`,
         link: {
           text: 'view education',
@@ -155,11 +155,11 @@ export default {
   .fact {
     width: 500px;
     height: 500px;
-    
+
     h3 {
       font-size: 50px;
     }
-    
+
     h5 {
       font-size: 40px;
     }

@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "deploy": "gh-pages -d dist --remote prod -b master",
-    "gh-help": "gh-pages --help"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "d3": "^4.6.0",

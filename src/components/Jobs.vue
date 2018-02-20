@@ -2,10 +2,10 @@
   <section>
     <div class="container" id="jobs" v-viewport="{onEnter: scrollEnter}">
       <h1 class="center-align md-display-4">Career</h1>
-      
+
       <h5>Filter by tech</h5>
       <div class="filters">
-        <div v-for="tag in tags" class="filter">
+        <div v-for="(tag, index) in tags" :key="index" class="filter">
           <input type="checkbox" :id="checkboxId(tag)" :value="tag.name" v-model="checkedTags" />
           <label :for="checkboxId(tag)">
             <i v-bind:class="['colored', tag.icon]" v-if="tag.icon"></i>
@@ -16,34 +16,34 @@
       <md-switch v-model="showOnlyTech" class="md-primary">
         <span @click="toggleTech" class="tech-toggle-label">Show only tech jobs</span>
       </md-switch>
-      <transition 
-        enter-active-class="animated fadeInUp" 
+      <transition
+        enter-active-class="animated fadeInUp"
         leave-active-class="animated fadeOutDown" mode="out-in">
-        <transition-group 
+        <transition-group
           v-if="filteredJobs.length"
-          name="job-list" 
-          tag="div" 
+          name="job-list"
+          tag="div"
           class="job-list">
-          <div v-for="(job, index) in filteredJobs" class="job" :key="job">
+          <div v-for="(job, index) in filteredJobs" class="job" :key="index">
             <div class="name">
-              <h4 class="title">{{job.title}}</h4> 
+              <h4 class="title">{{job.title}}</h4>
               <h5 class="org">{{job.name}}</h5>
               <span class="dates">{{job.dates}}</span>
             </div>
             <div class="row">
               <div class="tags col m12 l4 push-l8">
-                <tag v-for="tag in job.tags" :tag="tag"></tag>
+                <tag v-for="tag in job.tags" :tag="tag" :key="tag"></tag>
               </div>
               <div class="blurb col m12 l8 pull-l4">
                 <ul class="fa-ul" v-if="job.blurb.length">
-                  <li v-for="bullet in job.blurb">
+                  <li v-for="(bullet, index) in job.blurb" :key="index">
                     <i class="fa-li fa fa-code-fork"></i>
                     {{bullet}}
                   </li>
                 </ul>
                 <transition enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp">
                   <ul class="fa-ul" v-if="job.more.length && job.showMore">
-                    <li v-for="bullet in job.more">
+                    <li v-for="(bullet, index) in job.more" :key="index">
                       <i class="fa-li fa fa-code-fork"></i>
                       {{bullet}}
                     </li>
@@ -89,21 +89,21 @@ export default {
         dates: 'February 2017 to Present',
         location: 'Washington, DC',
         blurb: [
-          `Introduced, set up the infrastructure for, and trained 
-          team members in the following concepts and technologies: continuous 
-          integration and deployment, code linting, unit testing, 
+          `Introduced, set up the infrastructure for, and trained
+          team members in the following concepts and technologies: continuous
+          integration and deployment, code linting, unit testing,
           module bundling, and React`,
-          `Led the technical direction for the company's newest, most 
-          highly-visible client, including modernizing the team's existing 
+          `Led the technical direction for the company's newest, most
+          highly-visible client, including modernizing the team's existing
           technology, implementation, and processes.`,
-          `Mentored junior team members and became the "go-to" person for 
+          `Mentored junior team members and became the "go-to" person for
           javascript, git, and CSS questions`
         ],
         more: [
-          `Created a developer tool using React, Redux, and Electron, which 
-          simplifies the creation of test data by allowing users to create and 
+          `Created a developer tool using React, Redux, and Electron, which
+          simplifies the creation of test data by allowing users to create and
           post JSON data that conforms to an arbitrary schema`,
-          `Led several workshops for the front-end team, including how to write 
+          `Led several workshops for the front-end team, including how to write
           unit tests, and an introduction to React`
         ],
         showMore: false,
@@ -114,23 +114,23 @@ export default {
         title: 'QA Engineer',
         dates: 'June 2015 to February 2017',
         location: 'Washington, DC',
-        tags: ['angular', 'ruby on rails', 'sass', 'circle ci', 'buildkite ci', 
+        tags: ['angular', 'ruby on rails', 'sass', 'circle ci', 'buildkite ci',
           'protractor', 'jasmine', 'github', 'agile'],
         blurb: [
-          `Completed frontend and backend components for both client-facing features  
+          `Completed frontend and backend components for both client-facing features
           and internally-used tools using Angular and Ruby on Rails.`,
-          `Identified, documented, debugged, and fixed bugs in frontend and 
+          `Identified, documented, debugged, and fixed bugs in frontend and
           backend code.`,
-          `Wrote and maintained automated test suite using Protractor and 
+          `Wrote and maintained automated test suite using Protractor and
           Jasmine, with data seeded using Ruby on Rails.`
         ],
         more: [
-          `Negotiated with product, project managers, and other engineers on 
+          `Negotiated with product, project managers, and other engineers on
           the feasibility, design, and implication of features.`,
-          `Designed a process and format for test plan creation and test case 
-          documentation in order to provide visibility into which cases are 
+          `Designed a process and format for test plan creation and test case
+          documentation in order to provide visibility into which cases are
           automated and which cases needed to be automated.`,
-          `Trained junior team members on the QA processes for both manual 
+          `Trained junior team members on the QA processes for both manual
           testing and automation.`
         ],
         showMore: false,
@@ -142,14 +142,14 @@ export default {
         location: 'Annapolis, MD',
         tags: ['java', 'selenium webdriver', 'bitbucket'],
         blurb: [
-          `Generated a comprehensive suite of automated tests 
+          `Generated a comprehensive suite of automated tests
           for several web-based applications using Java and
           Selenium Webdriver.`
         ],
         more: [
-          `Ran nightly builds of the automation suite on a continuous 
+          `Ran nightly builds of the automation suite on a continuous
           integration server, Jenkins.`,
-          `Created a standardized Google Sheets template used by the QA team 
+          `Created a standardized Google Sheets template used by the QA team
           to write test plans for new features.`
         ],
         showMore: false,
@@ -161,16 +161,16 @@ export default {
         location: 'Washington, DC',
         tags: [],
         blurb: [
-          `Created and implemented research-based interventions for children 
+          `Created and implemented research-based interventions for children
           with autism.`,
-          `Collected and graphed data in order to monitor each child’s 
-          progress, analyze the efficacy of current programs, and troubleshoot 
+          `Collected and graphed data in order to monitor each child’s
+          progress, analyze the efficacy of current programs, and troubleshoot
           problems with existing interventions.`
         ],
         more: [
-          `Collaborated with caregivers and related service providers to 
+          `Collaborated with caregivers and related service providers to
           create and modify goals and interventions based on data collected.`,
-          `Wrote reports based on collected data in order to inform both 
+          `Wrote reports based on collected data in order to inform both
           caregivers and insurance providers of each child’s progress.`
         ],
         showMore: false,
@@ -182,14 +182,14 @@ export default {
         location: 'Washington, DC',
         tags: ['objective-c'],
         blurb: [
-          `Collaborated with a special education teacher to instruct students 
+          `Collaborated with a special education teacher to instruct students
           in Autism Pre-Kindergarten and Kindergarten classrooms.`,
-          `Created an iPhone application using Objective-C to facilitate 
+          `Created an iPhone application using Objective-C to facilitate
           gathering data for assessments.`
         ],
         more: [
           `Administered assessments, such as GOLD and the VB-MAPP.`,
-          `Assisted the teacher with the development and execution of IEPs 
+          `Assisted the teacher with the development and execution of IEPs
           and ABA programs.`
         ],
         showMore: false,
@@ -264,11 +264,11 @@ section {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: baseline;
-  
+
   .org {
     flex: 1;
   }
-  
+
   .title {
     margin-right: 20px;
   }

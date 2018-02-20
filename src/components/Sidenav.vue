@@ -1,9 +1,10 @@
 <template>
   <md-sidenav class="md-left" ref="sidenav" id="sidenav">
     <md-list>
-      <md-list-item 
+      <md-list-item
         @click.native="mobileScrollTo(section.anchor)"
-        v-for="section in sections"
+        v-for="(section, index) in sections"
+        :key="index"
         class="md-inset md-button">
         {{section.name}}
       </md-list-item>
@@ -68,16 +69,16 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    
+
     .md-list {
       margin-top: 50px;
     }
   }
-  
+
   .sidenav-list {
     display: flex;
     justify-content: center;
-    
+
     li {
       margin: 15px;
     }

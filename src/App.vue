@@ -81,18 +81,18 @@ body {
   color: #2c3e50;
   background-color: white;
   font-size: 20px !important;
-  
+
   .md-button, .md-switch-label {
     font-size: 20px;
   }
-  
+
   @media screen and (max-width: 992px) {
     font-size: 40px !important;
-    
+
     .md-button, .md-switch-label {
       font-size: 40px;
     }
-    
+
     .md-button {
       min-height: 40px;
       min-width: 40px;
@@ -120,8 +120,8 @@ section:not(:last-of-type)::after, section:not(:first-of-type)::before {
   content: '';
   width: 100%;
   height: 200px;
-  
-  background: 
+
+  background:
     linear-gradient(135deg, white 25%, transparent 25%) -100px 0,
     linear-gradient(225deg, white 25%, transparent 25%) -100px 0,
     linear-gradient(315deg, white 25%, transparent 25%),
@@ -137,5 +137,10 @@ a {
 
 .colored {
   margin-right: 5px;
+}
+
+.md-chip-container {
+  display: flex;
+  align-items: center;
 }
 </style>
