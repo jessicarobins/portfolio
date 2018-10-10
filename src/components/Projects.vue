@@ -90,6 +90,17 @@ export default {
   data () {
     return {
       projects: [{
+        name: 'tinythoughts',
+        subtitle: 'June 2018 to Present',
+        urls: {
+          'open project': 'https://www.tinythoughts.me',
+          github: 'https://github.com/jessicarobins/lineaday'
+        },
+        description: `A journaling web app that prompts users via push notification to write one sentence a day about their lives.
+          Tinythoughts was #2 product of the day on Product Hunt on July 7, 2018.`,
+        tags: ['vue', 'node', 'firebase'],
+        image: require('../assets/tinythoughts.jpeg')
+      }, {
         name: 'Date-o-Matic',
         subtitle: 'February 2018',
         urls: {
@@ -105,7 +116,6 @@ export default {
         name: 'when\'s the last bike',
         subtitle: 'March 2017',
         urls: {
-          'open project': 'http://whensthelast.bike',
           'github (frontend)': 'https://github.com/jessicarobins/wakeup-ui',
           'github (backend)': 'https://github.com/jessicarobins/wakeup-api',
           medium: 'https://medium.com/@jessrrobins/what-time-do-i-have-to-wake-up-to-get-a-bike-112a110a91dd',
@@ -117,9 +127,8 @@ export default {
         image: require('../assets/whensthelastbike.png')
       }, {
         name: 'everee',
-        subtitle: 'November 2016 to present',
+        subtitle: 'November 2016',
         urls: {
-          'open project': 'http://everee.io',
           github: 'https://github.com/jessicarobins/everee'
         },
         description: `An app that creates a bucket list based on
@@ -167,7 +176,6 @@ export default {
           filterable tree structure. While the majority of the frontend is built using
           AngularJS, I used some React components to optimize page load time.`,
         urls: {
-          'open project': 'http://jessdocs.io',
           'github (backend)': 'https://github.com/jessicarobins/jd-api',
           'github (frontend)': 'https://github.com/jessicarobins/jd-ui'
 

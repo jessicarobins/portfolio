@@ -88,7 +88,12 @@ export default {
         title: 'Software Engineer',
         dates: 'December 2017 to Present',
         location: 'Washington, DC',
-        blurb: ['TBD'],
+        blurb: [
+          `Hired as the company’s first “javascript expert” to kick off the conversion of a Ruby
+            on Rails-served frontend to a React single page application.`,
+          `Laid the groundwork for a codebase built on best practices by using Eslint, Flow, and Jest.`,
+          `Converted haml-serving rails controllers into a json API using rabl, and tested them using rspec`
+        ],
         more: [],
         showMore: false,
         tags: ['javascript', 'react', 'jest', 'flow', 'webpack', 'sass', 'ruby on rails', 'github'],

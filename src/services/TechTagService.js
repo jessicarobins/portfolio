@@ -119,6 +119,8 @@ export default {
         name: 'flow'
       }, {
         name: 'jest'
+      }, {
+        name: 'firebase'
       }]
   },
 
