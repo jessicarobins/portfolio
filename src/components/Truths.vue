@@ -65,9 +65,9 @@ export default {
       }, {
         active: false,
         id: 2,
-        text: 'I\'ve visited 10 countries outside the USA.',
+        text: 'I\'ve never been outside of North American.',
         truth: 'False',
-        revealText: `I\'ve been to more than that! I love to travel. I even have a scratch
+        revealText: `I love to travel. I even have a scratch
           map to keep track of all the places I've been.`,
         link: {
           text: 'view interests',

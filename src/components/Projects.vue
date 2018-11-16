@@ -116,6 +116,7 @@ export default {
         name: 'when\'s the last bike',
         subtitle: 'March 2017',
         urls: {
+          'open project': 'http://whensthelastbike.jessis.cool',
           'github (frontend)': 'https://github.com/jessicarobins/wakeup-ui',
           'github (backend)': 'https://github.com/jessicarobins/wakeup-api',
           medium: 'https://medium.com/@jessrrobins/what-time-do-i-have-to-wake-up-to-get-a-bike-112a110a91dd',
@@ -199,7 +200,6 @@ export default {
           the Aliens in Outer Space. It replaces the pencil and paper
           component of tracking player movement on a hexagonal grid.`,
         urls: {
-          'play store': 'https://play.google.com/store/apps/details?id=com.jrobins.jrobins.escape2',
           'github': 'https://github.com/jessicarobins/escapegame'
         },
         image: require('../assets/aliens.png'),

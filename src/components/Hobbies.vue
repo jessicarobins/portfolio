@@ -58,6 +58,12 @@ export default {
       }, {
         label: 'maps',
         emoji: '🗺️'
+      }, {
+        label: 'yoga',
+        emoji: '🧘🏻'
+      }, {
+        label: 'swing dancing',
+        emoji: '💃🏻'
       }]
     }
   },
