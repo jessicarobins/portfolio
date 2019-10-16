@@ -24,6 +24,9 @@ export default {
         name: 'react',
         icon: 'devicon-react-original',
       }, {
+        name: 'react native',
+        icon: 'devicon-react-original',
+      }, {
         name: 'redux',
       }, {
         name: 'bootstrap',
@@ -46,10 +49,10 @@ export default {
       }, {
         name: 'material design',
       }, {
-        name: 'angular',
+        name: 'angularjs',
         icon: 'devicon-angularjs-plain',
       }, {
-        name: 'angular 2',
+        name: 'angular',
         icon: 'devicon-angularjs-plain',
       },{
         name: 'ruby on rails',
@@ -116,11 +119,23 @@ export default {
         name: 'android sdk',
         icon: 'devicon-android-plain'
       }, {
+        name: 'android',
+        icon: 'devicon-android-plain'
+      }, {
+        name: 'ios',
+        icon: 'devicon-apple-original'
+      }, {
         name: 'flow'
       }, {
         name: 'jest'
       }, {
         name: 'firebase'
+      }, {
+        name: 'python',
+        icon: 'devicon-python-plain'
+      }, {
+        name: 'aws',
+        icon: 'devicon-amazonwebservices-plain'
       }]
   },
 

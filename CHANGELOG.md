@@ -1,5 +1,14 @@
 # Changelog
 
+## 10/15/19
+### Added
+- Getupside
+- Smooch
+- Haiti & Puerto Rico
+
+### Removed
+- Rollercoasters
+
 ## 11/16/18
 ### Changed
 - The lie from 3 truths and a lie, because it was technically still true before.

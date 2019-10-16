@@ -53,9 +53,6 @@ export default {
         label: 'board games',
         emoji: '🎲'
       }, {
-        label: 'roller coasters',
-        emoji: '🎢'
-      }, {
         label: 'maps',
         emoji: '🗺️'
       }, {

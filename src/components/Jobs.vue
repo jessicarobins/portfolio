@@ -84,9 +84,30 @@ export default {
   data () {
     return {
       jobs: [{
+        name: 'GetUpside',
+        title: 'Software Engineer',
+        dates: 'January 2018 to Present',
+        location: 'Washington, DC',
+        blurb: [
+          `As Technical Lead on a tiger team, architected and delivered a major engineering initiative 
+          to add the convenience store vertical to our product.`,
+          `Transformed a support tool command line interface into a web UI using Angular, Python lambdas, 
+          and API Gateway, improving productivity, decreasing the error rate, and decreasing support hiring 
+          and training costs.`,
+          `Served as Technical Mentor for a junior engineer, assisting her in working through technical 
+          challenges, vetting her technical designs, and providing her with technical and career guidance.`,
+          `Created and maintained microservices using Java, Jdbi, Dropwizard, and SQL, as well as an extensive 
+          collection of data structures across the AWS ecosystem including Lambda (using Python and Java), 
+          SQS, SNS, S3, API Gateway, and Athena using terraform.`
+        ],
+        more: [],
+        showMore: false,
+        tags: ['java', 'python', 'angular', 'javascript', 'aws', 'github'],
+        tech: true
+      }, {
         name: 'LevelUp',
         title: 'Software Engineer',
-        dates: 'December 2017 to Present',
+        dates: 'December 2017 to December 2018',
         location: 'Washington, DC',
         blurb: [
           `Hired as the company’s first “javascript expert” to kick off the conversion of a Ruby
@@ -129,7 +150,7 @@ export default {
         title: 'QA Engineer',
         dates: 'June 2015 to February 2017',
         location: 'Washington, DC',
-        tags: ['angular', 'ruby on rails', 'sass', 'circle ci', 'buildkite ci',
+        tags: ['angularjs', 'ruby on rails', 'sass', 'circle ci', 'buildkite ci',
           'protractor', 'jasmine', 'github', 'agile'],
         blurb: [
           `Completed frontend and backend components for both client-facing features

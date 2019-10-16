@@ -90,6 +90,16 @@ export default {
   data () {
     return {
       projects: [{
+        name: 'Smooch',
+        subtitle: 'August 2019 to Present',
+        urls: {
+          'Apple Store': 'https://apps.apple.com/app/id1477226719',
+          'Google Play Store': 'https://play.google.com/store/apps/details?id=com.smooch'
+        },
+        description: 'A native app for both iOS and Android that allows users to "check in" and rate their make up.',
+        tags: ['react native', 'firebase', 'android', 'ios'],
+        image: require('../assets/smooch.png')
+      }, {
         name: 'tinythoughts',
         subtitle: 'June 2018 to Present',
         urls: {
@@ -124,7 +134,7 @@ export default {
         description: `Uses Capital Bikeshare data and Google BigQuery to predict
           when to wake up in the morning in order to be able to get a bike before they
           run out at any given bikeshare station in DC.`,
-        tags: ['angular 2', 'ruby on rails', 'webpack', 'heroku'],
+        tags: ['angular', 'ruby on rails', 'webpack', 'heroku'],
         image: require('../assets/whensthelastbike.png')
       }, {
         name: 'everee',
@@ -181,7 +191,7 @@ export default {
           'github (frontend)': 'https://github.com/jessicarobins/jd-ui'
 
         },
-        tags: ['angular', 'webpack', 'ruby on rails', 'material design',
+        tags: ['angularjs', 'webpack', 'ruby on rails', 'material design',
           'heroku', 'amazon s3', 'sass', 'react', 'postgres'],
         image: require('../assets/jessdocs.png')
       }, {
