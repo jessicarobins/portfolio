@@ -23,7 +23,7 @@ import { work } from '../data/work'
       <Text
         as="p"
         variant="lede"
-        class="mt-0 max-w-[30.625rem] text-[1.0625rem] text-site-ink tablet:text-[1.1875rem]"
+        class="mt-0 max-w-[30.625rem] text-body-large text-site-ink tablet:text-body-large-tablet"
       >
         Full-stack, frontend-focused engineer with 11 years of experience. I partner with product,
         design, and engineering to shape solutions, then build the applications, APIs, and cloud
@@ -40,7 +40,7 @@ import { work } from '../data/work'
     aria-label="Areas of work"
   >
     <div
-      class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 px-9 text-center font-display text-[0.6875rem] leading-relaxed font-black tracking-widest uppercase tablet:gap-x-6 tablet:text-[0.8125rem]"
+      class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 px-9 text-center font-display text-caption leading-relaxed font-black tracking-widest uppercase tablet:gap-x-6 tablet:text-badge"
     >
       <span>Product engineering</span><span aria-hidden="true" class="text-site-line">✳</span>
       <span>Internal tools</span><span aria-hidden="true" class="text-site-line">✳</span>
@@ -82,7 +82,7 @@ import { work } from '../data/work'
       <Text as="h2" variant="section-title">Engineer by trade.<br />Curious by default.</Text>
     </div>
     <div>
-      <Text as="p" variant="body" class="mb-9 mt-0 max-w-[36.875rem] text-[1.0625rem]">
+      <Text as="p" variant="body" class="mb-9 mt-0 max-w-[36.875rem] text-body-large">
         I like solving problems across the product and technical stack, from understanding what
         users need to building the applications, APIs, and infrastructure behind the experience.
         Before software, I spent ten years working with kids; I still bring curiosity and patience

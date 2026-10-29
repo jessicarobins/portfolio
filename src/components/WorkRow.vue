@@ -26,7 +26,7 @@ defineProps<{
     }}</span>
     <div>
       <div
-        class="flex flex-wrap items-center gap-x-9 gap-y-4 font-mono text-[0.625rem] leading-relaxed tracking-wide text-site-purple uppercase"
+        class="flex flex-wrap items-center gap-x-9 gap-y-4 font-mono text-label leading-relaxed tracking-wide text-site-purple uppercase"
       >
         <span>{{ company }}</span>
         <span class="text-site-muted">{{ timeframe }}</span>
@@ -35,13 +35,13 @@ defineProps<{
       <Text
         as="h2"
         variant="section-title"
-        class="row-title mt-4 text-[1.625rem] leading-none tracking-[-0.045em] transition-colors tablet:text-[clamp(1.5rem,3.2vw,2.3125rem)]"
+        class="row-title mt-4 text-row-mobile leading-none tracking-[-0.045em] transition-colors tablet:text-display-row"
       >
         {{ title }}
       </Text>
       <Text as="p" variant="body-small" class="mt-3 max-w-[50rem]">{{ summary }}</Text>
       <TagList v-if="tags" :items="tags" variant="plain" />
     </div>
-    <span class="text-[1.3125rem] text-site-purple" aria-hidden="true">↗</span>
+    <span class="text-icon text-site-purple" aria-hidden="true">↗</span>
   </RouterLink>
 </template>

@@ -31,7 +31,7 @@ const route = useRoute()
         <Button
           to="/contact"
           variant="outline"
-          class="px-4 py-3 text-[0.625rem] tablet:px-6 tablet:py-4 tablet:text-xs"
+          class="px-4 py-3 text-label tablet:px-6 tablet:py-4 tablet:text-xs"
           :aria-current="route.path === '/contact' ? 'page' : undefined"
           >Say hi <span aria-hidden="true">↗</span></Button
         >
@@ -44,7 +44,7 @@ const route = useRoute()
 
     <SiteContainer
       as="footer"
-      class="flex flex-wrap justify-between gap-9 border-t border-site-line py-9 pb-13 font-mono text-[0.6875rem] leading-relaxed text-site-muted max-tablet:flex-col"
+      class="flex flex-wrap justify-between gap-9 border-t border-site-line py-9 pb-13 font-mono text-caption leading-relaxed text-site-muted max-tablet:flex-col"
     >
       <span>Jessica “Jess” Solka · Washington, DC</span>
       <div class="flex flex-wrap gap-10">
@@ -52,20 +52,20 @@ const route = useRoute()
           href="https://github.com/jessicarobins"
           external
           variant="text"
-          class="font-mono text-[0.6875rem] text-site-ink uppercase"
+          class="font-mono text-caption text-site-ink uppercase"
           >GitHub <span aria-hidden="true">↗</span></Button
         >
         <Button
           href="https://www.linkedin.com/in/jessica-robins/"
           external
           variant="text"
-          class="font-mono text-[0.6875rem] text-site-ink uppercase"
+          class="font-mono text-caption text-site-ink uppercase"
           >LinkedIn <span aria-hidden="true">↗</span></Button
         >
         <Button
           href="mailto:jessrrobins@gmail.com"
           variant="text"
-          class="font-mono text-[0.6875rem] text-site-ink uppercase"
+          class="font-mono text-caption text-site-ink uppercase"
           >Email <span aria-hidden="true">↗</span></Button
         >
       </div>

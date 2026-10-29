@@ -16,7 +16,7 @@ const nextStory = computed(() => work[index.value + 1])
 
 <template>
   <article v-if="story" class="py-15 pb-27">
-    <Button to="/work" variant="text" class="mb-13 font-mono text-[0.6875rem] uppercase"
+    <Button to="/work" variant="text" class="mb-13 font-mono text-caption uppercase"
       ><span aria-hidden="true">←</span> All work</Button
     >
     <header class="relative border-b-[3px] border-site-purple py-13 pb-15">
@@ -35,7 +35,7 @@ const nextStory = computed(() => work[index.value + 1])
           :href="link.href"
           external
           variant="text"
-          class="font-mono text-[0.6875rem] uppercase"
+          class="font-mono text-caption uppercase"
           >{{ link.label }} <span aria-hidden="true">↗</span></Button
         >
       </div>
@@ -70,7 +70,7 @@ const nextStory = computed(() => work[index.value + 1])
             <Text as="span" variant="body" class="mt-4 font-bold text-site-ink">{{
               metric.label
             }}</Text>
-            <Text as="small" variant="mono" class="mt-3 text-[0.6875rem] text-site-muted">{{
+            <Text as="small" variant="mono" class="mt-3 text-caption text-site-muted">{{
               metric.detail
             }}</Text>
           </div>
@@ -92,8 +92,8 @@ const nextStory = computed(() => work[index.value + 1])
       class="mt-15 flex max-w-[48.125rem] items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
     >
       <span
-        ><Text variant="mono" class="text-[0.625rem] text-site-acid">Next story</Text
-        ><Text as="strong" variant="section-title" class="next-title mt-2 text-[1.375rem]">{{
+        ><Text variant="mono" class="text-label text-site-acid">Next story</Text
+        ><Text as="strong" variant="section-title" class="next-title mt-2 text-heading-small">{{
           nextStory.company
         }}</Text></span
       >
@@ -105,8 +105,8 @@ const nextStory = computed(() => work[index.value + 1])
       class="mt-15 flex max-w-[48.125rem] items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
     >
       <span
-        ><Text variant="mono" class="text-[0.625rem] text-site-acid">End of selected work</Text
-        ><Text as="strong" variant="section-title" class="next-title mt-2 text-[1.375rem]"
+        ><Text variant="mono" class="text-label text-site-acid">End of selected work</Text
+        ><Text as="strong" variant="section-title" class="next-title mt-2 text-heading-small"
           >Back to all work</Text
         ></span
       >

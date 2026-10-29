@@ -10,7 +10,7 @@ defineProps<{ items: string[]; variant?: 'pill' | 'plain' }>()
     <li
       v-for="item in items"
       :key="item"
-      class="font-mono text-[0.625rem] leading-relaxed"
+      class="font-mono text-label leading-relaxed"
       :class="
         variant === 'plain'
           ? 'rounded-full border border-site-line px-4 py-2 text-site-muted'

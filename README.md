@@ -23,9 +23,11 @@ Case-study content lives in `src/data/work.ts`.
 
 Tailwind CSS 4 powers page layouts and component styling. The spacing scale uses a 2px base unit,
 so numeric margin, padding, and gap utilities follow a consistent 2px grid. Fluid section spacing
-uses named `section` and `fluid` theme tokens. The Purple Riot palette, display font, and mono font
-are defined once in `src/assets/main.css` under `@theme`; use those `site-*` color tokens and the
-shared font utilities instead of repeating raw colors or font stacks.
+uses named `section` and `fluid` theme tokens. The type scale is defined in the same `@theme`
+block with semantic sizes for labels, captions, body copy, headings, metrics, and fluid display
+titles. Use these `text-*` utilities instead of adding one-off font sizes. The Purple Riot palette,
+display font, and mono font are also defined there; use those `site-*` color tokens and shared font
+utilities instead of repeating raw colors or font stacks.
 
 Reusable Vue primitives live in `src/components/`: `Text` owns the type scale, `Button`
 owns link and button variants, `SectionEyebrow` and `SectionHeading` standardize section labels,

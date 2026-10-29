@@ -8,7 +8,7 @@ defineProps<{ label: string }>()
   <Text
     as="span"
     variant="mono"
-    class="inline-block border border-site-acid px-4 py-2 text-[0.625rem] tracking-[0.025rem] text-site-acid"
+    class="inline-block border border-site-acid px-4 py-2 text-label tracking-[0.025rem] text-site-acid"
   >
     {{ label }}
   </Text>
