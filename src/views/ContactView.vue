@@ -11,7 +11,7 @@ import SectionEyebrow from '../components/SectionEyebrow.vue'
       as="h1"
       variant="heading"
       :level="2"
-      class="font-black leading-[0.9] tracking-[-0.065em] uppercase"
+      class="font-black leading-display tracking-display uppercase"
     >
       Have a good problem?<br /><span
         class="mt-7 inline-block rotate-[-3deg] bg-site-acid px-5 pt-3 pb-4 text-site-bg tablet:px-8 tablet:pt-4 tablet:pb-7"

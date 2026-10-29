@@ -16,7 +16,7 @@ import { work } from '../data/work'
       variant="heading"
       :level="1"
       id="home-title"
-      class="block font-black leading-[0.84] tracking-[-0.075em] uppercase"
+      class="block font-black leading-hero tracking-display-hero uppercase"
     >
       Good code.<br />Big ideas.<br /><span
         class="mt-7 ml-0 inline-block rotate-[-3deg] bg-site-acid px-5 pt-3 pb-4 text-site-bg tablet:ml-27 tablet:px-8 tablet:pt-4 tablet:pb-7"

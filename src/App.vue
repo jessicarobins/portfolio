@@ -19,7 +19,7 @@ const route = useRoute()
       class="flex min-h-[4.375rem] items-center justify-between gap-6 border-b-2 border-site-acid tablet:min-h-[5.125rem] tablet:gap-12"
     >
       <RouterLink
-        class="inline-block rotate-[-3deg] bg-site-acid px-4 py-3 text-base leading-none font-black tracking-[-0.0625rem] text-site-bg no-underline tablet:px-6 tablet:py-4 tablet:text-xl"
+        class="inline-block rotate-[-3deg] bg-site-acid px-4 py-3 text-base leading-none font-black tracking-brand text-site-bg no-underline tablet:px-6 tablet:py-4 tablet:text-xl"
         to="/"
         aria-label="Jess is Cool home"
         >jess is cool.</RouterLink

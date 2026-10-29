@@ -12,7 +12,7 @@ defineProps<{ eyebrow: string }>()
       as="h1"
       variant="heading"
       :level="2"
-      class="font-black leading-[0.9] tracking-[-0.065em] uppercase"
+      class="font-black leading-display tracking-display uppercase"
     >
       <slot name="title" />
     </Text>

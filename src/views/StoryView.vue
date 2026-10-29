@@ -29,7 +29,7 @@ const nextStory = computed(() => work[index.value + 1])
         as="h1"
         variant="heading"
         :level="2"
-        class="max-w-[56.25rem] font-black leading-[0.9] tracking-[-0.065em] uppercase"
+        class="max-w-[56.25rem] font-black leading-display tracking-display uppercase"
         >{{ story.title }}</Text
       >
       <Text as="p" variant="body" class="mt-9 max-w-[48.75rem] leading-relaxed tablet:text-lg">{{
@@ -59,7 +59,7 @@ const nextStory = computed(() => work[index.value + 1])
           as="h2"
           variant="heading"
           :level="4"
-          class="mb-6 font-bold leading-tight tracking-[-0.025em] text-site-acid"
+          class="mb-6 font-bold leading-tight tracking-subheading text-site-acid"
           >{{ section.heading }}</Text
         >
         <Text
@@ -71,7 +71,7 @@ const nextStory = computed(() => work[index.value + 1])
         >
           {{ paragraph }}
         </Text>
-        <ul v-if="section.bullets" class="pl-10 text-base leading-[1.75] text-site-muted">
+        <ul v-if="section.bullets" class="pl-10 text-base leading-copy text-site-muted">
           <li v-for="bullet in section.bullets" :key="bullet">{{ bullet }}</li>
         </ul>
         <div v-if="section.metrics" class="mt-9 grid grid-cols-1 gap-6 tablet:grid-cols-2">
@@ -139,7 +139,7 @@ const nextStory = computed(() => work[index.value + 1])
       as="h1"
       variant="heading"
       :level="2"
-      class="font-black leading-[0.9] tracking-[-0.065em] uppercase"
+      class="font-black leading-display tracking-display uppercase"
       >Story not found.</Text
     >
     <Button to="/work" variant="text" class="mt-10"

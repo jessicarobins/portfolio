@@ -14,9 +14,9 @@ const props = withDefaults(
 )
 
 const variants: Record<TextVariant, string> = {
-  body: 'text-base leading-[1.75] text-site-muted',
-  label: 'font-mono text-caption leading-relaxed tracking-[0.05625rem] uppercase',
-  heading: 'm-0 font-extrabold leading-none tracking-[-0.055em]',
+  body: 'text-base leading-copy text-site-muted',
+  label: 'font-mono text-caption leading-relaxed tracking-label uppercase',
+  heading: 'm-0 font-extrabold leading-none tracking-heading',
 }
 
 const levels: Record<TextLevel, string> = {

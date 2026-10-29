@@ -36,7 +36,7 @@ defineProps<{
         as="h2"
         variant="heading"
         :level="4"
-        class="row-title mt-4 leading-none tracking-[-0.045em] transition-colors"
+        class="row-title mt-4 leading-none tracking-card transition-colors"
       >
         {{ title }}
       </Text>

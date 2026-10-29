@@ -27,6 +27,18 @@
   --text-level-4: clamp(1.5625rem, 4vw, 2rem);
   --text-level-5: 1.375rem;
   --text-icon: 1.3125rem;
+  --leading-hero: 0.84;
+  --leading-display: 0.9;
+  --leading-card: 0.98;
+  --leading-copy: 1.75;
+  --tracking-brand: -0.0625rem;
+  --tracking-display-hero: -0.075em;
+  --tracking-display: -0.065em;
+  --tracking-heading: -0.055em;
+  --tracking-card: -0.045em;
+  --tracking-subheading: -0.025em;
+  --tracking-label: 0.05625rem;
+  --tracking-status: 0.025rem;
   --breakpoint-tablet: 43.75rem;
 }
 
