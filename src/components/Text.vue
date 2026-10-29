@@ -1,49 +1,40 @@
 <script setup lang="ts">
-withDefaults(
+import { computed } from 'vue'
+
+type TextVariant = 'body' | 'label' | 'heading'
+type TextLevel = 1 | 2 | 3 | 4 | 5
+
+const props = withDefaults(
   defineProps<{
     as?: string
-    variant?:
-      | 'hero'
-      | 'page-title'
-      | 'story-title'
-      | 'contact-title'
-      | 'section-title'
-      | 'subsection-title'
-      | 'eyebrow'
-      | 'lede'
-      | 'body'
-      | 'body-small'
-      | 'muted'
-      | 'mono'
-      | 'metric'
+    variant?: TextVariant
+    level?: TextLevel
   }>(),
   { as: 'p', variant: 'body' },
 )
 
-const variants = {
-  hero: 'm-0 block text-display-home font-black leading-[0.84] tracking-[-0.075em] uppercase tablet:text-display-home-tablet',
-  'page-title':
-    'm-0 text-display-page font-black leading-[0.9] tracking-[-0.065em] uppercase tablet:text-display-page-tablet',
-  'story-title':
-    'm-0 max-w-[56.25rem] text-display-story font-black leading-[0.9] tracking-[-0.065em] uppercase tablet:text-display-story-tablet',
-  'contact-title':
-    'm-0 text-display-contact font-black leading-[0.9] tracking-[-0.075em] uppercase tablet:text-display-contact-tablet',
-  'section-title': 'm-0 text-display-section font-extrabold leading-none tracking-[-0.055em]',
-  'subsection-title':
-    'm-0 mb-6 text-heading-medium font-bold leading-tight tracking-[-0.025em] text-site-acid tablet:text-heading-medium-tablet',
-  eyebrow:
-    'm-0 mb-5 font-mono text-caption leading-relaxed tracking-[0.05625rem] text-site-acid uppercase',
-  lede: 'mt-9 max-w-[45rem] text-base leading-relaxed text-site-muted tablet:text-lg',
+const variants: Record<TextVariant, string> = {
   body: 'text-base leading-[1.75] text-site-muted',
-  'body-small': 'm-0 max-w-[50rem] text-body-small text-site-muted',
-  muted: 'text-site-muted',
-  mono: 'font-mono text-caption leading-relaxed tracking-[0.05625rem] uppercase',
-  metric: 'text-metric leading-none text-site-acid',
-} satisfies Record<string, string>
+  label: 'font-mono text-caption leading-relaxed tracking-[0.05625rem] uppercase',
+  heading: 'm-0 font-extrabold leading-none tracking-[-0.055em]',
+}
+
+const levels: Record<TextLevel, string> = {
+  1: 'text-level-1 tablet:text-level-1-tablet',
+  2: 'text-level-2 tablet:text-level-2-tablet',
+  3: 'text-level-3',
+  4: 'text-level-4',
+  5: 'text-level-5',
+}
+
+const classes = computed(() => {
+  const level = props.level ?? (props.variant === 'heading' ? 3 : undefined)
+  return [variants[props.variant], level ? levels[level] : '']
+})
 </script>
 
 <template>
-  <component :is="as" :class="variants[variant]">
+  <component :is="props.as" :class="classes">
     <slot />
   </component>
 </template>

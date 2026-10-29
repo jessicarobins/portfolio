@@ -7,13 +7,18 @@ import SectionEyebrow from '../components/SectionEyebrow.vue'
 <template>
   <section class="py-24 pb-40 tablet:py-33 tablet:pb-53">
     <SectionEyebrow label="Contact / open to the right next thing" />
-    <Text as="h1" variant="contact-title">
+    <Text
+      as="h1"
+      variant="heading"
+      :level="2"
+      class="font-black leading-[0.9] tracking-[-0.065em] uppercase"
+    >
       Have a good problem?<br /><span
         class="mt-7 inline-block rotate-[-3deg] bg-site-acid px-5 pt-3 pb-4 text-site-bg tablet:px-8 tablet:pt-4 tablet:pb-7"
         >Let’s talk.</span
       >
     </Text>
-    <Text as="p" variant="lede" class="mt-14 max-w-[39.375rem]">
+    <Text as="p" variant="body" class="mt-14 max-w-[39.375rem] leading-relaxed tablet:text-lg">
       I’m interested in full-stack product engineering, internal tools, and platform teams solving
       people-centered problems across the stack.
     </Text>

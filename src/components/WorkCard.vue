@@ -30,13 +30,14 @@ defineProps<{
     <StatusTag v-if="status" :label="status" class="mt-4" />
     <Text
       as="h3"
-      variant="section-title"
-      class="work-card-title mt-12 text-display-card leading-[0.98] tracking-[-0.045em] transition-colors"
+      variant="heading"
+      :level="4"
+      class="work-card-title mt-12 leading-[0.98] tracking-[-0.045em] transition-colors"
     >
       {{ company }}
     </Text>
-    <Text as="p" variant="body-small" class="mt-3 font-bold">{{ title }}</Text>
-    <Text as="p" variant="body-small" class="mt-5 max-w-[26.875rem]">{{ summary }}</Text>
+    <Text as="p" variant="body" class="mt-3 text-body-small font-bold">{{ title }}</Text>
+    <Text as="p" variant="body" class="mt-5 max-w-[26.875rem] text-body-small">{{ summary }}</Text>
     <span class="absolute right-2 bottom-10 text-icon text-site-purple" aria-hidden="true">↗</span>
   </RouterLink>
 </template>

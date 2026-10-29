@@ -19,24 +19,14 @@
   --text-body-small: 0.9375rem;
   --text-body-large: 1.0625rem;
   --text-body-large-tablet: 1.1875rem;
-  --text-heading-small: 1.375rem;
-  --text-heading-medium: 1.5625rem;
-  --text-heading-medium-tablet: 2rem;
-  --text-heading-large: 2rem;
-  --text-row-mobile: 1.625rem;
+  --text-level-1: clamp(3.375rem, 13.5vw, 5.375rem);
+  --text-level-1-tablet: clamp(4.0625rem, 10vw, 7.75rem);
+  --text-level-2: clamp(2.6875rem, 11vw, 4.25rem);
+  --text-level-2-tablet: clamp(3.0625rem, 7.4vw, 5.5rem);
+  --text-level-3: clamp(1.875rem, 4vw, 2.875rem);
+  --text-level-4: clamp(1.5625rem, 4vw, 2rem);
+  --text-level-5: 1.375rem;
   --text-icon: 1.3125rem;
-  --text-metric: 1.9375rem;
-  --text-display-home: clamp(3.375rem, 13.5vw, 5.375rem);
-  --text-display-home-tablet: clamp(4.0625rem, 10vw, 7.75rem);
-  --text-display-page: clamp(2.75rem, 11vw, 4rem);
-  --text-display-page-tablet: clamp(3.25rem, 7.7vw, 5.5rem);
-  --text-display-story: clamp(2.6875rem, 11vw, 4.25rem);
-  --text-display-story-tablet: clamp(3.0625rem, 7.4vw, 5.5rem);
-  --text-display-contact: clamp(2.75rem, 11vw, 4.625rem);
-  --text-display-contact-tablet: clamp(3.25rem, 8.6vw, 6.375rem);
-  --text-display-section: clamp(1.875rem, 4vw, 2.875rem);
-  --text-display-card: clamp(1.4375rem, 3vw, 2.125rem);
-  --text-display-row: clamp(1.5rem, 3.2vw, 2.3125rem);
   --breakpoint-tablet: 43.75rem;
 }
 

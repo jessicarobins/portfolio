@@ -10,7 +10,7 @@ defineProps<{ eyebrow: string; title: string; linkText?: string; to?: string; id
   <div class="mb-9 flex items-end justify-between gap-10 max-tablet:items-start">
     <div>
       <SectionEyebrow :label="eyebrow" />
-      <Text as="h2" variant="section-title" :id="id">
+      <Text as="h2" variant="heading" :level="3" :id="id">
         {{ title }}<span class="text-site-acid">.</span>
       </Text>
     </div>

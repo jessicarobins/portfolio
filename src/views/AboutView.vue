@@ -18,9 +18,7 @@ import PageIntro from '../components/PageIntro.vue'
   <section class="grid grid-cols-1 gap-10 py-17 pb-21 tablet:grid-cols-2 tablet:gap-23">
     <div>
       <SectionEyebrow label="How I work" />
-      <Text as="h2" variant="section-title" class="mb-8 text-heading-large"
-        >Keep the whole system in view.</Text
-      >
+      <Text as="h2" variant="heading" :level="3" class="mb-8">Keep the whole system in view.</Text>
       <Text as="p" variant="body" class="mt-0 text-body-small"
         >I’m comfortable moving between product questions, application code, APIs, infrastructure,
         quality, and team coordination. I care about the experience people get and the systems that
@@ -41,9 +39,7 @@ import PageIntro from '../components/PageIntro.vue'
     </div>
     <div>
       <SectionEyebrow label="How I got here" />
-      <Text as="h2" variant="section-title" class="mb-8 text-heading-large"
-        >Some unexpected turns.</Text
-      >
+      <Text as="h2" variant="heading" :level="3" class="mb-8">Some unexpected turns.</Text>
       <Text as="p" variant="body" class="mt-0 text-body-small"
         >Before software, I worked with kids for ten years. I studied mathematics and psychology at
         Carnegie Mellon, then turned my web-development hobby into a career.</Text
@@ -63,7 +59,7 @@ import PageIntro from '../components/PageIntro.vue'
   <section
     class="flex flex-col items-start justify-between gap-12 border-t border-site-line py-9 pb-23 tablet:flex-row tablet:items-center"
   >
-    <Text variant="mono" class="text-site-muted"
+    <Text variant="label" class="text-site-muted"
       >Always interested in useful problems and good people to solve them with.</Text
     >
     <Button to="/contact" variant="secondary">Say hi <span aria-hidden="true">↗</span></Button>

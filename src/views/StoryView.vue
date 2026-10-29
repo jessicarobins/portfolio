@@ -25,8 +25,16 @@ const nextStory = computed(() => work[index.value + 1])
         class="mb-6"
       />
       <StatusTag v-if="story.status" :label="story.status" class="mb-6" />
-      <Text as="h1" variant="story-title">{{ story.title }}</Text>
-      <Text as="p" variant="lede" class="max-w-[48.75rem]">{{ story.summary }}</Text>
+      <Text
+        as="h1"
+        variant="heading"
+        :level="2"
+        class="max-w-[56.25rem] font-black leading-[0.9] tracking-[-0.065em] uppercase"
+        >{{ story.title }}</Text
+      >
+      <Text as="p" variant="body" class="mt-9 max-w-[48.75rem] leading-relaxed tablet:text-lg">{{
+        story.summary
+      }}</Text>
       <TagList v-if="story.stack" :items="story.stack" variant="plain" class="mt-10" />
       <div v-if="story.links?.length" class="mt-9 flex flex-wrap gap-x-9 gap-y-4">
         <Button
@@ -47,7 +55,13 @@ const nextStory = computed(() => work[index.value + 1])
         :key="section.heading"
         class="border-b border-site-line py-11"
       >
-        <Text as="h2" variant="subsection-title">{{ section.heading }}</Text>
+        <Text
+          as="h2"
+          variant="heading"
+          :level="4"
+          class="mb-6 font-bold leading-tight tracking-[-0.025em] text-site-acid"
+          >{{ section.heading }}</Text
+        >
         <Text
           v-for="paragraph in section.paragraphs"
           :key="paragraph"
@@ -66,11 +80,17 @@ const nextStory = computed(() => work[index.value + 1])
             :key="metric.label"
             class="flex flex-col bg-site-panel p-8"
           >
-            <Text as="strong" variant="metric">{{ metric.value }}</Text>
+            <Text
+              as="strong"
+              variant="heading"
+              :level="4"
+              class="mb-0 leading-none text-site-acid"
+              >{{ metric.value }}</Text
+            >
             <Text as="span" variant="body" class="mt-4 font-bold text-site-ink">{{
               metric.label
             }}</Text>
-            <Text as="small" variant="mono" class="mt-3 text-caption text-site-muted">{{
+            <Text as="small" variant="label" class="mt-3 text-caption text-site-muted">{{
               metric.detail
             }}</Text>
           </div>
@@ -92,8 +112,8 @@ const nextStory = computed(() => work[index.value + 1])
       class="mt-15 flex max-w-[48.125rem] items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
     >
       <span
-        ><Text variant="mono" class="text-label text-site-acid">Next story</Text
-        ><Text as="strong" variant="section-title" class="next-title mt-2 text-heading-small">{{
+        ><Text variant="label" class="text-label text-site-acid">Next story</Text
+        ><Text as="strong" variant="heading" :level="5" class="next-title mt-2">{{
           nextStory.company
         }}</Text></span
       >
@@ -105,8 +125,8 @@ const nextStory = computed(() => work[index.value + 1])
       class="mt-15 flex max-w-[48.125rem] items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
     >
       <span
-        ><Text variant="mono" class="text-label text-site-acid">End of selected work</Text
-        ><Text as="strong" variant="section-title" class="next-title mt-2 text-heading-small"
+        ><Text variant="label" class="text-label text-site-acid">End of selected work</Text
+        ><Text as="strong" variant="heading" :level="5" class="next-title mt-2"
           >Back to all work</Text
         ></span
       >
@@ -115,7 +135,13 @@ const nextStory = computed(() => work[index.value + 1])
   </article>
   <section v-else class="py-20 tablet:py-27">
     <SectionEyebrow label="That page wandered off" />
-    <Text as="h1" variant="page-title">Story not found.</Text>
+    <Text
+      as="h1"
+      variant="heading"
+      :level="2"
+      class="font-black leading-[0.9] tracking-[-0.065em] uppercase"
+      >Story not found.</Text
+    >
     <Button to="/work" variant="text" class="mt-10"
       >Back to the work <span aria-hidden="true">↗</span></Button
     >

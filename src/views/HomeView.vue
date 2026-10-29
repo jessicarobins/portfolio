@@ -9,9 +9,15 @@ import { work } from '../data/work'
 <template>
   <section class="py-section pb-21" aria-labelledby="home-title">
     <div class="mb-14 flex justify-between gap-8 text-site-muted">
-      <Text variant="mono" class="mb-0 text-site-muted">Washington, DC · Open to remote</Text>
+      <Text variant="label" class="mb-0 text-site-muted">Washington, DC · Open to remote</Text>
     </div>
-    <Text as="h1" variant="hero" id="home-title">
+    <Text
+      as="h1"
+      variant="heading"
+      :level="1"
+      id="home-title"
+      class="block font-black leading-[0.84] tracking-[-0.075em] uppercase"
+    >
       Good code.<br />Big ideas.<br /><span
         class="mt-7 ml-0 inline-block rotate-[-3deg] bg-site-acid px-5 pt-3 pb-4 text-site-bg tablet:ml-27 tablet:px-8 tablet:pt-4 tablet:pb-7"
         >Zero beige.</span
@@ -22,8 +28,8 @@ import { work } from '../data/work'
     >
       <Text
         as="p"
-        variant="lede"
-        class="mt-0 max-w-[30.625rem] text-body-large text-site-ink tablet:text-body-large-tablet"
+        variant="body"
+        class="mt-0 max-w-[30.625rem] text-body-large leading-relaxed text-site-ink tablet:text-body-large-tablet"
       >
         Full-stack, frontend-focused engineer with 11 years of experience. I partner with product,
         design, and engineering to shape solutions, then build the applications, APIs, and cloud
@@ -79,7 +85,7 @@ import { work } from '../data/work'
   >
     <div>
       <SectionEyebrow label="A little context" />
-      <Text as="h2" variant="section-title">Engineer by trade.<br />Curious by default.</Text>
+      <Text as="h2" variant="heading" :level="3">Engineer by trade.<br />Curious by default.</Text>
     </div>
     <div>
       <Text as="p" variant="body" class="mb-9 mt-0 max-w-[36.875rem] text-body-large">

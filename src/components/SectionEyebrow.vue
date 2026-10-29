@@ -5,5 +5,5 @@ defineProps<{ label: string }>()
 </script>
 
 <template>
-  <Text variant="eyebrow">{{ label }}</Text>
+  <Text variant="label" class="mb-5 text-site-acid">{{ label }}</Text>
 </template>

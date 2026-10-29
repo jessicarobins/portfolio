@@ -34,12 +34,13 @@ defineProps<{
       </div>
       <Text
         as="h2"
-        variant="section-title"
-        class="row-title mt-4 text-row-mobile leading-none tracking-[-0.045em] transition-colors tablet:text-display-row"
+        variant="heading"
+        :level="4"
+        class="row-title mt-4 leading-none tracking-[-0.045em] transition-colors"
       >
         {{ title }}
       </Text>
-      <Text as="p" variant="body-small" class="mt-3 max-w-[50rem]">{{ summary }}</Text>
+      <Text as="p" variant="body" class="mt-3 max-w-[50rem] text-body-small">{{ summary }}</Text>
       <TagList v-if="tags" :items="tags" variant="plain" />
     </div>
     <span class="text-icon text-site-purple" aria-hidden="true">↗</span>

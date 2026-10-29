@@ -7,7 +7,7 @@ defineProps<{ label: string }>()
 <template>
   <Text
     as="span"
-    variant="mono"
+    variant="label"
     class="inline-block border border-site-acid px-4 py-2 text-label tracking-[0.025rem] text-site-acid"
   >
     {{ label }}
