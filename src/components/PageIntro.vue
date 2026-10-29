@@ -13,13 +13,15 @@ defineProps<{ eyebrow: string }>()
       variant="heading"
       :level="2"
       class="font-black leading-[0.9] tracking-[-0.065em] uppercase"
-      ><slot name="title"
-    /></Text>
+    >
+      <slot name="title" />
+    </Text>
     <Text
       v-if="$slots.lede"
       variant="body"
       class="mt-9 max-w-[45rem] leading-relaxed tablet:text-lg"
-      ><slot name="lede"
-    /></Text>
+    >
+      <slot name="lede" />
+    </Text>
   </section>
 </template>
