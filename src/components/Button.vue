@@ -17,14 +17,14 @@ const props = withDefaults(
 
 const classes = computed(() => {
   const base =
-    'inline-flex w-fit shrink-0 items-center gap-2 whitespace-nowrap font-bold no-underline transition-colors'
+    'inline-flex w-fit shrink-0 items-center gap-4 whitespace-nowrap font-bold no-underline transition-colors'
   const variants = {
-    primary: 'border border-site-acid bg-site-acid px-4 py-3 text-site-bg hover:bg-site-ink',
+    primary: 'border border-site-acid bg-site-acid px-8 py-6 text-site-bg hover:bg-site-ink',
     secondary:
-      'rotate-[2deg] border-2 border-site-purple bg-site-purple px-4 py-2.5 text-site-bg hover:-rotate-[2deg]',
+      'rotate-[2deg] border-2 border-site-purple bg-site-purple px-8 py-5 text-site-bg hover:-rotate-[2deg]',
     text: 'text-site-acid underline underline-offset-4 hover:decoration-2',
     outline:
-      'border border-site-purple px-4 py-3 text-site-ink hover:bg-site-purple hover:text-site-bg',
+      'border border-site-purple px-8 py-6 text-site-ink hover:bg-site-purple hover:text-site-bg',
   }
   return `${base} ${variants[props.variant]}`
 })

@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import AppText from './AppText.vue'
+import Text from './Text.vue'
 
 defineProps<{ label: string }>()
 </script>
 
 <template>
-  <AppText
+  <Text
     as="span"
     variant="mono"
-    class="inline-block border border-site-acid px-2 py-[3px] text-[0.625rem] tracking-[0.025rem] text-site-acid"
+    class="inline-block border border-site-acid px-4 py-2 text-[0.625rem] tracking-[0.025rem] text-site-acid"
   >
     {{ label }}
-  </AppText>
+  </Text>
 </template>

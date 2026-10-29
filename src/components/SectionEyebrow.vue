@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import AppText from './AppText.vue'
+import Text from './Text.vue'
 
 defineProps<{ label: string }>()
 </script>
 
 <template>
-  <AppText variant="eyebrow">{{ label }}</AppText>
+  <Text variant="eyebrow">{{ label }}</Text>
 </template>

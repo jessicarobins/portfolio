@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import AppText from './AppText.vue'
+import Text from './Text.vue'
 import SectionEyebrow from './SectionEyebrow.vue'
 
 defineProps<{ eyebrow: string; title: string; linkText?: string; to?: string; id?: string }>()
 </script>
 
 <template>
-  <div class="mb-[1.125rem] flex items-end justify-between gap-5 max-tablet:items-start">
+  <div class="mb-9 flex items-end justify-between gap-10 max-tablet:items-start">
     <div>
       <SectionEyebrow :label="eyebrow" />
-      <AppText as="h2" variant="section-title" :id="id">
+      <Text as="h2" variant="section-title" :id="id">
         {{ title }}<span class="text-site-acid">.</span>
-      </AppText>
+      </Text>
     </div>
     <RouterLink
       v-if="to && linkText"

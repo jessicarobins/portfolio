@@ -21,11 +21,13 @@ Case-study content lives in `src/data/work.ts`.
 
 ## Design system
 
-Tailwind CSS 4 powers page layouts and component styling. The Purple Riot palette, display font,
-and mono font are defined once in `src/assets/main.css` under `@theme`; use those `site-*` color
-tokens and the shared font utilities instead of repeating raw colors or font stacks.
+Tailwind CSS 4 powers page layouts and component styling. The spacing scale uses a 2px base unit,
+so numeric margin, padding, and gap utilities follow a consistent 2px grid. Fluid section spacing
+uses named `section` and `fluid` theme tokens. The Purple Riot palette, display font, and mono font
+are defined once in `src/assets/main.css` under `@theme`; use those `site-*` color tokens and the
+shared font utilities instead of repeating raw colors or font stacks.
 
-Reusable Vue primitives live in `src/components/`: `AppText` owns the type scale, `AppButton`
+Reusable Vue primitives live in `src/components/`: `Text` owns the type scale, `Button`
 owns link and button variants, `SectionEyebrow` and `SectionHeading` standardize section labels,
 `PageIntro` provides the page opening layout, `TagList` and `StatusTag` standardize metadata,
 `SiteContainer` and `SiteNavLink` define shared site chrome, and `WorkCard`/`WorkRow` render the

@@ -4,7 +4,7 @@ defineProps<{ items: string[]; variant?: 'pill' | 'plain' }>()
 
 <template>
   <ul
-    class="mt-3 flex list-none flex-wrap gap-1.5 p-0"
+    class="mt-6 flex list-none flex-wrap gap-3 p-0"
     :aria-label="variant === 'plain' ? undefined : 'Technologies and skills'"
   >
     <li
@@ -13,7 +13,7 @@ defineProps<{ items: string[]; variant?: 'pill' | 'plain' }>()
       class="font-mono text-[0.625rem] leading-relaxed"
       :class="
         variant === 'plain'
-          ? 'rounded-full border border-site-line px-2 py-[3px] text-site-muted'
+          ? 'rounded-full border border-site-line px-4 py-2 text-site-muted'
           : 'text-site-ink'
       "
     >

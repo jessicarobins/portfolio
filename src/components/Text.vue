@@ -31,10 +31,10 @@ const variants = {
   'section-title':
     'm-0 text-[clamp(1.875rem,4vw,2.875rem)] font-extrabold leading-none tracking-[-0.055em]',
   'subsection-title':
-    'm-0 mb-3 text-[1.5625rem] font-bold leading-tight tracking-[-0.025em] text-site-acid tablet:text-[2rem]',
+    'm-0 mb-6 text-[1.5625rem] font-bold leading-tight tracking-[-0.025em] text-site-acid tablet:text-[2rem]',
   eyebrow:
-    'm-0 mb-2.5 font-mono text-[0.6875rem] leading-relaxed tracking-[0.05625rem] text-site-acid uppercase',
-  lede: 'mt-[1.125rem] max-w-[45rem] text-base leading-relaxed text-site-muted tablet:text-lg',
+    'm-0 mb-5 font-mono text-[0.6875rem] leading-relaxed tracking-[0.05625rem] text-site-acid uppercase',
+  lede: 'mt-9 max-w-[45rem] text-base leading-relaxed text-site-muted tablet:text-lg',
   body: 'text-base leading-[1.75] text-site-muted',
   'body-small': 'm-0 max-w-[50rem] text-sm text-site-muted',
   muted: 'text-site-muted',

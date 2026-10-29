@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
+  --spacing: 0.125rem;
+  --spacing-section: clamp(2.375rem, 6vw, 4.25rem);
+  --spacing-fluid: clamp(14px, 3vw, 36px);
   --color-site-bg: #241039;
   --color-site-panel: #32164e;
   --color-site-ink: #ffffff;
