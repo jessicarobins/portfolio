@@ -9,7 +9,7 @@ import { work } from '../data/work'
 <template>
   <section class="py-section pb-21" aria-labelledby="home-title">
     <div class="mb-14 flex justify-between gap-8 text-site-muted">
-      <Text variant="label" class="mb-0 text-site-muted">Washington, DC · Open to remote</Text>
+      <Text variant="label" class="mb-0">Washington, DC · Open to remote</Text>
     </div>
     <Text
       as="h1"
@@ -29,7 +29,8 @@ import { work } from '../data/work'
       <Text
         as="p"
         variant="body"
-        class="mt-0 max-w-[30.625rem] text-body-large leading-relaxed text-site-ink tablet:text-body-large-tablet"
+        color-variant="primary"
+        class="mt-0 max-w-[30.625rem] text-body-large leading-relaxed tablet:text-body-large-tablet"
       >
         Full-stack, frontend-focused engineer with 11 years of experience. I partner with product,
         design, and engineering to shape solutions, then build the applications, APIs, and cloud
@@ -88,7 +89,12 @@ import { work } from '../data/work'
       <Text as="h2" variant="heading" :level="3">Engineer by trade.<br />Curious by default.</Text>
     </div>
     <div>
-      <Text as="p" variant="body" class="mb-9 mt-0 max-w-[36.875rem] text-body-large">
+      <Text
+        as="p"
+        variant="body"
+        color-variant="secondary"
+        class="mb-9 mt-0 max-w-[36.875rem] text-body-large"
+      >
         I like solving problems across the product and technical stack, from understanding what
         users need to building the applications, APIs, and infrastructure behind the experience.
         Before software, I spent ten years working with kids; I still bring curiosity and patience

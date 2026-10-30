@@ -36,8 +36,16 @@ defineProps<{
     >
       {{ company }}
     </Text>
-    <Text as="p" variant="body" class="mt-3 text-body-small font-bold">{{ title }}</Text>
-    <Text as="p" variant="body" class="mt-5 max-w-[26.875rem] text-body-small">{{ summary }}</Text>
+    <Text as="p" variant="body" color-variant="secondary" class="mt-3 text-body-small font-bold">{{
+      title
+    }}</Text>
+    <Text
+      as="p"
+      variant="body"
+      color-variant="secondary"
+      class="mt-5 max-w-[26.875rem] text-body-small"
+      >{{ summary }}</Text
+    >
     <span class="absolute right-2 bottom-10 text-icon text-site-purple" aria-hidden="true">↗</span>
   </RouterLink>
 </template>

@@ -18,7 +18,12 @@ import SectionEyebrow from '../components/SectionEyebrow.vue'
         >Let’s talk.</span
       >
     </Text>
-    <Text as="p" variant="body" class="mt-14 max-w-[39.375rem] leading-relaxed tablet:text-lg">
+    <Text
+      as="p"
+      variant="body"
+      color-variant="secondary"
+      class="mt-14 max-w-[39.375rem] leading-relaxed tablet:text-lg"
+    >
       I’m interested in full-stack product engineering, internal tools, and platform teams solving
       people-centered problems across the stack.
     </Text>

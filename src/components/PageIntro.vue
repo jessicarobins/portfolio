@@ -19,6 +19,7 @@ defineProps<{ eyebrow: string }>()
     <Text
       v-if="$slots.lede"
       variant="body"
+      color-variant="secondary"
       class="mt-9 max-w-[45rem] leading-relaxed tablet:text-lg"
     >
       <slot name="lede" />

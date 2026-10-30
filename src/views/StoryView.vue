@@ -32,9 +32,13 @@ const nextStory = computed(() => work[index.value + 1])
         class="max-w-[56.25rem] font-black leading-display tracking-display uppercase"
         >{{ story.title }}</Text
       >
-      <Text as="p" variant="body" class="mt-9 max-w-[48.75rem] leading-relaxed tablet:text-lg">{{
-        story.summary
-      }}</Text>
+      <Text
+        as="p"
+        variant="body"
+        color-variant="secondary"
+        class="mt-9 max-w-[48.75rem] leading-relaxed tablet:text-lg"
+        >{{ story.summary }}</Text
+      >
       <TagList v-if="story.stack" :items="story.stack" variant="plain" class="mt-10" />
       <div v-if="story.links?.length" class="mt-9 flex flex-wrap gap-x-9 gap-y-4">
         <Button
@@ -59,7 +63,8 @@ const nextStory = computed(() => work[index.value + 1])
           as="h2"
           variant="heading"
           :level="4"
-          class="mb-6 font-bold leading-tight tracking-subheading text-site-acid"
+          color-variant="tertiary"
+          class="mb-6 font-bold leading-tight tracking-subheading"
           >{{ section.heading }}</Text
         >
         <Text
@@ -67,6 +72,7 @@ const nextStory = computed(() => work[index.value + 1])
           :key="paragraph"
           as="p"
           variant="body"
+          color-variant="secondary"
           class="my-0 mt-5 first:mt-0"
         >
           {{ paragraph }}
@@ -84,13 +90,14 @@ const nextStory = computed(() => work[index.value + 1])
               as="strong"
               variant="heading"
               :level="4"
-              class="mb-0 leading-none text-site-acid"
+              color-variant="tertiary"
+              class="mb-0 leading-none"
               >{{ metric.value }}</Text
             >
-            <Text as="span" variant="body" class="mt-4 font-bold text-site-ink">{{
+            <Text as="span" variant="body" color-variant="primary" class="mt-4 font-bold">{{
               metric.label
             }}</Text>
-            <Text as="small" variant="label" class="mt-3 text-caption text-site-muted">{{
+            <Text as="small" variant="label" color-variant="secondary" class="mt-3 text-caption">{{
               metric.detail
             }}</Text>
           </div>
@@ -99,7 +106,8 @@ const nextStory = computed(() => work[index.value + 1])
           v-if="section.callout"
           as="p"
           variant="body"
-          class="mt-9 border-l-[3px] border-site-acid bg-site-panel px-9 py-7 text-site-ink"
+          color-variant="primary"
+          class="mt-9 border-l-[3px] border-site-acid bg-site-panel px-9 py-7"
         >
           {{ section.callout }}
         </Text>
@@ -112,7 +120,7 @@ const nextStory = computed(() => work[index.value + 1])
       class="mt-15 flex max-w-[48.125rem] items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
     >
       <span
-        ><Text variant="label" class="text-label text-site-acid">Next story</Text
+        ><Text variant="label" color-variant="tertiary" class="text-label">Next story</Text
         ><Text as="strong" variant="heading" :level="5" class="next-title mt-2">{{
           nextStory.company
         }}</Text></span
@@ -125,7 +133,8 @@ const nextStory = computed(() => work[index.value + 1])
       class="mt-15 flex max-w-[48.125rem] items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
     >
       <span
-        ><Text variant="label" class="text-label text-site-acid">End of selected work</Text
+        ><Text variant="label" color-variant="tertiary" class="text-label"
+          >End of selected work</Text
         ><Text as="strong" variant="heading" :level="5" class="next-title mt-2"
           >Back to all work</Text
         ></span

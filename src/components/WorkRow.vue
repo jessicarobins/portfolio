@@ -40,7 +40,13 @@ defineProps<{
       >
         {{ title }}
       </Text>
-      <Text as="p" variant="body" class="mt-3 max-w-[50rem] text-body-small">{{ summary }}</Text>
+      <Text
+        as="p"
+        variant="body"
+        color-variant="secondary"
+        class="mt-3 max-w-[50rem] text-body-small"
+        >{{ summary }}</Text
+      >
       <TagList v-if="tags" :items="tags" variant="plain" />
     </div>
     <span class="text-icon text-site-purple" aria-hidden="true">↗</span>
