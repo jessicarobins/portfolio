@@ -14,7 +14,7 @@
     "type-check": "vue-tsc --build",
     "test": "vitest run",
     "lint": "run-s \"lint:*\"",
-    "lint:oxlint": "oxlint .",
+    "lint:oxlint": "oxlint . --ignore-pattern 'public/old/**'",
     "lint:eslint": "eslint . --cache",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
