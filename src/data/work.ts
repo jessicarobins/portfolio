@@ -15,7 +15,6 @@ export type WorkStory = {
   title: string
   summary: string
   stack?: string[]
-  status?: string
   links?: { label: string; href: string }[]
   sections: StorySection[]
 }
@@ -109,7 +108,6 @@ export const work: WorkStory[] = [
     timeframe: 'In development',
     role: 'Product engineering',
     kind: 'AI-powered product',
-    status: 'Work in progress',
     title: 'AI-powered research that turns an idea into a list.',
     summary:
       'All the Things turns an idea into a source-backed list with AI-assisted web research and AI image generation.',
@@ -171,7 +169,6 @@ export const work: WorkStory[] = [
     timeframe: 'Launched July 2018',
     role: 'Independent project',
     kind: 'Mobile and web product · Journaling',
-    status: 'Paused',
     title: 'A one-sentence-a-day journal for web and mobile.',
     summary:
       'Built a Vue web app and React Native apps for iOS and Android, using daily push notifications to help people capture one sentence about their lives. It reached #2 Product of the Day on Product Hunt.',

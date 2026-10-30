@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import Text from './Text.vue'
-import StatusLabel from './StatusLabel.vue'
 import TagList from './TagList.vue'
 
 defineProps<{
@@ -11,7 +10,6 @@ defineProps<{
   title: string
   summary: string
   to: string
-  status?: string
   tags?: string[]
 }>()
 </script>
@@ -33,7 +31,6 @@ defineProps<{
           >{{ company }}</span
         >
         <span class="text-site-muted">{{ timeframe }}</span>
-        <StatusLabel v-if="status" :label="status" />
       </div>
       <Text
         as="h2"

@@ -23,7 +23,6 @@ import { work } from '../data/work'
       :title="story.title"
       :summary="story.summary"
       :to="`/work/${story.slug}`"
-      :status="story.status"
       :tags="story.stack"
     />
   </section>

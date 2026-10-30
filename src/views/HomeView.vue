@@ -75,7 +75,6 @@ import { work } from '../data/work'
         :title="story.title"
         :summary="story.summary"
         :to="`/work/${story.slug}`"
-        :status="story.status"
         :featured="story.slug === 'all-the-things'"
       />
     </div>

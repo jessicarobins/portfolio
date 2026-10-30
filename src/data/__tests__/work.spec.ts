@@ -25,11 +25,11 @@ describe('portfolio work', () => {
     expect(aiWorkflow?.paragraphs?.[0]).toContain('existing internal tool')
   })
 
-  it('keeps All the Things identified as an in-progress AI product', () => {
+  it('keeps All the Things identified as an in-development AI product', () => {
     const project = work.find((story) => story.slug === 'all-the-things')
 
     expect(project?.company).toBe('All the Things')
-    expect(project?.status).toBe('Work in progress')
+    expect(project?.timeframe).toBe('In development')
     expect(project?.title).toContain('AI-powered research')
     expect(project?.summary.toLowerCase()).toContain('ai')
     expect(project?.summary).toContain('image generation')
@@ -50,8 +50,7 @@ describe('portfolio work', () => {
     expect(project?.stack).toContain('Vue')
     expect(project?.stack).toContain('iOS')
     expect(project?.stack).toContain('Android')
-    expect(project?.status).toContain('Paused')
-    expect(project?.status).not.toContain('may return')
+    expect(project?.timeframe).toBe('Launched July 2018')
     expect(project?.sections[1]?.paragraphs?.[0]).not.toMatch(/may return|pick it back up/i)
     expect(project?.sections[1]?.paragraphs?.[0]).toContain(
       '10 people across several countries still write in TinyThoughts several times a month',
