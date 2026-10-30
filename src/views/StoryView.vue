@@ -19,7 +19,7 @@ const nextStory = computed(() => work[index.value + 1])
     <Button to="/work" variant="text" class="mb-13 font-mono text-caption uppercase"
       ><span aria-hidden="true">←</span> All work</Button
     >
-    <header class="relative border-b-[3px] border-site-purple py-13 pb-15">
+    <header class="relative border-b-3 border-site-purple py-13 pb-15">
       <SectionEyebrow
         :label="`${story.company} / ${story.role} / ${story.timeframe}`"
         class="mb-6"
@@ -53,7 +53,7 @@ const nextStory = computed(() => work[index.value + 1])
       </div>
     </header>
 
-    <div class="max-w-[48.125rem] py-4 pb-10">
+    <div class="max-w-story py-4 pb-10">
       <section
         v-for="section in story.sections"
         :key="section.heading"
@@ -107,7 +107,7 @@ const nextStory = computed(() => work[index.value + 1])
           as="p"
           variant="body"
           color-variant="primary"
-          class="mt-9 border-l-[3px] border-site-acid bg-site-panel px-9 py-7"
+          class="mt-9 border-l-3 border-site-acid bg-site-panel px-9 py-7"
         >
           {{ section.callout }}
         </Text>
@@ -117,7 +117,7 @@ const nextStory = computed(() => work[index.value + 1])
     <RouterLink
       v-if="nextStory"
       :to="`/work/${nextStory.slug}`"
-      class="mt-15 flex max-w-[48.125rem] items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
+      class="mt-15 flex max-w-story items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
     >
       <span
         ><Text variant="label" color-variant="tertiary" class="text-label">Next story</Text
@@ -130,7 +130,7 @@ const nextStory = computed(() => work[index.value + 1])
     <RouterLink
       v-else
       to="/work"
-      class="mt-15 flex max-w-[48.125rem] items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
+      class="mt-15 flex max-w-story items-center justify-between border-y border-site-purple border-t-2 py-9 text-site-ink no-underline hover:[&_.next-title]:text-site-acid"
     >
       <span
         ><Text variant="label" color-variant="tertiary" class="text-label"

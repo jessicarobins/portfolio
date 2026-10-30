@@ -18,7 +18,7 @@ defineProps<{
 <template>
   <RouterLink
     :to="to"
-    class="group relative block min-h-[13rem] border-b border-site-line py-9 pr-16 text-site-ink no-underline hover:[&_.work-card-title]:text-site-acid"
+    class="group relative block min-h-104 border-b border-site-line py-9 pr-16 text-site-ink no-underline hover:[&_.work-card-title]:text-site-acid"
     :class="featured ? 'bg-gradient-to-br from-transparent via-transparent to-site-purple/10' : ''"
   >
     <div

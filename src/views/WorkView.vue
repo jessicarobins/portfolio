@@ -13,7 +13,7 @@ import { work } from '../data/work'
     >
   </PageIntro>
 
-  <section class="border-t-[3px] border-site-purple" aria-label="Selected work">
+  <section class="border-t-3 border-site-purple" aria-label="Selected work">
     <WorkRow
       v-for="(story, index) in work"
       :key="story.slug"

@@ -29,9 +29,11 @@ block, including named line-height and letter-spacing tokens. The shared `Text` 
 1 to 5 to set their size, independent of where they appear. Its `colorVariant` values are
 `default`, `primary`, `secondary`, and `tertiary`; `default` inherits the surrounding color, while
 the named variants use the primary ink, muted, and acid colors. Use the named typography utilities instead of adding
-one-off font sizes, line heights, or tracking values. The Purple Riot palette, display font, and
-mono font are also defined there; use those `site-*` color tokens and shared font utilities instead
-of repeating raw colors or font stacks.
+one-off font sizes, line heights, or tracking values. The site and story content widths are named
+container tokens, repeated 3px dividers use Tailwind's border-width utility, and header/card minimum
+heights and underline offsets follow the 2px spacing scale. The Purple Riot palette,
+display font, and mono font are also defined there; use those `site-*` color tokens and shared font
+utilities instead of repeating raw colors or font stacks.
 
 Reusable Vue primitives live in `src/components/`: `Text` owns the type scale, `Button`
 owns link and button variants, `SectionEyebrow` and `SectionHeading` standardize section labels,

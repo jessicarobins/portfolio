@@ -16,7 +16,7 @@ const route = useRoute()
   <div class="min-h-screen overflow-hidden">
     <SiteContainer
       as="header"
-      class="flex min-h-[4.375rem] items-center justify-between gap-6 border-b-2 border-site-acid tablet:min-h-[5.125rem] tablet:gap-12"
+      class="flex min-h-35 items-center justify-between gap-6 border-b-2 border-site-acid tablet:min-h-41 tablet:gap-12"
     >
       <RouterLink
         class="inline-block rotate-[-3deg] bg-site-acid px-4 py-3 text-base leading-none font-black tracking-brand text-site-bg no-underline tablet:px-6 tablet:py-4 tablet:text-xl"

@@ -65,7 +65,7 @@ import { work } from '../data/work'
       link-text="See all work"
       to="/work"
     />
-    <div class="grid grid-cols-1 gap-x-13 border-t-[3px] border-site-purple tablet:grid-cols-2">
+    <div class="grid grid-cols-1 gap-x-13 border-t-3 border-site-purple tablet:grid-cols-2">
       <WorkCard
         v-for="(story, index) in work"
         :key="story.slug"
