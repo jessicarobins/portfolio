@@ -28,7 +28,7 @@ defineProps<{
       <div
         class="flex flex-wrap items-center gap-x-9 gap-y-4 font-mono text-label leading-relaxed tracking-wide text-site-purple uppercase"
       >
-        <span>{{ company }}</span>
+        <span class="text-badge font-bold text-site-ink">{{ company }}</span>
         <span class="text-site-muted">{{ timeframe }}</span>
         <StatusTag v-if="status" :label="status" />
       </div>
