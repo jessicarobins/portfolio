@@ -17,7 +17,7 @@ export const experience: ExperienceEntry[] = [
     role: 'Front End Engineer',
     timeframe: 'Feb 2017 – Dec 2017',
     highlight:
-      'Partnered with The Washington Post’s highest-profile client to codify the client’s design system for its CMS.',
+      'Partnered with a high-profile client to codify the client’s design system for its CMS.',
   },
   {
     company: 'Kit Check, Inc.',
