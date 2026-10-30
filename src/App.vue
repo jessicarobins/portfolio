@@ -1,146 +1,74 @@
-<template>
-  <div id="app">
-    <navbar :sections="sections"></navbar>
-    <hello></hello>
-    <truths></truths>
-    <projects></projects>
-    <jobs></jobs>
-    <education></education>
-    <hobbies></hobbies>
-    <contact></contact>
-    <sidenav :sections="sections"></sidenav>
-  </div>
-</template>
+<script setup lang="ts">
+import { RouterLink, RouterView, useRoute } from 'vue-router'
+import Button from './components/Button.vue'
+import SiteContainer from './components/SiteContainer.vue'
+import SiteNavLink from './components/SiteNavLink.vue'
 
-<script>
-import Contact from './components/Contact'
-import Education from './components/Education'
-import Hello from './components/Hello'
-import Hobbies from './components/Hobbies'
-import Jobs from './components/Jobs'
-import Navbar from './components/Navbar'
-import Projects from './components/Projects'
-import Sidenav from './components/Sidenav'
-import Truths from './components/Truths'
-
-export default {
-  name: 'app',
-  components: {
-    Contact,
-    Education,
-    Hello,
-    Hobbies,
-    Jobs,
-    Navbar,
-    Projects,
-    Sidenav,
-    Truths
-  },
-  data() {
-    return {
-      sections: [{
-        name: 'About Me',
-        anchor: '#truths',
-      }, {
-        name: 'Projects',
-        anchor: '#projects',
-      }, {
-        name: 'Career',
-        anchor: '#jobs',
-      }, {
-        name: 'Education',
-        anchor: '#education',
-      }, {
-        name: 'Interests',
-        anchor: '#interests'
-      }, {
-        name: 'Contact',
-        anchor: '#contact'
-      }]
-    }
-  }
-}
+const route = useRoute()
 </script>
 
-<style>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.css');
-@import url('https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css');
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300|Material+Icons');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+<template>
+  <a
+    class="absolute top-5 left-5 z-10 -translate-y-[180%] bg-site-acid px-7 py-5 font-bold text-site-bg focus:translate-y-0"
+    href="#main"
+    >Skip to content</a
+  >
+  <div class="min-h-screen overflow-hidden">
+    <SiteContainer
+      as="header"
+      class="flex min-h-35 items-center justify-between gap-6 border-b-2 border-site-acid tablet:min-h-41 tablet:gap-12"
+    >
+      <RouterLink
+        class="inline-block rotate-[-3deg] bg-site-acid px-4 py-3 text-base leading-none font-black tracking-brand text-site-bg no-underline tablet:px-6 tablet:py-4 tablet:text-xl"
+        to="/"
+        aria-label="Jess is Cool home"
+        >jess is cool.</RouterLink
+      >
+      <nav class="flex items-center gap-5 tablet:gap-fluid" aria-label="Main navigation">
+        <SiteNavLink to="/" :current="route.path === '/'">Home</SiteNavLink>
+        <SiteNavLink to="/work" :current="route.path.startsWith('/work')">Work</SiteNavLink>
+        <SiteNavLink to="/about" :current="route.path === '/about'">About</SiteNavLink>
+        <Button
+          to="/contact"
+          variant="outline"
+          class="px-4 py-3 text-label tablet:px-6 tablet:py-4 tablet:text-xs"
+          :aria-current="route.path === '/contact' ? 'page' : undefined"
+          >Say hi <span aria-hidden="true">↗</span></Button
+        >
+      </nav>
+    </SiteContainer>
 
-$zig-zag: #e91e63;
+    <SiteContainer as="main" id="main" tabindex="-1" class="min-h-[70vh]">
+      <RouterView />
+    </SiteContainer>
 
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
-
-#app {
-  font-family: 'Open Sans Condensed', sans-serif;
-  color: #2c3e50;
-  background-color: white;
-  font-size: 20px !important;
-
-  .md-button, .md-switch-label {
-    font-size: 20px;
-  }
-
-  @media screen and (max-width: 992px) {
-    font-size: 40px !important;
-
-    .md-button, .md-switch-label {
-      font-size: 40px;
-    }
-
-    .md-button {
-      min-height: 40px;
-      min-width: 40px;
-      padding: 20px;
-    }
-  }
-}
-
-h1 {
-  font-family: 'Amatic SC', cursive;
-}
-
-section {
-  min-height: calc(100vh + 400px);
-  &:first-of-type, &:last-of-type {
-    min-height: calc(100vh + 200px);
-  }
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-section:not(:last-of-type)::after, section:not(:first-of-type)::before {
-  content: '';
-  width: 100%;
-  height: 200px;
-
-  background:
-    linear-gradient(135deg, white 25%, transparent 25%) -100px 0,
-    linear-gradient(225deg, white 25%, transparent 25%) -100px 0,
-    linear-gradient(315deg, white 25%, transparent 25%),
-    linear-gradient(45deg, white 25%, transparent 25%);
-  background-size: 200px 200px;
-  background-repeat: repeat round;
-  background-color: $zig-zag;
-}
-
-a {
-  cursor: pointer;
-}
-
-.colored {
-  margin-right: 5px;
-}
-
-.md-chip-container {
-  display: flex;
-  align-items: center;
-}
-</style>
+    <SiteContainer
+      as="footer"
+      class="flex flex-wrap justify-between gap-9 border-t border-site-line py-9 pb-13 font-mono text-caption leading-relaxed text-site-muted max-tablet:flex-col"
+    >
+      <span>Jessica “Jess” Solka · Washington, DC</span>
+      <div class="flex flex-wrap gap-10">
+        <Button
+          href="https://github.com/jessicarobins"
+          external
+          variant="text"
+          class="font-mono text-caption text-site-ink uppercase"
+          >GitHub <span aria-hidden="true">↗</span></Button
+        >
+        <Button
+          href="https://www.linkedin.com/in/jessica-robins/"
+          external
+          variant="text"
+          class="font-mono text-caption text-site-ink uppercase"
+          >LinkedIn <span aria-hidden="true">↗</span></Button
+        >
+        <Button
+          href="mailto:jessrrobins@gmail.com"
+          variant="text"
+          class="font-mono text-caption text-site-ink uppercase"
+          >Email <span aria-hidden="true">↗</span></Button
+        >
+      </div>
+    </SiteContainer>
+  </div>
+</template>
