@@ -4,6 +4,9 @@ import Text from '../components/Text.vue'
 import SectionHeading from '../components/SectionHeading.vue'
 import WorkCard from '../components/WorkCard.vue'
 import { work } from '../data/work'
+import { careerStartYear } from '../data/experience'
+
+const yearsExperience = new Date().getFullYear() - careerStartYear
 </script>
 
 <template>
@@ -32,9 +35,9 @@ import { work } from '../data/work'
         color-variant="primary"
         class="mt-0 max-w-[30.625rem] text-body-large leading-relaxed tablet:text-body-large-tablet"
       >
-        Full-stack, frontend-focused engineer with 11 years of experience. I partner with product,
-        design, and engineering to shape solutions, then build the applications, APIs, and cloud
-        systems needed to ship them.
+        Full-stack, frontend-focused engineer with {{ yearsExperience }} years of experience. I
+        partner with product, design, and engineering to shape solutions, then build the
+        applications, APIs, and cloud systems needed to ship them.
       </Text>
       <Button to="/work" variant="secondary"
         >The proof is right here <span aria-hidden="true">↓</span></Button

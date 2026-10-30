@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import PageIntro from '../components/PageIntro.vue'
 import WorkRow from '../components/WorkRow.vue'
+import Text from '../components/Text.vue'
+import ExperienceList from '../components/ExperienceList.vue'
 import { work } from '../data/work'
 </script>
 
@@ -25,5 +27,15 @@ import { work } from '../data/work'
       :to="`/work/${story.slug}`"
       :tags="story.stack"
     />
+  </section>
+
+  <section
+    class="mt-12 border-t-3 border-site-purple pt-6 pb-16"
+    aria-labelledby="earlier-roles-title"
+  >
+    <Text as="h2" variant="label" color-variant="tertiary" id="earlier-roles-title" class="mb-5">
+      Earlier roles
+    </Text>
+    <ExperienceList />
   </section>
 </template>
