@@ -3,7 +3,6 @@ import Button from '../components/Button.vue'
 import Text from '../components/Text.vue'
 import SectionEyebrow from '../components/SectionEyebrow.vue'
 import PageIntro from '../components/PageIntro.vue'
-import ExperienceList from '../components/ExperienceList.vue'
 </script>
 
 <template>
@@ -54,19 +53,6 @@ import ExperienceList from '../components/ExperienceList.vue'
         out with my cats, or listening to punk music.
       </Text>
     </div>
-  </section>
-
-  <section
-    class="grid grid-cols-1 gap-10 border-t border-site-line py-14 pb-20 tablet:grid-cols-[0.85fr_1fr] tablet:gap-23"
-    aria-labelledby="experience-title"
-  >
-    <div>
-      <SectionEyebrow label="Experience" />
-      <Text as="h2" variant="heading" :level="3" id="experience-title">
-        A decade of building software with teams.
-      </Text>
-    </div>
-    <ExperienceList />
   </section>
 
   <section

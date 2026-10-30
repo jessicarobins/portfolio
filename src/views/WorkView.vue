@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import PageIntro from '../components/PageIntro.vue'
 import WorkRow from '../components/WorkRow.vue'
+import SectionEyebrow from '../components/SectionEyebrow.vue'
+import Text from '../components/Text.vue'
+import ExperienceList from '../components/ExperienceList.vue'
 import { work } from '../data/work'
 </script>
 
@@ -25,5 +28,18 @@ import { work } from '../data/work'
       :to="`/work/${story.slug}`"
       :tags="story.stack"
     />
+  </section>
+
+  <section
+    class="mt-16 grid grid-cols-1 gap-10 border-t-3 border-site-purple pt-9 pb-20 tablet:grid-cols-[0.85fr_1fr] tablet:gap-23"
+    aria-labelledby="earlier-roles-title"
+  >
+    <div>
+      <SectionEyebrow label="Earlier roles" />
+      <Text as="h2" variant="heading" :level="3" id="earlier-roles-title">
+        Frontend, product, and test engineering.
+      </Text>
+    </div>
+    <ExperienceList />
   </section>
 </template>

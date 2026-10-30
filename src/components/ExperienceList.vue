@@ -6,7 +6,7 @@ import { experience } from '../data/experience'
 <template>
   <ol class="m-0 list-none border-t border-site-line p-0" aria-label="Career history">
     <li
-      v-for="(entry, index) in experience"
+      v-for="entry in experience"
       :key="`${entry.company}-${entry.role}`"
       class="grid grid-cols-1 gap-x-6 gap-y-2 border-b border-site-line py-5 tablet:grid-cols-[1fr_auto] tablet:items-start"
     >
@@ -17,13 +17,7 @@ import { experience } from '../data/experience'
         <Text as="p" variant="body" color-variant="primary" class="mb-0 mt-0 text-body-small">
           {{ entry.role }}
         </Text>
-        <Text
-          v-if="index > 1"
-          as="p"
-          variant="body"
-          color-variant="secondary"
-          class="mb-0 mt-2 text-body-small"
-        >
+        <Text as="p" variant="body" color-variant="secondary" class="mb-0 mt-2 text-body-small">
           {{ entry.highlight }}
         </Text>
       </div>
