@@ -17,7 +17,7 @@ export const experience: ExperienceEntry[] = [
     role: 'Front End Engineer',
     timeframe: 'Feb 2017 – Dec 2017',
     highlight:
-      'Worked across frontend projects, including a React and Electron tool for creating schema-based test data.',
+      'Partnered with The Washington Post’s highest-profile client to codify the client’s design system for its CMS.',
   },
   {
     company: 'Kit Check, Inc.',
