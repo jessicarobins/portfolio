@@ -26,4 +26,11 @@ export const experience: ExperienceEntry[] = [
     highlight:
       'Built product features and automated tests for the continuous integration pipeline.',
   },
+  {
+    company: 'SunGard Availability Services',
+    role: 'Junior QA Engineer',
+    timeframe: 'Mar 2014 – Jun 2015',
+    highlight:
+      'Built automated test suites for web applications using Java and Selenium WebDriver.',
+  },
 ]
