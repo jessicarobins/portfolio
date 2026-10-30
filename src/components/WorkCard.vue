@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import Text from './Text.vue'
-import StatusTag from './StatusTag.vue'
+import StatusLabel from './StatusLabel.vue'
 
 defineProps<{
   index: number
@@ -27,7 +27,7 @@ defineProps<{
       <span class="text-xs">{{ String(index).padStart(2, '0') }}</span>
       <span class="text-right text-site-purple">{{ kind }}</span>
     </div>
-    <StatusTag v-if="status" :label="status" class="mt-4" />
+    <StatusLabel v-if="status" :label="status" class="mt-4" />
     <Text
       as="h3"
       variant="heading"

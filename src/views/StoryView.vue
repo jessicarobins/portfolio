@@ -4,7 +4,7 @@ import { RouterLink, useRoute } from 'vue-router'
 import Button from '../components/Button.vue'
 import Text from '../components/Text.vue'
 import SectionEyebrow from '../components/SectionEyebrow.vue'
-import StatusTag from '../components/StatusTag.vue'
+import StatusLabel from '../components/StatusLabel.vue'
 import TagList from '../components/TagList.vue'
 import { work } from '../data/work'
 
@@ -24,7 +24,7 @@ const nextStory = computed(() => work[index.value + 1])
         :label="`${story.company} / ${story.role} / ${story.timeframe}`"
         class="mb-6"
       />
-      <StatusTag v-if="story.status" :label="story.status" class="mb-6" />
+      <StatusLabel v-if="story.status" :label="story.status" class="mb-6" />
       <Text
         as="h1"
         variant="heading"

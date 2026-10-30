@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import Text from './Text.vue'
-import StatusTag from './StatusTag.vue'
+import StatusLabel from './StatusLabel.vue'
 import TagList from './TagList.vue'
 
 defineProps<{
@@ -28,9 +28,12 @@ defineProps<{
       <div
         class="flex flex-wrap items-center gap-x-9 gap-y-4 font-mono text-label leading-relaxed tracking-wide text-site-purple uppercase"
       >
-        <span class="text-badge font-bold text-site-acid">{{ company }}</span>
+        <span
+          class="inline-flex border border-site-acid px-4 py-2 text-badge leading-none font-bold text-site-acid"
+          >{{ company }}</span
+        >
         <span class="text-site-muted">{{ timeframe }}</span>
-        <StatusTag v-if="status" :label="status" />
+        <StatusLabel v-if="status" :label="status" />
       </div>
       <Text
         as="h2"
