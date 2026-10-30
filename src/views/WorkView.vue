@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import PageIntro from '../components/PageIntro.vue'
 import WorkRow from '../components/WorkRow.vue'
-import SectionEyebrow from '../components/SectionEyebrow.vue'
 import Text from '../components/Text.vue'
 import ExperienceList from '../components/ExperienceList.vue'
 import { work } from '../data/work'
@@ -31,15 +30,12 @@ import { work } from '../data/work'
   </section>
 
   <section
-    class="mt-16 grid grid-cols-1 gap-10 border-t-3 border-site-purple pt-9 pb-20 tablet:grid-cols-[0.85fr_1fr] tablet:gap-23"
+    class="mt-12 border-t-3 border-site-purple pt-6 pb-16"
     aria-labelledby="earlier-roles-title"
   >
-    <div>
-      <SectionEyebrow label="Earlier roles" />
-      <Text as="h2" variant="heading" :level="3" id="earlier-roles-title">
-        Frontend, product, and test engineering.
-      </Text>
-    </div>
+    <Text as="h2" variant="label" color-variant="tertiary" id="earlier-roles-title" class="mb-5">
+      Earlier roles
+    </Text>
     <ExperienceList />
   </section>
 </template>

@@ -8,21 +8,26 @@ import { experience } from '../data/experience'
     <li
       v-for="entry in experience"
       :key="`${entry.company}-${entry.role}`"
-      class="grid grid-cols-1 gap-x-6 gap-y-2 border-b border-site-line py-5 tablet:grid-cols-[1fr_auto] tablet:items-start"
+      class="grid grid-cols-1 gap-x-6 gap-y-1 border-b border-site-line py-3 tablet:grid-cols-[1fr_auto] tablet:items-baseline"
     >
-      <div>
-        <Text as="h3" variant="heading" :level="4" class="mb-1 mt-0">
+      <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <Text as="h3" variant="heading" :level="5" class="mb-0 mt-0">
           {{ entry.company }}
         </Text>
         <Text as="p" variant="body" color-variant="primary" class="mb-0 mt-0 text-body-small">
           {{ entry.role }}
         </Text>
-        <Text as="p" variant="body" color-variant="secondary" class="mb-0 mt-2 text-body-small">
-          {{ entry.highlight }}
-        </Text>
       </div>
-      <Text variant="label" color-variant="secondary" class="mt-1 tablet:text-right">
+      <Text variant="label" color-variant="secondary" class="mt-0 tablet:text-right">
         {{ entry.timeframe }}
+      </Text>
+      <Text
+        as="p"
+        variant="body"
+        color-variant="secondary"
+        class="col-span-full mb-0 mt-0 text-body-small"
+      >
+        {{ entry.highlight }}
       </Text>
     </li>
   </ol>
