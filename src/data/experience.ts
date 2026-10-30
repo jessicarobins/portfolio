@@ -5,6 +5,8 @@ export type ExperienceEntry = {
   highlight: string
 }
 
+export const careerStartYear = 2014
+
 export const experience: ExperienceEntry[] = [
   {
     company: 'LevelUp',
