@@ -26,9 +26,9 @@ export const work: WorkStory[] = [
     timeframe: 'September 2021 – October 2026',
     role: 'Senior Software Engineer',
     kind: 'Internal platform · Product engineering',
-    title: 'Studio authorization, built for many teams.',
+    title: 'Untangling Studio’s authorization model.',
     summary:
-      'Shaped and delivered a studio authorization product, then helped more than 10 teams adopt its shared access model across 12 applications.',
+      'Built a shared authorization platform that unified how Studio teams manage access, replacing fragmented approaches with a consistent model.',
     stack: ['React', 'TypeScript', 'GraphQL', 'Node.js', 'Playwright', 'Jenkins', 'promptfoo'],
     sections: [
       {
@@ -46,7 +46,7 @@ export const work: WorkStory[] = [
       {
         heading: 'Built foundations other teams could use',
         paragraphs: [
-          'Developed libraries adopted across more than 10 teams and 12 applications, including reusable access-management components and a role-aware Playwright testing library.',
+          'Developed reusable access-management components and a role-aware Playwright testing library so partner teams could build on the same foundations.',
         ],
       },
       {
