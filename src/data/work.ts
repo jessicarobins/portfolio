@@ -26,7 +26,7 @@ export const work: WorkStory[] = [
     timeframe: 'September 2021 – October 2026',
     role: 'Senior Software Engineer',
     kind: 'Internal platform · Product engineering',
-    title: 'Moving Studio teams to a new authorization system.',
+    title: 'Building Studio’s new authorization system.',
     summary:
       'Worked directly with partner teams to define and test their roles, resources, and permissions, then helped migrate their workflows to the new access model.',
     stack: ['React', 'TypeScript', 'GraphQL', 'Node.js', 'Playwright', 'Jenkins', 'promptfoo'],

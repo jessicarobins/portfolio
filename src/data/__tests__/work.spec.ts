@@ -18,7 +18,7 @@ describe('portfolio work', () => {
     const netflix = work.find((story) => story.slug === 'netflix')
     const metrics = netflix?.sections.flatMap((section) => section.metrics ?? []) ?? []
 
-    expect(netflix?.title).toBe('Moving Studio teams to a new authorization system.')
+    expect(netflix?.title).toBe('Building Studio’s new authorization system.')
     expect(netflix?.summary).toContain('migrate their workflows to the new access model')
     expect(metrics.map((metric) => metric.value)).toEqual(expect.arrayContaining(['38%', '59%']))
     const aiWorkflow = netflix?.sections.find((section) => section.heading.includes('AI'))
