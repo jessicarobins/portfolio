@@ -26,27 +26,27 @@ export const work: WorkStory[] = [
     timeframe: 'September 2021 – October 2026',
     role: 'Senior Software Engineer',
     kind: 'Internal platform · Product engineering',
-    title: 'Studio authorization, built for many teams.',
+    title: 'Building Studio’s new authorization system.',
     summary:
-      'Shaped and delivered a studio authorization product, then helped more than 10 teams adopt its shared access model across 12 applications.',
+      'Shaped and delivered a Studio authorization product, then helped teams across Netflix adopt its shared model in their applications.',
     stack: ['React', 'TypeScript', 'GraphQL', 'Node.js', 'Playwright', 'Jenkins', 'promptfoo'],
     sections: [
       {
         heading: 'Defined the model and built the product',
         paragraphs: [
-          'Partnered with product and design to define requirements and shape the access model for resources, roles, permissions, onboarding, and provisioning. Then built the UI from the ground up using React, TypeScript, and GraphQL.',
+          'Partnered with product, design, backend, and other engineers to define and test the admin model for resources, roles, permissions, onboarding, and provisioning. Led UI development for several parts of the system, including user onboarding and delegated administration.',
         ],
       },
       {
         heading: 'Expanded adoption across teams',
         paragraphs: [
-          'Worked directly with partner teams to define and test their roles, resources, and permissions, then helped migrate their workflows to the new access model.',
+          'Worked with Studio teams to define and test their roles and capabilities, then migrate them from the old authorization system to the new one.',
         ],
       },
       {
-        heading: 'Built foundations other teams could use',
+        heading: 'Built foundations to unblock other teams',
         paragraphs: [
-          'Developed libraries adopted across more than 10 teams and 12 applications, including reusable access-management components and a role-aware Playwright testing library.',
+          'Built reusable access-management components and an end-to-end testing library that unblocked every UI app with existing end-to-end tests from migrating to the new system.',
         ],
       },
       {
@@ -140,13 +140,13 @@ export const work: WorkStory[] = [
     kind: 'Backend systems · Internal tools · Product delivery',
     title: 'A web tool for faster, more reliable support.',
     summary:
-      'Led delivery of a convenience-store offering, replaced a command-line support tool with a web app, and built backend systems and AWS data workflows.',
+      'Led delivery of a convenience-store product vertical, replaced a command-line support tool with a web app, and built backend systems and AWS data workflows.',
     stack: ['Angular', 'TypeScript', 'Python', 'Java', 'AWS', 'Terraform'],
     sections: [
       {
         heading: 'Extended the product into convenience stores',
         paragraphs: [
-          'Served as technical lead on a tiger team that architected and delivered the company’s convenience-store offering.',
+          'As technical lead on a tiger team, I helped architect and deliver GetUpside’s convenience-store product vertical.',
         ],
       },
       {
@@ -156,9 +156,9 @@ export const work: WorkStory[] = [
         ],
       },
       {
-        heading: 'Expanded AWS capabilities and mentored a junior engineer',
+        heading: 'Built backend services and AWS data workflows',
         paragraphs: [
-          'Built and maintained backend software and AWS data workflows using Java, Dropwizard, Lambda, SQS, SNS, S3, API Gateway, Athena, SQL, and Terraform. Mentored a junior engineer through technical design and career development.',
+          'Built and maintained backend software and AWS data workflows using Java, Dropwizard, Lambda, SQS, SNS, S3, API Gateway, Athena, SQL, and Terraform.',
         ],
       },
     ],
@@ -191,7 +191,7 @@ export const work: WorkStory[] = [
       {
         heading: 'Launched on iOS and Android',
         paragraphs: [
-          'The mobile apps were previously available on both app stores. More than five years after the last update, 10 people across several countries still write in TinyThoughts several times a month.',
+          'The mobile apps were previously available on both app stores. More than five years after its last update, 10 people across several countries still write in TinyThoughts, including seven who write almost every day.',
         ],
       },
     ],

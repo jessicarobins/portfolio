@@ -24,8 +24,9 @@ import SectionEyebrow from '../components/SectionEyebrow.vue'
       color-variant="secondary"
       class="mt-14 max-w-[39.375rem] leading-relaxed tablet:text-lg"
     >
-      I’m interested in full-stack product engineering, internal tools, and platform teams solving
-      people-centered problems across the stack.
+      I’m interested in frontend-focused full-stack roles where I can work closely with product and
+      design, build user-facing features, and strengthen engineering workflows with testing, CI,
+      code-quality tooling, and practical AI automation.
     </Text>
     <div class="mt-13 flex flex-wrap gap-6">
       <Button href="mailto:jessrrobins@gmail.com" variant="primary"

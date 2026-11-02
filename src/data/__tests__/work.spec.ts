@@ -14,12 +14,14 @@ describe('portfolio work', () => {
     }
   })
 
-  it('keeps measurable Netflix platform outcomes in the story', () => {
+  it('describes the Netflix authorization system migration', () => {
     const netflix = work.find((story) => story.slug === 'netflix')
     const metrics = netflix?.sections.flatMap((section) => section.metrics ?? []) ?? []
 
+    expect(netflix?.title).toBe('Building Studio’s new authorization system.')
+    expect(netflix?.summary).toContain('Shaped and delivered a Studio authorization product')
+    expect(netflix?.summary).toContain('teams across Netflix adopt its shared model')
     expect(metrics.map((metric) => metric.value)).toEqual(expect.arrayContaining(['38%', '59%']))
-    expect(netflix?.summary).toContain('10 teams adopt')
     const aiWorkflow = netflix?.sections.find((section) => section.heading.includes('AI'))
     expect(aiWorkflow?.paragraphs?.[0]).toContain('promptfoo')
     expect(aiWorkflow?.paragraphs?.[0]).toContain('existing internal tool')
@@ -53,7 +55,7 @@ describe('portfolio work', () => {
     expect(project?.timeframe).toBe('Launched July 2018')
     expect(project?.sections[1]?.paragraphs?.[0]).not.toMatch(/may return|pick it back up/i)
     expect(project?.sections[1]?.paragraphs?.[0]).toContain(
-      '10 people across several countries still write in TinyThoughts several times a month',
+      '10 people across several countries still write in TinyThoughts, including seven who write almost every day',
     )
     expect(project?.links?.[0]?.href).toBe('https://tinythoughts.me')
   })
