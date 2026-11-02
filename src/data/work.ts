@@ -44,7 +44,7 @@ export const work: WorkStory[] = [
         ],
       },
       {
-        heading: 'Built shared components and testing tools integrated by Studio teams',
+        heading: 'Built foundations to unblock other teams',
         paragraphs: [
           'Built reusable access-management components and an end-to-end testing library that unblocked every UI app with existing end-to-end tests from migrating to the new system.',
         ],
