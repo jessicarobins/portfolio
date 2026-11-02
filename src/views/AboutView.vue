@@ -49,7 +49,7 @@ import PageIntro from '../components/PageIntro.vue'
       <Text as="p" variant="body" color-variant="secondary" class="mt-6 text-body-small">
         I’ve led efforts to make interview practices more equitable at Compass and GetUpside. I also
         built Not The Pipeline, a full-stack product that assessed technical interview processes and
-        recommended changes to improve them.
+        recommended changes to support diversity, equity, and inclusion.
       </Text>
       <Text as="p" variant="body" color-variant="secondary" class="mt-6 text-body-small">
         Outside work, I’m usually off on an adventure with my family, playing board games, hanging
