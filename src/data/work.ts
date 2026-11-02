@@ -28,7 +28,7 @@ export const work: WorkStory[] = [
     kind: 'Internal platform · Product engineering',
     title: 'Untangling Studio’s authorization model.',
     summary:
-      'Built a shared authorization platform that unified how Studio teams manage access, replacing fragmented approaches with a consistent model.',
+      'Worked directly with partner teams to define and test their roles, resources, and permissions, then helped migrate their workflows to the new access model.',
     stack: ['React', 'TypeScript', 'GraphQL', 'Node.js', 'Playwright', 'Jenkins', 'promptfoo'],
     sections: [
       {

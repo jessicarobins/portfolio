@@ -14,12 +14,12 @@ describe('portfolio work', () => {
     }
   })
 
-  it('describes the shared Netflix platform and keeps measurable outcomes', () => {
+  it('describes the Netflix authorization system migration', () => {
     const netflix = work.find((story) => story.slug === 'netflix')
     const metrics = netflix?.sections.flatMap((section) => section.metrics ?? []) ?? []
 
     expect(netflix?.title).toBe('Untangling Studio’s authorization model.')
-    expect(netflix?.summary).toContain('unified how Studio teams manage access')
+    expect(netflix?.summary).toContain('migrate their workflows to the new access model')
     expect(metrics.map((metric) => metric.value)).toEqual(expect.arrayContaining(['38%', '59%']))
     const aiWorkflow = netflix?.sections.find((section) => section.heading.includes('AI'))
     expect(aiWorkflow?.paragraphs?.[0]).toContain('promptfoo')
