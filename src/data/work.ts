@@ -28,7 +28,7 @@ export const work: WorkStory[] = [
     kind: 'Internal platform · Product engineering',
     title: 'Building Studio’s new authorization system.',
     summary:
-      'Led UI development for parts of Studio’s new authorization system, including onboarding and delegated administration; helped define the admin model with product and backend and built an end-to-end testing library to help UI apps migrate from the old system.',
+      'Shaped and delivered a Studio authorization product, then helped teams across Netflix adopt its shared model in their applications.',
     stack: ['React', 'TypeScript', 'GraphQL', 'Node.js', 'Playwright', 'Jenkins', 'promptfoo'],
     sections: [
       {
