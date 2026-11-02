@@ -19,14 +19,14 @@ export const experience: ExperienceEntry[] = [
     role: 'Front End Engineer',
     timeframe: 'Feb 2017 – Dec 2017',
     highlight:
-      'Partnered with a high-profile client to codify the client’s design system for its CMS.',
+      'Partnered with a high-profile client to codify its design system for The Washington Post’s CMS, keeping the CSS lean to minimize build size.',
   },
   {
     company: 'Kit Check, Inc.',
     role: 'QA Automation Engineer',
     timeframe: 'Jun 2015 – Feb 2017',
     highlight:
-      'Built product features and automated tests for the continuous integration pipeline.',
+      'Built frontend and backend features for customer-facing products and internal tools with Angular and Rails, and wrote Protractor and Jasmine tests for them.',
   },
   {
     company: 'SunGard Availability Services',

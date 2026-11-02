@@ -35,9 +35,9 @@ const yearsExperience = new Date().getFullYear() - careerStartYear
         color-variant="primary"
         class="mt-0 max-w-[30.625rem] text-body-large leading-relaxed tablet:text-body-large-tablet"
       >
-        Full-stack, frontend-focused engineer with {{ yearsExperience }} years of experience. I
-        partner with product, design, and engineering to shape solutions, then build the
-        applications, APIs, and cloud systems needed to ship them.
+        I’m a frontend-focused full-stack engineer with {{ yearsExperience }} years of experience,
+        most recently at Netflix. I work across product planning and implementation, building web
+        applications, APIs, internal tools, and platform software.
       </Text>
       <Button to="/work" variant="secondary"
         >The proof is right here <span aria-hidden="true">↓</span></Button
@@ -97,10 +97,9 @@ const yearsExperience = new Date().getFullYear() - careerStartYear
         color-variant="secondary"
         class="mb-9 mt-0 max-w-[36.875rem] text-body-large"
       >
-        I like solving problems across the product and technical stack, from understanding what
-        users need to building the applications, APIs, and infrastructure behind the experience.
-        Before software, I spent ten years working with kids; I still bring curiosity and patience
-        to my work.
+        I like working close to the product: understanding what people need, shaping the experience
+        with the team, and building the frontend and APIs behind it. Before software, I spent ten
+        years working with kids; I still bring curiosity and patience to the work.
       </Text>
       <Button to="/about" variant="text">More about me <span aria-hidden="true">↗</span></Button>
     </div>

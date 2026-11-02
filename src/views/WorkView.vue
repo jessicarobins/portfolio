@@ -8,11 +8,11 @@ import { work } from '../data/work'
 
 <template>
   <PageIntro eyebrow="Work index / 01—05">
-    <template #title>Products, platforms, and tools I've helped build.</template>
-    <template #lede
-      >Product delivery from discovery through adoption, internal platforms and tools, and one AI
-      product in progress.</template
-    >
+    <template #title>From studio authorization to AI-powered research.</template>
+    <template #lede>
+      Selected work includes a new authorization system for Netflix Studio, a communications
+      platform for Compass agents, and an AI product that turns a prompt into a researched list.
+    </template>
   </PageIntro>
 
   <section class="border-t-3 border-site-purple" aria-label="Selected work">

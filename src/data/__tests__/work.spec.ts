@@ -54,7 +54,7 @@ describe('portfolio work', () => {
     expect(project?.timeframe).toBe('Launched July 2018')
     expect(project?.sections[1]?.paragraphs?.[0]).not.toMatch(/may return|pick it back up/i)
     expect(project?.sections[1]?.paragraphs?.[0]).toContain(
-      '10 people across several countries still write in TinyThoughts several times a month',
+      '10 people across several countries still write in TinyThoughts, including seven who write almost every day',
     )
     expect(project?.links?.[0]?.href).toBe('https://tinythoughts.me')
   })
