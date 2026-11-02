@@ -26,11 +26,9 @@ import PageIntro from '../components/PageIntro.vue'
         write end-to-end tests to check that the whole experience works as expected.
       </Text>
       <Text as="p" variant="body" color-variant="secondary" class="mt-6 text-body-small">
-        I led UI development for several parts of Studio’s new authorization system, including user
-        onboarding and delegated administration. I worked with product and backend to define and
-        test the admin model, and built an end-to-end testing library so every UI app with existing
-        end-to-end tests could migrate to the new system. I also partnered with Studio teams to
-        migrate their roles and capabilities from the old system.
+        At Compass, I was a technical lead and engineering manager, leading a five-person team and
+        delivery of a communications product across the platform. More recently at Netflix, I
+        partnered with product, backend, and Studio teams to build a new authorization system.
       </Text>
       <Text as="p" variant="body" color-variant="secondary" class="mt-6 text-body-small">
         I’ve also applied AI to engineering workflows: I wrote code-review rules specific to our
