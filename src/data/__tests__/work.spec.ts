@@ -19,7 +19,8 @@ describe('portfolio work', () => {
     const metrics = netflix?.sections.flatMap((section) => section.metrics ?? []) ?? []
 
     expect(netflix?.title).toBe('Building Studio’s new authorization system.')
-    expect(netflix?.summary).toContain('migrate their workflows to the new access model')
+    expect(netflix?.summary).toContain('built an end-to-end testing library')
+    expect(netflix?.summary).toContain('migrate from the old system')
     expect(metrics.map((metric) => metric.value)).toEqual(expect.arrayContaining(['38%', '59%']))
     const aiWorkflow = netflix?.sections.find((section) => section.heading.includes('AI'))
     expect(aiWorkflow?.paragraphs?.[0]).toContain('promptfoo')
