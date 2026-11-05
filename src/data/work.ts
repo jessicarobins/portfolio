@@ -6,7 +6,7 @@ export type StorySection = {
   metrics?: { value: string; label: string; detail: string }[]
 }
 
-export type ArtworkTreatment = 'playful' | 'product-screenshot'
+export type ArtworkTreatment = 'wordmark' | 'product-screenshot'
 
 export type ArtworkAsset = {
   src: string
@@ -120,7 +120,11 @@ export const work: WorkStory[] = [
     title: 'AI-powered research that turns an idea into a list.',
     summary:
       'All the Things turns an idea into a source-backed list with AI-assisted web research and AI image generation.',
-    artwork: { src: '/images/all-the-things-wordmark.png', alt: 'All the Things wordmark' },
+    artwork: {
+      src: '/images/all-the-things-wordmark.png',
+      alt: 'All the Things logo with its sparkle mark',
+      treatment: 'wordmark',
+    },
     links: [{ label: 'Open the live app', href: 'https://allthethings.jessis.cool' }],
     sections: [
       {
