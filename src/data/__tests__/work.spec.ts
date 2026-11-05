@@ -32,7 +32,7 @@ describe('portfolio work', () => {
 
     expect(project?.company).toBe('All the Things')
     expect(project?.timeframe).toBe('In production')
-    expect(project?.artwork?.src).toBe('/images/all-the-things-wordmark.png')
+    expect(project?.artwork?.src).toBe('/images/all-the-things-social-preview-v2.png')
     expect(project?.links?.[0]?.href).toBe('https://allthethings.jessis.cool')
     expect(project?.title).toContain('AI-powered research')
     expect(project?.summary.toLowerCase()).toContain('ai')

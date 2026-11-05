@@ -6,12 +6,9 @@ export type StorySection = {
   metrics?: { value: string; label: string; detail: string }[]
 }
 
-export type ArtworkTreatment = 'wordmark' | 'product-screenshot'
-
 export type ArtworkAsset = {
   src: string
   alt: string
-  treatment?: ArtworkTreatment
 }
 
 export type WorkStory = {
@@ -121,9 +118,8 @@ export const work: WorkStory[] = [
     summary:
       'All the Things turns an idea into a source-backed list with AI-assisted web research and AI image generation.',
     artwork: {
-      src: '/images/all-the-things-wordmark.png',
-      alt: 'All the Things logo with its sparkle mark',
-      treatment: 'wordmark',
+      src: '/images/all-the-things-social-preview-v2.png',
+      alt: 'All the Things homepage with sticker illustrations, a bucket-list prompt, and example ideas',
     },
     links: [{ label: 'Open the live app', href: 'https://allthethings.jessis.cool' }],
     sections: [
@@ -190,7 +186,6 @@ export const work: WorkStory[] = [
     artwork: {
       src: '/old/static/img/tinythoughts.006aac0.png',
       alt: 'TinyThoughts journaling app shown on a desktop browser and phone',
-      treatment: 'product-screenshot',
     },
     stack: ['Vue', 'React Native', 'Node.js', 'Firebase', 'iOS', 'Android'],
     links: [{ label: 'TinyThoughts website', href: 'https://tinythoughts.me' }],
