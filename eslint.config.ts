@@ -23,6 +23,7 @@ export default defineConfigWithVueTs(
   {
     rules: {
       'vue/multi-word-component-names': ['error', { ignores: ['Button', 'Text'] }],
+      'vue/no-undef-components': 'error',
     },
   },
 

@@ -6,6 +6,11 @@ export type StorySection = {
   metrics?: { value: string; label: string; detail: string }[]
 }
 
+export type ArtworkAsset = {
+  src: string
+  alt: string
+}
+
 export type WorkStory = {
   slug: string
   company: string
@@ -14,6 +19,7 @@ export type WorkStory = {
   kind: string
   title: string
   summary: string
+  artwork?: ArtworkAsset
   stack?: string[]
   links?: { label: string; href: string }[]
   sections: StorySection[]
@@ -105,12 +111,17 @@ export const work: WorkStory[] = [
   {
     slug: 'all-the-things',
     company: 'All the Things',
-    timeframe: 'In development',
+    timeframe: 'In production',
     role: 'Product engineering',
     kind: 'AI-powered product',
     title: 'AI-powered research that turns an idea into a list.',
     summary:
       'All the Things turns an idea into a source-backed list with AI-assisted web research and AI image generation.',
+    artwork: {
+      src: '/images/all-the-things-social-preview-v2.png',
+      alt: 'All the Things homepage with sticker illustrations, a bucket-list prompt, and example ideas',
+    },
+    links: [{ label: 'Open the live app', href: 'https://allthethings.jessis.cool' }],
     sections: [
       {
         heading: 'Integrating AI into list creation',
@@ -127,7 +138,7 @@ export const work: WorkStory[] = [
       {
         heading: 'Evaluation checks the generated lists',
         paragraphs: [
-          'An offline evaluator compares generated lists against known reference collections and flags missing items, unexpected items, duplicates, and missing sources. The product and its AI research workflow remain in development.',
+          'An offline evaluator compares generated lists against known reference collections and flags missing items, unexpected items, duplicates, and missing sources. I’m continuing to refine the live product and its AI research workflow.',
         ],
       },
     ],
@@ -172,6 +183,10 @@ export const work: WorkStory[] = [
     title: 'A one-sentence-a-day journal for web and mobile.',
     summary:
       'Built a Vue web app and React Native apps for iOS and Android, using daily push notifications to help people capture one sentence about their lives. It reached #2 Product of the Day on Product Hunt.',
+    artwork: {
+      src: '/old/static/img/tinythoughts.006aac0.png',
+      alt: 'TinyThoughts journaling app shown on a desktop browser and phone',
+    },
     stack: ['Vue', 'React Native', 'Node.js', 'Firebase', 'iOS', 'Android'],
     links: [{ label: 'TinyThoughts website', href: 'https://tinythoughts.me' }],
     sections: [

@@ -2,6 +2,7 @@
 import Button from '../components/Button.vue'
 import Text from '../components/Text.vue'
 import SectionHeading from '../components/SectionHeading.vue'
+import SectionEyebrow from '../components/SectionEyebrow.vue'
 import WorkCard from '../components/WorkCard.vue'
 import { work } from '../data/work'
 import { careerStartYear } from '../data/experience'

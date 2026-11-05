@@ -29,7 +29,7 @@ defineProps<{
       as="h3"
       variant="heading"
       :level="4"
-      class="work-card-title mt-12 leading-card tracking-card transition-colors"
+      class="work-card-title leading-card tracking-card transition-colors"
     >
       {{ company }}
     </Text>
