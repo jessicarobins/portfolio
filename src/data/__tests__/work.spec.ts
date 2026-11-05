@@ -27,11 +27,13 @@ describe('portfolio work', () => {
     expect(aiWorkflow?.paragraphs?.[0]).toContain('existing internal tool')
   })
 
-  it('keeps All the Things identified as an in-development AI product', () => {
+  it('shows All the Things as a live AI product with its artwork and link', () => {
     const project = work.find((story) => story.slug === 'all-the-things')
 
     expect(project?.company).toBe('All the Things')
-    expect(project?.timeframe).toBe('In development')
+    expect(project?.timeframe).toBe('In production')
+    expect(project?.artwork?.src).toBe('/images/all-the-things-wordmark.png')
+    expect(project?.links?.[0]?.href).toBe('https://allthethings.jessis.cool')
     expect(project?.title).toContain('AI-powered research')
     expect(project?.summary.toLowerCase()).toContain('ai')
     expect(project?.summary).toContain('image generation')

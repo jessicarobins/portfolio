@@ -14,6 +14,7 @@ export type WorkStory = {
   kind: string
   title: string
   summary: string
+  artwork?: { src: string; alt: string }
   stack?: string[]
   links?: { label: string; href: string }[]
   sections: StorySection[]
@@ -105,12 +106,14 @@ export const work: WorkStory[] = [
   {
     slug: 'all-the-things',
     company: 'All the Things',
-    timeframe: 'In development',
+    timeframe: 'In production',
     role: 'Product engineering',
     kind: 'AI-powered product',
     title: 'AI-powered research that turns an idea into a list.',
     summary:
       'All the Things turns an idea into a source-backed list with AI-assisted web research and AI image generation.',
+    artwork: { src: '/images/all-the-things-wordmark.png', alt: 'All the Things wordmark' },
+    links: [{ label: 'Open the live app', href: 'https://allthethings.jessis.cool' }],
     sections: [
       {
         heading: 'Integrating AI into list creation',
@@ -127,7 +130,7 @@ export const work: WorkStory[] = [
       {
         heading: 'Evaluation checks the generated lists',
         paragraphs: [
-          'An offline evaluator compares generated lists against known reference collections and flags missing items, unexpected items, duplicates, and missing sources. The product and its AI research workflow remain in development.',
+          'An offline evaluator compares generated lists against known reference collections and flags missing items, unexpected items, duplicates, and missing sources. I’m continuing to refine the live product and its AI research workflow.',
         ],
       },
     ],

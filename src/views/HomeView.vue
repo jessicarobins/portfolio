@@ -2,6 +2,7 @@
 import Button from '../components/Button.vue'
 import Text from '../components/Text.vue'
 import SectionHeading from '../components/SectionHeading.vue'
+import SectionEyebrow from '../components/SectionEyebrow.vue'
 import WorkCard from '../components/WorkCard.vue'
 import { work } from '../data/work'
 import { careerStartYear } from '../data/experience'
@@ -77,6 +78,7 @@ const yearsExperience = new Date().getFullYear() - careerStartYear
         :kind="story.kind"
         :title="story.title"
         :summary="story.summary"
+        :artwork="story.artwork"
         :to="`/work/${story.slug}`"
         :featured="story.slug === 'all-the-things'"
       />

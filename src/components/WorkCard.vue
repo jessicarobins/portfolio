@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import Text from './Text.vue'
+import ProjectArtwork from './ProjectArtwork.vue'
 
 defineProps<{
   index: number
@@ -8,6 +9,7 @@ defineProps<{
   kind: string
   title: string
   summary: string
+  artwork?: { src: string; alt: string }
   to: string
   featured?: boolean
 }>()
@@ -25,11 +27,13 @@ defineProps<{
       <span class="text-xs">{{ String(index).padStart(2, '0') }}</span>
       <span class="text-right text-site-purple">{{ kind }}</span>
     </div>
+    <ProjectArtwork v-if="artwork" :src="artwork.src" :alt="artwork.alt" size="card" class="mt-8" />
     <Text
       as="h3"
       variant="heading"
       :level="4"
-      class="work-card-title mt-12 leading-card tracking-card transition-colors"
+      class="work-card-title leading-card tracking-card transition-colors"
+      :class="artwork ? 'mt-8' : ''"
     >
       {{ company }}
     </Text>

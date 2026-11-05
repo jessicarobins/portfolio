@@ -5,6 +5,7 @@ import Button from '../components/Button.vue'
 import Text from '../components/Text.vue'
 import SectionEyebrow from '../components/SectionEyebrow.vue'
 import TagList from '../components/TagList.vue'
+import ProjectArtwork from '../components/ProjectArtwork.vue'
 import { work } from '../data/work'
 
 const route = useRoute()
@@ -37,6 +38,12 @@ const nextStory = computed(() => work[index.value + 1])
         class="mt-9 max-w-[48.75rem] leading-relaxed tablet:text-lg"
         >{{ story.summary }}</Text
       >
+      <ProjectArtwork
+        v-if="story.artwork"
+        :src="story.artwork.src"
+        :alt="story.artwork.alt"
+        class="mt-10"
+      />
       <TagList v-if="story.stack" :items="story.stack" variant="plain" class="mt-10" />
       <div v-if="story.links?.length" class="mt-9 flex flex-wrap gap-x-9 gap-y-4">
         <Button
