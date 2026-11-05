@@ -42,6 +42,7 @@ const nextStory = computed(() => work[index.value + 1])
         v-if="story.artwork"
         :src="story.artwork.src"
         :alt="story.artwork.alt"
+        :treatment="story.artwork.treatment"
         class="mt-10"
       />
       <TagList v-if="story.stack" :items="story.stack" variant="plain" class="mt-10" />

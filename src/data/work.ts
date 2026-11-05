@@ -6,6 +6,14 @@ export type StorySection = {
   metrics?: { value: string; label: string; detail: string }[]
 }
 
+export type ArtworkTreatment = 'playful' | 'product-screenshot'
+
+export type ArtworkAsset = {
+  src: string
+  alt: string
+  treatment?: ArtworkTreatment
+}
+
 export type WorkStory = {
   slug: string
   company: string
@@ -14,7 +22,7 @@ export type WorkStory = {
   kind: string
   title: string
   summary: string
-  artwork?: { src: string; alt: string }
+  artwork?: ArtworkAsset
   stack?: string[]
   links?: { label: string; href: string }[]
   sections: StorySection[]
@@ -175,6 +183,11 @@ export const work: WorkStory[] = [
     title: 'A one-sentence-a-day journal for web and mobile.',
     summary:
       'Built a Vue web app and React Native apps for iOS and Android, using daily push notifications to help people capture one sentence about their lives. It reached #2 Product of the Day on Product Hunt.',
+    artwork: {
+      src: '/old/static/img/tinythoughts.006aac0.png',
+      alt: 'TinyThoughts journaling app shown on a desktop browser and phone',
+      treatment: 'product-screenshot',
+    },
     stack: ['Vue', 'React Native', 'Node.js', 'Firebase', 'iOS', 'Android'],
     links: [{ label: 'TinyThoughts website', href: 'https://tinythoughts.me' }],
     sections: [

@@ -78,7 +78,6 @@ const yearsExperience = new Date().getFullYear() - careerStartYear
         :kind="story.kind"
         :title="story.title"
         :summary="story.summary"
-        :artwork="story.artwork"
         :to="`/work/${story.slug}`"
         :featured="story.slug === 'all-the-things'"
       />
