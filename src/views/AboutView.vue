@@ -31,13 +31,11 @@ import PageIntro from '../components/PageIntro.vue'
         partnered with product, backend, and Studio teams to build a new authorization system.
       </Text>
       <Text as="p" variant="body" color-variant="secondary" class="mt-6 text-body-small">
-        Alongside product work, I’ve applied AI to engineering
-        workflows. I wrote code-review rules specific to our codebase
-        and manually evaluated them with promptfoo. I integrated the
-        rules into an existing internal tool that comments on pull
-        requests. I built All the Things, a live product for researching
-        collections, creating reusable catalogs, and tracking personal
-        progress.
+        I’ve applied AI to engineering workflows: I wrote code-review rules specific to our
+        codebase and manually evaluated them with promptfoo, then integrated those rules into an
+        existing internal tool that comments on pull requests. Separately, I built All the
+        Things, a live product for researching collections, creating reusable catalogs, and
+        tracking personal progress.
       </Text>
     </div>
     <div>
