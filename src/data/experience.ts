@@ -12,14 +12,15 @@ export const experience: ExperienceEntry[] = [
     company: 'LevelUp',
     role: 'Software Engineer',
     timeframe: 'Dec 2017 – Dec 2018',
-    highlight: 'Moved the Rails-served frontend to a React single-page application.',
+    highlight:
+      'Hired as the first JavaScript specialist; helped move the Rails-served frontend to React, established ESLint, Flow, and Jest tooling, and converted server-rendered controllers into JSON APIs.',
   },
   {
     company: 'The Washington Post',
     role: 'Front End Engineer',
     timeframe: 'Feb 2017 – Dec 2017',
     highlight:
-      'Partnered with a high-profile client to codify its design system for The Washington Post’s CMS, keeping the CSS lean to minimize build size.',
+      'Led frontend technical direction for a high-profile client project, introducing React, automated testing, and CI tooling to modernize engineering practices.',
   },
   {
     company: 'Kit Check, Inc.',
