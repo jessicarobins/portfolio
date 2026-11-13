@@ -33,9 +33,9 @@ import PageIntro from '../components/PageIntro.vue'
       <Text as="p" variant="body" color-variant="secondary" class="mt-6 text-body-small">
         I’ve applied AI to engineering workflows: I wrote code-review rules specific to our
         codebase and manually evaluated them with promptfoo, then integrated those rules into an
-        existing internal tool that comments on pull requests. Separately, I built All the
-        Things, a live product for researching collections, creating reusable catalogs, and
-        tracking personal progress.
+        existing internal tool that comments on pull requests. I built All the Things, a live
+        product for researching collections, creating reusable catalogs, and tracking personal
+        progress.
       </Text>
     </div>
     <div>
