@@ -36,10 +36,9 @@ const yearsExperience = new Date().getFullYear() - careerStartYear
         color-variant="primary"
         class="mt-0 max-w-[30.625rem] text-body-large leading-relaxed tablet:text-body-large-tablet"
       >
-        I’m a frontend and product engineer with {{ yearsExperience }} years of experience, most
-        recently a Senior Software Engineer at Netflix. I work from product planning through
-        implementation, building web applications, shared frontend systems, internal tools, and the
-        migrations and tooling that help teams keep shipping.
+        I’m a frontend-focused full-stack engineer with {{ yearsExperience }} years of experience,
+        most recently at Netflix. I work across product planning and implementation, building web
+        applications, APIs, internal tools, and platform software.
       </Text>
       <Button to="/work" variant="secondary"
         >The proof is right here <span aria-hidden="true">↓</span></Button
