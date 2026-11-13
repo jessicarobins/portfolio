@@ -50,15 +50,15 @@ export const work: WorkStory[] = [
         ],
       },
       {
-        heading: 'Modernized two legacy applications',
-        paragraphs: [
-          'I independently modernized two legacy applications, migrating them to TypeScript, Netflix’s shared design system, and the standard build and deployment paved path. I kept the applications current as platform teams introduced new standards, including upgrading Vite and migrating to React Router framework mode. I handled dependency upgrades, security fixes, breaking changes, and migration troubleshooting with platform engineers as needed.',
-        ],
-      },
-      {
         heading: 'Built shared foundations for other teams',
         paragraphs: [
           'Built reusable access-management components and several shared libraries adopted by more than 10 teams across 12 applications. I also built a role-aware Playwright library that made it easier to test applications with different authorization requirements and helped teams migrate their end-to-end tests to the new system.',
+        ],
+      },
+      {
+        heading: 'Modernized two legacy applications',
+        paragraphs: [
+          'I independently modernized two legacy applications, migrating them to TypeScript, Netflix’s shared design system, and the standard build and deployment paved path. I kept the applications current as platform teams introduced new standards, including upgrading Vite and migrating to React Router framework mode. I handled dependency upgrades, security fixes, breaking changes, and migration troubleshooting with platform engineers as needed.',
         ],
       },
       {
