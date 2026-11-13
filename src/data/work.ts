@@ -210,9 +210,9 @@ export const work: WorkStory[] = [
         ],
       },
       {
-        heading: 'The web app remains available',
+        heading: 'Launched on iOS and Android',
         paragraphs: [
-          'The web application remains operational; the iOS and Android apps are no longer available in app stores. More than five years after its last update, 10 people across several countries still write in TinyThoughts, including seven who write almost every day.',
+          'The mobile apps were previously available on both app stores. More than five years after its last update, 10 people across several countries still write in TinyThoughts, including seven who write almost every day.',
         ],
       },
     ],
