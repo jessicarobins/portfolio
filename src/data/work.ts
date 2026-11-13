@@ -95,15 +95,15 @@ export const work: WorkStory[] = [
     stack: ['React', 'TypeScript', 'Product strategy', 'Cross-team delivery', 'People management'],
     sections: [
       {
-        heading: 'Technical lead · Senior Software Engineer II · Feb 2020–Mar 2021',
+        heading: 'Led a unified communications initiative across Compass',
         paragraphs: [
-          'Led the design, implementation, and delivery of a cross-team initiative giving real estate agents one unified communications experience across Compass. Coordinated technical integrations and dependencies across engineering teams, and partnered with Product, Design, Support Engineering, and User Research on requirements, roadmaps, prioritization, scope, and quarterly and half-year resourcing.',
+          'As Technical Lead / Senior Software Engineer II (February 2020–March 2021), I led the design, implementation, and delivery of a cross-team initiative giving real estate agents one unified communications experience across Compass. I coordinated technical integrations and dependencies across engineering teams, and partnered with Product, Design, Support Engineering, and User Research on requirements, roadmaps, prioritization, scope, and quarterly and half-year resourcing.',
         ],
       },
       {
-        heading: 'Engineering Manager · Mar 2021–Sep 2021',
+        heading: 'Continued technical leadership while managing five engineers',
         paragraphs: [
-          'Continued as technical lead while managing five engineers, from Software Engineer II through Senior Software Engineer II. Held regular one-on-ones, gave feedback, and supported career development while staying hands-on with technical decisions and delivery.',
+          'As Engineering Manager (March 2021–September 2021), I continued as technical lead while managing five engineers, from Software Engineer II through Senior Software Engineer II. I held regular one-on-ones, gave feedback, and supported career development while staying hands-on with technical decisions and delivery.',
         ],
       },
       {
