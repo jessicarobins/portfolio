@@ -52,7 +52,7 @@ export const work: WorkStory[] = [
       {
         heading: 'Modernized two legacy applications',
         paragraphs: [
-          'In a monorepo with three applications, I independently modernized two legacy apps by migrating them to TypeScript, Netflix’s shared design system, and the standard build and deployment paved path. I kept all three applications current as platform teams introduced new standards, including upgrading Vite and migrating to React Router framework mode. I handled dependency upgrades, security fixes, breaking changes, and migration troubleshooting with platform engineers as needed.',
+          'I independently modernized two legacy applications, migrating them to TypeScript, Netflix’s shared design system, and the standard build and deployment paved path. I kept the applications current as platform teams introduced new standards, including upgrading Vite and migrating to React Router framework mode. I handled dependency upgrades, security fixes, breaking changes, and migration troubleshooting with platform engineers as needed.',
         ],
       },
       {
