@@ -12,7 +12,8 @@ export const experience: ExperienceEntry[] = [
     company: 'LevelUp',
     role: 'Software Engineer',
     timeframe: 'Dec 2017 – Dec 2018',
-    highlight: 'Hired as the first JavaScript specialist; helped move the Rails-served frontend to React, established ESLint, Flow, and Jest tooling, and converted server-rendered controllers into JSON APIs.',
+    highlight:
+      'Hired as the first JavaScript specialist; helped move the Rails-served frontend to React, established ESLint, Flow, and Jest tooling, and converted server-rendered controllers into JSON APIs.',
   },
   {
     company: 'The Washington Post',
