@@ -52,7 +52,7 @@ export const work: WorkStory[] = [
       {
         heading: 'Built shared foundations for other teams',
         paragraphs: [
-          'Built reusable access-management components and several shared libraries adopted by more than 10 teams across 12 applications. I also built a role-aware Playwright library that made it easier to test applications with different authorization requirements and helped teams migrate their end-to-end tests to the new system.',
+          'Built reusable access-management components and several shared libraries adopted by more than 10 teams across 12 applications. I built a role-aware Playwright library for applications with different authorization requirements; it unblocked every UI app with existing end-to-end tests from migrating to the new system.',
         ],
       },
       {
