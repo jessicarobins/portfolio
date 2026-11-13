@@ -122,7 +122,7 @@ export const work: WorkStory[] = [
     kind: 'AI-powered product',
     title: 'AI-powered research that turns an idea into a list.',
     summary:
-      'All the Things is a live, independently built application for researching collections, creating reusable catalogs, and tracking personal progress, with AI-assisted research, source-backed results, and generated imagery.',
+      'All the Things is a live application for researching collections, creating reusable catalogs, and tracking personal progress. Its AI-powered research pipeline turns an idea into a source-backed list with AI image generation.',
     artwork: {
       src: '/images/all-the-things-social-preview-v2.png',
       alt: 'All the Things homepage with sticker illustrations, a bucket-list prompt, and example ideas',
@@ -212,7 +212,7 @@ export const work: WorkStory[] = [
       {
         heading: 'The web app remains available',
         paragraphs: [
-          'The web application is still operational; the iOS and Android apps are no longer available in app stores.',
+          'The web application remains operational; the iOS and Android apps are no longer available in app stores. More than five years after its last update, 10 people across several countries still write in TinyThoughts, including seven who write almost every day.',
         ],
       },
     ],
