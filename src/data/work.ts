@@ -122,7 +122,7 @@ export const work: WorkStory[] = [
     kind: 'AI-powered product',
     title: 'AI-powered research that turns an idea into a list.',
     summary:
-      'All the Things is a live, independently built application for researching collections, creating reusable catalogs, and tracking personal progress, with AI-assisted research and source-backed results.',
+      'All the Things is a live, independently built application for researching collections, creating reusable catalogs, and tracking personal progress, with AI-assisted research, source-backed results, and generated imagery.',
     artwork: {
       src: '/images/all-the-things-social-preview-v2.png',
       alt: 'All the Things homepage with sticker illustrations, a bucket-list prompt, and example ideas',
@@ -212,7 +212,7 @@ export const work: WorkStory[] = [
       {
         heading: 'The web app remains available',
         paragraphs: [
-          'The web application is still operational; the iOS and Android apps are no longer available in app stores. The project reached #2 Product of the Day on Product Hunt in July 2018.',
+          'The web application is still operational; the iOS and Android apps are no longer available in app stores.',
         ],
       },
     ],
