@@ -97,19 +97,13 @@ export const work: WorkStory[] = [
       {
         heading: 'Led a unified communications initiative across Compass',
         paragraphs: [
-          'As Technical Lead / Senior Software Engineer II (February 2020–March 2021), I led the design, implementation, and delivery of a cross-team initiative giving real estate agents one unified communications experience across Compass. I coordinated technical integrations and dependencies across engineering teams, and partnered with Product, Design, Support Engineering, and User Research on requirements, roadmaps, prioritization, scope, and quarterly and half-year resourcing.',
+          'As Technical Lead / Senior Software Engineer II (February 2020–March 2021), I led the design, implementation, and delivery of a cross-team initiative giving real estate agents one unified communications experience across Compass. I coordinated technical integrations and dependencies across engineering teams, and partnered with Product, Design, Support Engineering, and User Research on requirements, roadmaps, prioritization, scope, and quarterly and half-year resourcing. I was accountable for customer experience, delivery, software quality, and maintainability.',
         ],
       },
       {
         heading: 'Continued technical leadership while managing five engineers',
         paragraphs: [
           'As Engineering Manager (March 2021–September 2021), I continued as technical lead while managing five engineers, from Software Engineer II through Senior Software Engineer II. I held regular one-on-ones, gave feedback, and supported career development while staying hands-on with technical decisions and delivery.',
-        ],
-      },
-      {
-        heading: 'Accountable for the customer experience and delivery',
-        paragraphs: [
-          'Across both roles, stayed accountable for customer experience, delivery, software quality, and maintainability.',
         ],
       },
     ],
