@@ -46,13 +46,19 @@ export const work: WorkStory[] = [
       {
         heading: 'Expanded adoption across teams',
         paragraphs: [
-          'Worked with Studio teams to define and test their roles and capabilities, then migrate them from the old authorization system to the new one.',
+          'Worked directly with Studio teams to define and test their roles, resources, and permissions, then supported their migrations from the old authorization system to the new one.',
         ],
       },
       {
-        heading: 'Built foundations to unblock other teams',
+        heading: 'Modernized two legacy applications',
         paragraphs: [
-          'Built reusable access-management components and an end-to-end testing library that unblocked every UI app with existing end-to-end tests from migrating to the new system.',
+          'In a monorepo with three applications, I independently modernized two legacy apps by migrating them to TypeScript, Netflix’s shared design system, and the standard build and deployment paved path. I kept all three applications current as platform teams introduced new standards, including upgrading to Vite 5 and migrating to React Router framework mode. I handled dependency upgrades, security fixes, breaking changes, and migration troubleshooting with platform engineers as needed.',
+        ],
+      },
+      {
+        heading: 'Built shared foundations for other teams',
+        paragraphs: [
+          'Built reusable access-management components and several shared libraries adopted by more than 10 teams across 12 applications. I also built a role-aware Playwright library that made it easier to test applications with different authorization requirements and helped teams migrate their end-to-end tests to the new system.',
         ],
       },
       {
@@ -81,7 +87,7 @@ export const work: WorkStory[] = [
     slug: 'compass',
     company: 'Compass',
     timeframe: 'February 2020 – September 2021',
-    role: 'Technical Lead · Engineering Manager',
+    role: 'Technical Lead / Senior Software Engineer II · Engineering Manager',
     kind: 'Product delivery · Cross-team leadership',
     title: 'A unified communications experience for Compass agents.',
     summary:
@@ -89,21 +95,21 @@ export const work: WorkStory[] = [
     stack: ['React', 'TypeScript', 'Product strategy', 'Cross-team delivery', 'People management'],
     sections: [
       {
-        heading: 'Delivered a unified agent communications experience',
+        heading: 'Technical lead · Senior Software Engineer II · Feb 2020–Mar 2021',
         paragraphs: [
-          'As technical lead, managed the design, implementation, and delivery of a large-scale initiative to provide real estate agents with a unified communication experience across the Compass Real Estate platform. Managed relationships and dependencies with engineers across teams so each team could integrate the product into its customer workflows.',
+          'Led the design, implementation, and delivery of a cross-team initiative giving real estate agents one unified communications experience across Compass. Coordinated technical integrations and dependencies across engineering teams, and partnered with Product, Design, Support Engineering, and User Research on requirements, roadmaps, prioritization, scope, and quarterly and half-year resourcing.',
         ],
       },
       {
-        heading: 'Partnered across functions to plan delivery',
+        heading: 'Engineering Manager · Mar 2021–Sep 2021',
         paragraphs: [
-          'Partnered with product, design, support engineering, and user research to plan sprint work, shape quarterly and half-year roadmaps, and set scope and resourcing.',
+          'Continued as technical lead while managing five engineers, from Software Engineer II through Senior Software Engineer II. Held regular one-on-ones, gave feedback, and supported career development while staying hands-on with technical decisions and delivery.',
         ],
       },
       {
-        heading: 'Managed and developed a five-person team',
+        heading: 'Accountable for the customer experience and delivery',
         paragraphs: [
-          'Owned customer experience, prioritization, quality, maintainability, and engineer growth. Managed five engineers from Software Engineer II through Senior Software Engineer II, with regular one-to-ones and career conversations.',
+          'Across both roles, stayed accountable for customer experience, delivery, software quality, and maintainability.',
         ],
       },
     ],
@@ -116,7 +122,7 @@ export const work: WorkStory[] = [
     kind: 'AI-powered product',
     title: 'AI-powered research that turns an idea into a list.',
     summary:
-      'All the Things turns an idea into a source-backed list with AI-assisted web research and AI image generation.',
+      'All the Things is a live, independently built application for researching collections, creating reusable catalogs, and tracking personal progress, with AI-assisted research and source-backed results.',
     artwork: {
       src: '/images/all-the-things-social-preview-v2.png',
       alt: 'All the Things homepage with sticker illustrations, a bucket-list prompt, and example ideas',
@@ -126,7 +132,7 @@ export const work: WorkStory[] = [
       {
         heading: 'Integrating AI into list creation',
         paragraphs: [
-          'A user describes a collection they want to explore. All the Things uses AI-assisted web research to find and organize relevant items, includes sources with the results, and uses AI image generation to illustrate the list. I’m building the product end to end, from the first prompt through research and quality checks to the finished list.',
+          'A user describes a collection they want to explore. All the Things uses structured LLM outputs and AI-assisted web research to find and organize relevant items, includes sources with the results, and uses AI image generation to illustrate the list. I built the React and TypeScript frontend, Python and Firebase/Firestore backend, and asynchronous research jobs with real-time updates.',
         ],
       },
       {
@@ -138,7 +144,7 @@ export const work: WorkStory[] = [
       {
         heading: 'Evaluation checks the generated lists',
         paragraphs: [
-          'An offline evaluator compares generated lists against known reference collections and flags missing items, unexpected items, duplicates, and missing sources. I’m continuing to refine the live product and its AI research workflow.',
+          'An offline evaluator compares generated lists against known reference collections and flags missing items, unexpected items, duplicates, and missing sources. The data model separates reusable public catalog templates from each user’s lists and progress.',
         ],
       },
     ],
@@ -204,9 +210,9 @@ export const work: WorkStory[] = [
         ],
       },
       {
-        heading: 'Launched on iOS and Android',
+        heading: 'The web app remains available',
         paragraphs: [
-          'The mobile apps were previously available on both app stores. More than five years after its last update, 10 people across several countries still write in TinyThoughts, including seven who write almost every day.',
+          'The web application is still operational; the iOS and Android apps are no longer available in app stores. The project reached #2 Product of the Day on Product Hunt in July 2018.',
         ],
       },
     ],
